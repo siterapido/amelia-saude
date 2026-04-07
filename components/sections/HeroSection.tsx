@@ -10,158 +10,129 @@ import { useReducedMotion } from '@/components/hooks'
 
 /**
  * Hero Section Component
- * Cinematographic full-bleed background with family image
- * Dark overlay gradient for text contrast
+ * Clean, minimal full-screen hero with elegant typography
+ * Inspired by Alice's light aesthetic with Amélia's purple palette
  */
 export const HeroSection = () => {
   const prefersReducedMotion = useReducedMotion()
   const { scrollY } = useScroll()
 
   const scrollIndicatorOpacity = useTransform(scrollY, [0, 100], [1, 0])
-  const imageScale = useTransform(scrollY, [0, 500], [1, 1.1])
-  const contentY = useTransform(scrollY, [0, 300], [0, 50])
+  const contentY = useTransform(scrollY, [0, 300], [0, 40])
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: 0.18,
+        delayChildren: 0.3,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
+      transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as const },
     },
   }
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-black-premium">
-      {/* Background Image - Full Bleed */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{ scale: prefersReducedMotion ? 1 : imageScale }}
-      >
-        <img
-          src="/hero.png"
-          alt="Família brasileira feliz"
-          className="w-full h-full object-cover object-[75%_20%] md:object-[70%_20%]"
-        />
-
-        {/* Cinematic Overlay - Dark gradient from left (desktop) and center/bottom (mobile) */}
-        <div
-          className="absolute inset-0 md:hidden"
+    <section className="relative min-h-screen w-full overflow-hidden bg-white">
+      {/* Subtle background orbs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <motion.div
+          className="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] rounded-full"
           style={{
-            background: `
-              linear-gradient(180deg,
-                rgba(10,10,10,0.5) 0%,
-                rgba(10,10,10,0.25) 30%,
-                rgba(10,10,10,0.15) 50%,
-                rgba(10,10,10,0.35) 70%,
-                rgba(10,10,10,0.75) 100%
-              ),
-              linear-gradient(90deg,
-                rgba(10,10,10,0.7) 0%,
-                rgba(10,10,10,0.4) 40%,
-                rgba(10,10,10,0.15) 100%
-              )
-            `,
+            background: 'radial-gradient(circle, rgba(123,108,177,0.08) 0%, rgba(94,73,133,0.04) 40%, transparent 70%)',
+            filter: 'blur(60px)',
           }}
+          animate={!prefersReducedMotion ? {
+            scale: [1, 1.05, 1],
+            opacity: [0.6, 0.8, 0.6],
+          } : {}}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
-        <div
-          className="absolute inset-0 hidden md:block"
+        <motion.div
+          className="absolute -bottom-[15%] -left-[10%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full"
           style={{
-            background: `
-              linear-gradient(90deg,
-                rgba(10,10,10,0.95) 0%,
-                rgba(10,10,10,0.85) 25%,
-                rgba(10,10,10,0.6) 50%,
-                rgba(10,10,10,0.3) 70%,
-                rgba(10,10,10,0.1) 100%
-              )
-            `,
-          }}
-        />
-
-        {/* Bottom gradient for scroll transition */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-32"
-          style={{
-            background: 'linear-gradient(to top, rgba(10,10,10,1) 0%, transparent 100%)',
-          }}
-        />
-
-        {/* Subtle gold accent glow */}
-        <div
-          className="absolute top-1/4 left-0 w-[600px] h-[600px] opacity-20 pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(241,193,15,0.15) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(94,73,133,0.06) 0%, rgba(168,153,204,0.03) 40%, transparent 70%)',
             filter: 'blur(80px)',
           }}
+          animate={!prefersReducedMotion ? {
+            scale: [1, 1.08, 1],
+            opacity: [0.5, 0.7, 0.5],
+          } : {}}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
         />
-      </motion.div>
+      </div>
 
       {/* Content */}
-      <Container className="relative z-10 flex flex-col justify-center min-h-screen pt-24 pb-20">
+      <Container className="relative z-10 flex flex-col items-center justify-center min-h-screen pt-28 pb-20 text-center">
         <motion.div
-          className="max-w-[700px]"
+          className="max-w-[800px]"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           style={{ y: prefersReducedMotion ? 0 : contentY }}
         >
+          {/* Badge */}
+          <motion.div variants={itemVariants} className="mb-8">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-primary/8 border border-gold-primary/15 text-gold-primary text-sm font-medium">
+              <span className="w-2 h-2 rounded-full bg-gold-primary animate-pulse" />
+              Operadora de Planos de Saúde
+            </span>
+          </motion.div>
+
           {/* Headline */}
-          <motion.div variants={itemVariants} className="mb-6 lg:mb-8">
-            <h1 className="font-display font-bold text-white leading-[0.95] tracking-tight">
-              <span className="block text-[clamp(2.5rem,7vw,5.5rem)]">
-                Sua saúde
+          <motion.div variants={itemVariants} className="mb-8">
+            <h1 className="font-display leading-[1.05] tracking-tight text-[#1A1A2E]">
+              <span className="block text-[clamp(2.5rem,6vw,4.5rem)]">
+                Planos que cuidam
               </span>
-              <span className="block text-[clamp(2.5rem,7vw,5.5rem)] text-gold-primary">
-                em nossos planos
+              <span className="block text-[clamp(2.5rem,6vw,4.5rem)] text-gold-primary">
+                de você de verdade
               </span>
             </h1>
           </motion.div>
 
           {/* Subheadline */}
-          <motion.div variants={itemVariants} className="mb-10 lg:mb-12 max-w-[520px]">
-            <p className="text-lg md:text-xl text-platinum-light leading-relaxed">
-              Planos de saúde para você, sua família e sua empresa, com um time sempre pronto para lhe atender com agilidade, transparência e segurança.
+          <motion.div variants={itemVariants} className="mb-12 max-w-[600px] mx-auto">
+            <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-body">
+              Conectamos você aos melhores médicos, clínicas, centros médicos e laboratórios, sem burocracias.
             </p>
           </motion.div>
 
           {/* CTAs */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
             <MagneticButton strength={0.1}>
               <Button
-                variant="ghost"
+                variant="primary"
                 size="lg"
-                className="!bg-white/5 !border !border-white/20 !text-white hover:!bg-white/10 hover:!border-white/30 !px-8 !py-6 !text-base font-medium min-w-[200px] rounded-xl transition-all duration-300"
+                className="!bg-gold-primary !text-white hover:!bg-gold-signature !px-10 !py-6 !text-base font-semibold min-w-[200px] rounded-2xl shadow-gold-md transition-all duration-300 hover:shadow-gold-lg hover:-translate-y-0.5"
                 onClick={() => {
-                  document.getElementById('client-section')?.scrollIntoView({ behavior: 'smooth' })
+                  const phoneNumber = '5521999999999'
+                  const message = 'Olá! Gostaria de conhecer os planos da Amélia Saúde.'
+                  window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank')
                 }}
               >
-                Já Sou Cliente
+                Fale Conosco
               </Button>
             </MagneticButton>
 
             <MagneticButton strength={0.1}>
               <Button
-                variant="primary"
+                variant="secondary"
                 size="lg"
-                className="!bg-gold-primary !text-black-premium hover:!bg-gold-signature !px-8 !py-6 !text-base font-bold min-w-[200px] rounded-xl shadow-gold-md transition-all duration-300 hover:shadow-gold-lg"
+                className="!border-gold-primary/20 !text-gold-primary hover:!bg-gold-primary/5 !px-10 !py-6 !text-base font-semibold min-w-[200px] rounded-2xl transition-all duration-300"
                 onClick={() => {
-                  const phoneNumber = '5521972229609'
-                  const message = 'Olá! Gostaria de fazer um orçamento de plano de saúde com a Amélia Saúde.'
-                  window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank')
+                  document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth' })
                 }}
               >
-                Fazer Orçamento
+                Conheça Nossos Planos
               </Button>
             </MagneticButton>
           </motion.div>
@@ -169,25 +140,25 @@ export const HeroSection = () => {
           {/* Trust indicator */}
           <motion.div
             variants={itemVariants}
-            className="mt-12 lg:mt-16 flex items-center gap-4"
+            className="mt-14 flex items-center justify-center gap-4"
           >
             <div className="flex -space-x-2">
               {[
-                { src: '/avatars/avatar-1.jpg', alt: 'Cliente satisfeita' },
-                { src: '/avatars/avatar-2.jpg', alt: 'Cliente satisfeita' },
-                { src: '/avatars/avatar-3.jpg', alt: 'Cliente satisfeito' },
-                { src: '/avatars/avatar-4.jpg', alt: 'Cliente satisfeita' },
+                { src: '/avatars/avatar-1.jpg', alt: 'Beneficiário' },
+                { src: '/avatars/avatar-2.jpg', alt: 'Beneficiária' },
+                { src: '/avatars/avatar-3.jpg', alt: 'Beneficiário' },
+                { src: '/avatars/avatar-4.jpg', alt: 'Beneficiária' },
               ].map((person, i) => (
                 <img
                   key={i}
                   src={person.src}
                   alt={person.alt}
-                  className="w-8 h-8 rounded-full border-2 border-black-premium object-cover"
+                  className="w-9 h-9 rounded-full border-2 border-white object-cover shadow-sm"
                 />
               ))}
             </div>
-            <div className="text-sm text-platinum">
-              <span className="text-white font-medium">+2.500</span> famílias protegidas
+            <div className="text-sm text-gray-400">
+              <span className="text-[#1A1A2E] font-semibold">+2.500</span> famílias protegidas
             </div>
           </motion.div>
         </motion.div>
@@ -201,8 +172,8 @@ export const HeroSection = () => {
         transition={{ duration: 2, repeat: Infinity, repeatType: 'loop' }}
       >
         <button
-          onClick={() => document.getElementById('client-section')?.scrollIntoView({ behavior: 'smooth' })}
-          className="p-3 rounded-full border border-white/20 text-white/50 hover:text-white hover:border-white/40 transition-colors"
+          onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+          className="p-3 rounded-full border border-gray-200 text-gray-400 hover:text-gold-primary hover:border-gold-primary/30 transition-colors duration-300"
           aria-label="Rolar para baixo"
         >
           <ChevronDown size={20} />

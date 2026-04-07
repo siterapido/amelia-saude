@@ -1,30 +1,30 @@
-import { Inter, Syne } from 'next/font/google'
+import { DM_Serif_Display, Plus_Jakarta_Sans } from 'next/font/google'
 
 /**
- * Inter - Body font (highly legible, professional)
+ * Plus Jakarta Sans - Body font (clean, modern readability)
  * Weights: 400 (Regular), 500 (Medium), 600 (Semibold), 700 (Bold)
  */
-export const inter = Inter({
+export const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin', 'latin-ext'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-inter',
+  variable: '--font-body',
   display: 'swap',
   fallback: ['system-ui', 'sans-serif'],
 })
 
 /**
- * Syne - Display font (unique, art-house, premium)
- * Weights: 400, 500, 600, 700, 800
+ * DM Serif Display - Display font (elegant, premium)
+ * Weight: 400
  */
-export const syne = Syne({
+export const dmSerif = DM_Serif_Display({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-syne',
+  weight: ['400'],
+  variable: '--font-display',
   display: 'swap',
-  fallback: ['system-ui', 'sans-serif'],
+  fallback: ['Georgia', 'serif'],
 })
 
 /**
  * Font combinations for layout
  */
-export const fontVariables = [inter.variable, syne.variable].join(' ')
+export const fontVariables = [plusJakarta.variable, dmSerif.variable].join(' ')

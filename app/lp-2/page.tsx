@@ -33,7 +33,7 @@ export default function LandingPage2() {
 
       {/* CTA Banner - Engagement #1 (Gold with Shield Pattern) */}
       <CTABanner
-        variant="gold"
+        variant="purple"
         heading="Ficou com alguma dúvida?"
         subheading="Nosso time está pronto para te ajudar"
         ctaText="Falar com especialista"
@@ -44,8 +44,9 @@ export default function LandingPage2() {
 
       {/* CTA Banner - Engagement #2 (Gold with Pulse Pattern) */}
       <CTABanner
-        variant="gold-care"
-        heading="Pronto para ter um plano de saúde que realmente cuida de você?"
+        variant="light"
+        heading="Pronto para cuidar da sua saúde?"
+        subheading="Conheça os planos ideais para você"
         ctaText="Quero Contratar"
       />
 

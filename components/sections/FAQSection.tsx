@@ -2,34 +2,38 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, HelpCircle, MessageCircle, Sparkles } from 'lucide-react'
+import { ChevronDown, HelpCircle, MessageCircle } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
-import { SectionHeader } from '@/components/ui/SectionHeader'
 import { MagneticButton, GradientText } from '@/components/animations'
 
 /**
  * FAQ Section
- * Accordion with frequently asked questions - Premium Gold Design
+ * Clean accordion with healthcare-specific questions
  */
 export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const faqs = [
     {
-      question: 'Quando recebo minha carteirinha digital?',
+      question: 'Quais municípios a rede credenciada cobre?',
       answer:
-        'Você terá acesso à sua carteirinha digital a partir da data de início da vigência do contrato, diretamente pelo Aplicativo Amélia Saúde.',
+        'A Amélia Saúde está presente em mais de oito municípios do Rio de Janeiro e Grande Rio, com acesso a diversos hospitais, clínicas e laboratórios.',
     },
     {
-      question: 'Como realizo o pagamento das mensalidades?',
+      question: 'Como funciona a telemedicina?',
       answer:
-        'O pagamento é feito via boleto digital, enviado mensalmente por e-mail e SMS. Você também pode acessar pelo nosso site ou WhatsApp. O boleto é registrado e permite pagamento após o vencimento com atualização automática.',
+        'Oferecemos mais de 30 especialidades médicas por telemedicina, com prescrição eletrônica de medicamentos, exames e atestados. Nossa taxa de resolutividade alcança 80% já na primeira consulta.',
     },
     {
       question: 'Quando posso começar a usar o plano?',
       answer:
-        'O uso do plano é liberado a partir da data de início da vigência expressa no seu contrato.',
+        'O uso do plano é liberado a partir da data de início da vigência expressa no seu contrato. A carteirinha digital fica disponível no app Amélia Saúde.',
+    },
+    {
+      question: 'Quais os tipos de plano disponíveis?',
+      answer:
+        'Oferecemos planos Individual, Familiar e Empresarial, todos com cobertura para consultas, exames, internações e cirurgias. Cada plano pode ser personalizado de acordo com suas necessidades.',
     },
     {
       question: 'Como funcionam as carências?',
@@ -37,24 +41,19 @@ export const FAQSection = () => {
         'A carência é o tempo de espera para realizar certos procedimentos. Seguimos os prazos máximos da ANS, mas eles podem ser reduzidos promocionalmente. Consulte sua proposta para detalhes específicos.',
     },
     {
-      question: 'O que é Cobertura Parcial Temporária (CPT)?',
+      question: 'O atendimento 24h funciona como?',
       answer:
-        'É um período de restrição para procedimentos de alta complexidade e cirurgias relacionados a doenças pré-existentes. Consultas e atendimentos de urgência/emergência não são afetados.',
-    },
-    {
-      question: 'Como entrar em contato com o suporte?',
-      answer:
-        'Estamos disponíveis pelo telefone 0800-000-5123 e WhatsApp (21) 97233-8589, de segunda a sexta, das 9h às 18h.',
+        'Nosso time de especialistas em saúde atua como ponto de contato único para auxiliá-lo em casos de urgência e emergência, com atendimento ágil e personalizado, disponível 24 horas por dia.',
     },
   ]
 
   return (
-    <section id="faq" className="relative py-24 md:py-32 lg:py-48 glass-section-dark glass-overlay noise-overlay shine-diagonal vignette-gold">
+    <section id="faq" className="relative py-24 md:py-32 bg-white">
       <Container>
-        {/* Premium Header */}
-        <div className="mb-16 md:mb-24 text-center space-y-6">
+        {/* Header */}
+        <div className="mb-16 md:mb-20 text-center space-y-5">
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gold-primary/10 border border-gold-primary/30 rounded-full"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gold-primary/8 border border-gold-primary/15 rounded-full"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -65,86 +64,73 @@ export const FAQSection = () => {
           </motion.div>
 
           <motion.h2
-            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white"
+            className="font-display text-3xl md:text-4xl lg:text-5xl text-[#1A1A2E]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Perguntas <GradientText className="font-bold">Frequentes</GradientText>
+            Perguntas <GradientText>Frequentes</GradientText>
           </motion.h2>
 
           <motion.p
-            className="text-platinum text-lg max-w-2xl mx-auto"
+            className="text-gray-500 text-lg max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Encontre respostas rápidas para as dúvidas mais comuns
+            Encontre respostas rápidas sobre nossos planos e serviços
           </motion.p>
-
-          <motion.div
-            className="h-1 bg-gradient-to-r from-gold-primary to-gold-signature rounded-full mx-auto"
-            initial={{ width: 0, opacity: 0 }}
-            whileInView={{ width: 100, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          />
         </div>
 
-        {/* FAQ Accordion - Premium Style */}
-        <div className="max-w-4xl mx-auto space-y-4">
+        {/* FAQ Accordion */}
+        <div className="max-w-3xl mx-auto space-y-3">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true, margin: '-50px' }}
-              className="group"
             >
               <motion.button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className={`w-full bg-black-deep/80 backdrop-blur-sm rounded-2xl p-6 text-left transition-all duration-500 ${openIndex === index
-                    ? 'border-2 border-gold-primary/60 shadow-[0_0_30px_rgba(245,166,35,0.2)]'
-                    : 'border border-gold-primary/20 hover:border-gold-primary/40 shadow-[0_0_20px_rgba(245,166,35,0.05)] hover:shadow-[0_0_25px_rgba(245,166,35,0.1)]'
-                  }`}
-                whileHover={{ scale: 1.01 }}
+                className={`w-full rounded-2xl p-5 md:p-6 text-left transition-all duration-400 ${
+                  openIndex === index
+                    ? 'bg-gold-primary/5 border border-gold-primary/20 shadow-[0_4px_20px_rgba(94,73,133,0.08)]'
+                    : 'bg-[#F8F9FA] border border-transparent hover:bg-[#F3F4F6]'
+                }`}
                 whileTap={{ scale: 0.995 }}
               >
                 <div className="flex items-center gap-4">
-                  {/* Number indicator */}
-                  <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold text-sm transition-all duration-300 ${openIndex === index
-                      ? 'bg-gradient-to-br from-gold-primary to-gold-signature text-black-premium shadow-[0_4px_15px_rgba(245,166,35,0.4)]'
-                      : 'bg-gold-primary/10 text-gold-primary border border-gold-primary/30'
-                    }`}>
+                  <span className={`flex-shrink-0 text-sm font-semibold font-body tabular-nums transition-colors duration-300 ${
+                    openIndex === index ? 'text-gold-primary' : 'text-gray-400'
+                  }`}>
                     {String(index + 1).padStart(2, '0')}
-                  </div>
+                  </span>
 
-                  <h3 className={`flex-1 font-semibold text-lg md:text-xl pr-4 transition-colors duration-300 ${openIndex === index ? 'text-gold-primary' : 'text-white group-hover:text-gold-light'
-                    }`}>
+                  <h3 className={`flex-1 font-semibold text-base md:text-lg transition-colors duration-300 ${
+                    openIndex === index ? 'text-gold-primary' : 'text-[#1A1A2E]'
+                  }`}>
                     {faq.question}
                   </h3>
 
                   <motion.div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${openIndex === index
-                        ? 'bg-gold-primary/20 border border-gold-primary/40'
-                        : 'bg-gold-primary/5 border border-gold-primary/20'
-                      }`}
+                    className="flex-shrink-0"
                   >
                     <ChevronDown
-                      size={20}
-                      className={`text-gold-primary transition-all duration-300 ${openIndex === index ? 'drop-shadow-[0_0_8px_rgba(245,166,35,0.6)]' : ''
-                        }`}
+                      size={18}
+                      className={`transition-colors duration-300 ${
+                        openIndex === index ? 'text-gold-primary' : 'text-gray-400'
+                      }`}
                     />
                   </motion.div>
                 </div>
               </motion.button>
 
-              {/* Answer - Premium Style */}
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
@@ -153,10 +139,9 @@ export const FAQSection = () => {
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <div className="mx-4 bg-gradient-to-br from-gold-primary/5 via-black-deep/90 to-gold-signature/5 border-x-2 border-b-2 border-gold-primary/30 rounded-b-2xl p-6 shadow-[inset_0_4px_20px_rgba(245,166,35,0.05)]">
-                      <div className="flex gap-4">
-                        <div className="flex-shrink-0 w-1 bg-gradient-to-b from-gold-primary to-gold-signature rounded-full" />
-                        <p className="text-platinum/90 leading-relaxed text-base">{faq.answer}</p>
+                    <div className="px-5 md:px-6 pb-2 pt-0">
+                      <div className="pl-9 border-l-2 border-gold-primary/20 py-3">
+                        <p className="text-gray-500 leading-relaxed text-[15px]">{faq.answer}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -166,26 +151,31 @@ export const FAQSection = () => {
           ))}
         </div>
 
-        {/* Bottom CTA - Premium */}
+        {/* Bottom CTA */}
         <motion.div
-          className="text-center mt-16 md:mt-24"
+          className="text-center mt-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true }}
         >
-          <div className="inline-flex flex-col items-center gap-6 p-8 bg-gradient-to-br from-gold-primary/10 via-black-deep/50 to-gold-signature/10 border border-gold-primary/30 rounded-3xl shadow-[0_0_40px_rgba(245,166,35,0.1)]">
-            <div className="flex items-center gap-3">
-              <Sparkles className="w-5 h-5 text-gold-primary" />
-              <p className="text-white font-medium text-lg">Não encontrou sua resposta?</p>
-            </div>
-            <MagneticButton strength={0.3}>
-              <Button variant="primary" className="shadow-[0_4px_20px_rgba(245,166,35,0.3)]">
-                <MessageCircle className="w-4 h-4 mr-2" />
-                Fale com um especialista
-              </Button>
-            </MagneticButton>
-          </div>
+          <p className="text-gray-500 mb-5 text-sm">
+            Não encontrou sua resposta?
+          </p>
+          <MagneticButton strength={0.2}>
+            <Button
+              variant="primary"
+              className="!bg-gold-primary !text-white hover:!bg-gold-signature !rounded-xl shadow-gold-sm"
+              onClick={() => {
+                const phoneNumber = '5521999999999'
+                const message = 'Olá! Tenho uma dúvida sobre os planos da Amélia Saúde.'
+                window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank')
+              }}
+            >
+              <MessageCircle className="w-4 h-4 mr-2" />
+              Fale com um especialista
+            </Button>
+          </MagneticButton>
         </motion.div>
       </Container>
     </section>

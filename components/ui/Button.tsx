@@ -55,31 +55,31 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       'relative font-semibold uppercase tracking-wide',
       'inline-flex items-center justify-center gap-2.5',
       'transition-all duration-300 ease-premium',
-      'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-signature focus-visible:ring-offset-2 focus-visible:ring-offset-black-premium',
+      'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-signature focus-visible:ring-offset-2 focus-visible:ring-offset-white',
       fullWidth && 'w-full'
     )
 
     const variantClasses = {
       primary: cn(
-        'bg-gradient-gold text-black-premium font-bold',
+        'bg-gradient-gold text-white font-bold',
         'shadow-gold-sm hover:shadow-gold-glow',
         'hover:-translate-y-0.5 hover:scale-[1.015]',
         'active:translate-y-0 active:scale-[0.98]',
         'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100 disabled:hover:shadow-gold-sm'
       ),
       secondary: cn(
-        'border-2 border-white/25 text-white bg-transparent',
+        'border-2 border-gold-primary/30 text-gold-primary bg-transparent',
         'hover:border-gold-primary hover:text-gold-signature',
-        'hover:shadow-[0_0_25px_rgba(212,168,75,0.12)]',
+        'hover:shadow-[0_0_25px_rgba(94,73,133,0.12)]',
         'active:bg-gold-primary/10',
-        'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:border-white/25 disabled:hover:text-white'
+        'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:border-gold-primary/30 disabled:hover:text-gold-primary'
       ),
       ghost: cn(
-        'bg-white/5 border border-white/8 text-white',
+        'bg-transparent border border-gray-300 text-gray-700',
         'backdrop-blur-xl',
-        'hover:bg-white/10 hover:border-gold-primary/25 hover:text-gold-signature',
-        'active:bg-white/15',
-        'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white/5 disabled:hover:border-white/8'
+        'hover:bg-gray-50 hover:border-gold-primary/25 hover:text-gold-signature',
+        'active:bg-gray-100',
+        'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:border-gray-300'
       ),
       'ghost-gold': cn(
         'bg-transparent border border-gold-primary/25',
@@ -112,14 +112,14 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
       >
         <circle
-          className={variant === 'primary' ? 'stroke-black-premium/30' : 'stroke-current opacity-30'}
+          className={variant === 'primary' ? 'stroke-white/30' : 'stroke-current opacity-30'}
           cx="12"
           cy="12"
           r="10"
           strokeWidth="3"
         />
         <path
-          className={variant === 'primary' ? 'stroke-black-premium' : 'stroke-current'}
+          className={variant === 'primary' ? 'stroke-white' : 'stroke-current'}
           d="M12 2a10 10 0 0 1 10 10"
           strokeWidth="3"
           strokeLinecap="round"

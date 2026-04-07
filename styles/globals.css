@@ -41,8 +41,8 @@ html {
 }
 
 body {
-  background-color: var(--color-black-premium);
-  color: white;
+  background-color: #ffffff;
+  color: #1A1A2E;
   overflow-x: hidden;
 }
 

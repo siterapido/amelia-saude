@@ -10,12 +10,12 @@ import { Footer } from '@/components/layout/Footer'
 import { AIChatWidget } from '@/components/ui/AIChatWidget'
 
 export const metadata: Metadata = {
-  title: 'Amélia Saúde | Planos de Saúde Premium com Atendimento Humano',
+  title: 'Amélia Saúde | Planos de Saúde que Cuidam de Você de Verdade',
   description:
-    'Planos de saúde com transparência, agilidade e atendimento 24/7. Administradora AAA registrada na ANS. Autoatendimento rápido e suporte especializado.',
+    'Conectamos você aos melhores médicos, clínicas e laboratórios do Rio de Janeiro, sem burocracias. Planos Individual, Familiar e Empresarial.',
   openGraph: {
-    title: 'Amélia Saúde | Planos de Saúde Premium',
-    description: 'Planos de saúde com atendimento humano e transparência total',
+    title: 'Amélia Saúde | Planos de Saúde',
+    description: 'Planos que cuidam de você de verdade. Rede credenciada no Rio de Janeiro.',
     url: 'https://ameliasaude.com.br',
     type: 'website',
     images: [
@@ -31,38 +31,39 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* Hero Section - Original */}
+      {/* Hero */}
       <HeroSection />
 
-      {/* Client Self-Service Section */}
+      {/* Sobre Nós + Rede Credenciada */}
       <ClientSection />
 
-      {/* Plans Section */}
-      <PlanSection />
-
-      {/* CTA Banner - Engagement #1 (Gold with Shield Pattern) */}
+      {/* CTA */}
       <CTABanner
-        variant="gold"
+        variant="purple"
         heading="Ficou com alguma dúvida?"
         subheading="Nosso time está pronto para te ajudar"
         ctaText="Falar com especialista"
       />
 
-      {/* FAQ Section */}
+      {/* Planos */}
+      <PlanSection />
+
+      {/* FAQ */}
       <FAQSection />
 
-      {/* CTA Banner - Engagement #2 (Gold with Pulse Pattern) */}
+      {/* CTA */}
       <CTABanner
-        variant="gold-care"
-        heading="Pronto para ter um plano de saúde que realmente cuida de você?"
+        variant="light"
+        heading="Pronto para cuidar da sua saúde?"
+        subheading="Conheça os planos ideais para você, sua família ou empresa"
         ctaText="Quero Contratar"
       />
 
-      {/* Latest News & Content */}
-      <LatestNewsSection />
-
-      {/* Social Proof Section */}
+      {/* Números */}
       <SocialProofSection />
+
+      {/* Blog */}
+      <LatestNewsSection />
 
       {/* Footer */}
       <Footer />

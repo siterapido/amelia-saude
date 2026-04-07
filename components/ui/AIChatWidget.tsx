@@ -126,7 +126,7 @@ export const AIChatWidget = () => {
             >
                 {/* Pulse ring effect */}
                 <motion.span
-                    className="absolute inset-0 rounded-full bg-[#F6C200]"
+                    className="absolute inset-0 rounded-full bg-[#5E4985]"
                     animate={{
                         scale: [1, 1.4, 1.4],
                         opacity: [0.4, 0, 0],
@@ -141,7 +141,7 @@ export const AIChatWidget = () => {
 
                 {/* Secondary pulse */}
                 <motion.span
-                    className="absolute inset-0 rounded-full bg-[#F6C200]"
+                    className="absolute inset-0 rounded-full bg-[#5E4985]"
                     animate={{
                         scale: [1, 1.2, 1.2],
                         opacity: [0.3, 0, 0],
@@ -157,7 +157,7 @@ export const AIChatWidget = () => {
 
                 {/* Main button */}
                 <span
-                    className="relative flex items-center justify-center w-16 h-16 rounded-full bg-[#F6C200] text-black shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+                    className="relative flex items-center justify-center w-16 h-16 rounded-full bg-[#5E4985] text-white shadow-lg group-hover:shadow-xl transition-shadow duration-300"
                     style={{
                         boxShadow: '0 4px 20px rgba(246, 194, 0, 0.4)',
                     }}
@@ -196,13 +196,13 @@ export const AIChatWidget = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
                         transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                        className="fixed bottom-24 right-6 z-40 w-[360px] max-w-[calc(100vw-48px)] h-[500px] max-h-[calc(100vh-150px)] bg-[#0A0A0A] border border-[#F6C200]/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+                        className="fixed bottom-24 right-6 z-40 w-[360px] max-w-[calc(100vw-48px)] h-[500px] max-h-[calc(100vh-150px)] bg-[#0A0A0A] border border-[#5E4985]/20 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
                         style={{
                             boxShadow: '0 8px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(246, 194, 0, 0.1)',
                         }}
                     >
                         {/* Header */}
-                        <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-[#F6C200] to-[#E5B400] text-black">
+                        <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-[#5E4985] to-[#4A3A6B] text-white">
                             <div className="flex items-center gap-2">
                                 <Sparkles size={20} />
                                 <div>
@@ -225,7 +225,7 @@ export const AIChatWidget = () => {
                             {msgs.length === 0 && (
                                 <div className="bg-[#1A1A1A] rounded-lg p-3 text-sm text-gray-300">
                                     <p className="mb-2">
-                                        👋 Olá! Sou o assistente virtual da <strong className="text-[#F6C200]">Amélia Saúde</strong>.
+                                        👋 Olá! Sou o assistente virtual da <strong className="text-[#5E4985]">Amélia Saúde</strong>.
                                     </p>
                                     <p>Como posso ajudar você hoje?</p>
                                 </div>
@@ -238,7 +238,7 @@ export const AIChatWidget = () => {
                                 >
                                     <div
                                         className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${msg.role === 'user'
-                                            ? 'bg-[#F6C200] text-black'
+                                            ? 'bg-[#5E4985] text-white'
                                             : 'bg-[#1A1A1A] text-gray-200'
                                             }`}
                                     >
@@ -259,7 +259,7 @@ export const AIChatWidget = () => {
                                             {[0, 1, 2].map((i) => (
                                                 <motion.span
                                                     key={i}
-                                                    className="w-2 h-2 bg-[#F6C200] rounded-full"
+                                                    className="w-2 h-2 bg-[#5E4985] rounded-full"
                                                     animate={{ opacity: [0.3, 1, 0.3] }}
                                                     transition={{
                                                         duration: 1,
@@ -279,7 +279,7 @@ export const AIChatWidget = () => {
                         {/* Handoff banner or WhatsApp button */}
                         {handoff ? (
                             <div className="px-4 pb-2">
-                                <div className="flex items-center gap-2 py-2 px-3 bg-[#1A1A1A] border border-[#F6C200]/30 rounded-lg text-xs text-[#F6C200]">
+                                <div className="flex items-center gap-2 py-2 px-3 bg-[#1A1A1A] border border-[#5E4985]/30 rounded-lg text-xs text-[#5E4985]">
                                     <UserCheck size={14} className="shrink-0" />
                                     <span>Atendimento humano ativo — nossa equipe responderá em breve</span>
                                 </div>
@@ -304,13 +304,13 @@ export const AIChatWidget = () => {
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
                                     placeholder="Digite sua mensagem..."
-                                    className="flex-1 bg-[#1A1A1A] border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#F6C200]/50 transition-colors"
+                                    className="flex-1 bg-[#1A1A1A] border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#5E4985]/50 transition-colors"
                                     disabled={loading}
                                 />
                                 <button
                                     type="submit"
                                     disabled={!input.trim() || loading}
-                                    className="px-3 py-2 bg-[#F6C200] text-black rounded-lg hover:bg-[#E5B400] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                    className="px-3 py-2 bg-[#5E4985] text-white rounded-lg hover:bg-[#4A3A6B] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                                     aria-label="Enviar mensagem"
                                 >
                                     <Send size={18} />

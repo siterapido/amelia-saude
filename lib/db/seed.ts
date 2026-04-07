@@ -25,9 +25,9 @@ async function seed() {
     console.log('Creating categories...')
     const categoriesData = [
         { name: 'Saúde', slug: 'saude', color: '#10D86F' },
-        { name: 'Planos', slug: 'planos', color: '#F5A623' },
+        { name: 'Planos', slug: 'planos', color: '#7B6CB1' },
         { name: 'Bem-estar', slug: 'bem-estar', color: '#6366F1' },
-        { name: 'Institucional', slug: 'institucional', color: '#FFB800' },
+        { name: 'Institucional', slug: 'institucional', color: '#5E4985' },
         { name: 'Dicas', slug: 'dicas', color: '#EC4899' },
     ]
 
@@ -69,7 +69,7 @@ async function seed() {
     const stagesData = [
         { name: 'Novo', slug: 'new', color: '#6366F1', order: 0 },
         { name: 'Contactado', slug: 'contacted', color: '#3B82F6', order: 1 },
-        { name: 'Qualificado', slug: 'qualified', color: '#F5A623', order: 2 },
+        { name: 'Qualificado', slug: 'qualified', color: '#7B6CB1', order: 2 },
         { name: 'Proposta', slug: 'proposal', color: '#F59E0B', order: 3 },
         { name: 'Negociação', slug: 'negotiation', color: '#EC4899', order: 4 },
         { name: 'Ganho', slug: 'won', color: '#10D86F', order: 5 },

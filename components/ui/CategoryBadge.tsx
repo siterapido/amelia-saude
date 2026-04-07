@@ -36,7 +36,7 @@ export const CategoryBadge = React.forwardRef<HTMLSpanElement, CategoryBadgeProp
       >
         <span
           className="w-2 h-2 rounded-full flex-shrink-0"
-          style={{ backgroundColor: category.color || '#FFB800' }}
+          style={{ backgroundColor: category.color || '#5E4985' }}
         />
         <span className="text-white/90">{category.name}</span>
       </span>

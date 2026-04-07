@@ -63,7 +63,7 @@ export const AppSection = () => {
   ]
 
   return (
-    <section className="relative py-24 md:py-32 lg:py-48 glass-section-dark glass-overlay noise-overlay ambient-glow pattern-hex overflow-hidden">
+    <section className="relative py-24 md:py-32 lg:py-48 bg-white overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left - Phone Visualization */}
@@ -97,7 +97,7 @@ export const AppSection = () => {
                 Tudo na palma da sua mão
               </motion.h2>
               <motion.p
-                className="text-lg md:text-xl text-platinum-light"
+                className="text-lg md:text-xl text-gray-500"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -123,8 +123,8 @@ export const AppSection = () => {
                     className="text-center space-y-2 p-4 rounded-2xl bg-gold-primary/5 border border-gold-primary/10 hover:border-gold-primary/30 transition-all duration-300 group"
                   >
                     <Icon className="w-5 h-5 text-gold-primary mx-auto group-hover:scale-110 transition-transform duration-300" />
-                    <div className="text-2xl font-bold text-white">{stat.value}</div>
-                    <div className="text-xs text-platinum">{stat.label}</div>
+                    <div className="text-2xl font-bold text-gray-800">{stat.value}</div>
+                    <div className="text-xs text-gray-500">{stat.label}</div>
                   </div>
                 )
               })}
@@ -149,10 +149,10 @@ export const AppSection = () => {
                         <Icon className="w-5 h-5 text-gold-primary icon-glow-sm" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-semibold text-white text-sm mb-1">
+                        <h3 className="font-semibold text-gray-800 text-sm mb-1">
                           {feature.title}
                         </h3>
-                        <p className="text-xs text-platinum leading-relaxed">
+                        <p className="text-xs text-gray-500 leading-relaxed">
                           {feature.description}
                         </p>
                       </div>

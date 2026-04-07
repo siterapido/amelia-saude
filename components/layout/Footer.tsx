@@ -2,77 +2,59 @@
 
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { MessageCircle, Mail, Phone, Instagram, Linkedin, Facebook } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { cn } from '@/lib/utils/cn'
 
 /**
- * Footer Component - Amélia Saúde Design System
- *
- * Premium footer with:
- * - 5 columns: Brand, Links, Legal, Contact, Social
- * - ANS badge and certifications
- * - Animated hover states
- * - Responsive grid layout
- *
- * @example
- * <Footer />
+ * Footer Component - Amélia Saúde
+ * Elegant dark footer with purple accents
  */
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const footerSections = [
     {
-      title: 'Navegacao',
+      title: 'Navegação',
       links: [
-        { label: 'Sou Cliente', href: '/#client-section' },
-        { label: 'Quero Contratar', href: '/#plans' },
-        { label: 'Canal de Atendimento', href: '/#faq' },
-        { label: 'Sobre Nos', href: '/sobre' },
-        { label: 'FAQ', href: '/#faq' },
+        { label: 'Sobre Nós', href: '/#about' },
+        { label: 'Nossos Planos', href: '/#plans' },
+        { label: 'Perguntas Frequentes', href: '/#faq' },
+        { label: 'Blog', href: '/noticias' },
       ],
     },
     {
       title: 'Legal',
       links: [
-        { label: 'Politica de Privacidade', href: '/privacidade' },
+        { label: 'Política de Privacidade', href: '/privacidade' },
         { label: 'Termos de Uso', href: '/termos' },
-        { label: 'Politica de Cookies', href: '/cookies' },
+        { label: 'Política de Cookies', href: '/cookies' },
         { label: 'LGPD', href: '/lgpd' },
       ],
     },
   ]
 
   const contactInfo = [
-    { icon: MessageCircle, label: 'WhatsApp', value: '(XX) XXXXX-XXXX', href: 'https://wa.me/55XXXXXXXXXXX' },
+    { icon: MessageCircle, label: 'WhatsApp', value: '(21) 99999-9999', href: 'https://wa.me/5521999999999' },
+    { icon: Phone, label: 'Telefone', value: '0800 000 000', href: 'tel:0800000000' },
     { icon: Mail, label: 'E-mail', value: 'atendimento@ameliasaude.com.br', href: 'mailto:atendimento@ameliasaude.com.br' },
-    { icon: Phone, label: 'Telefone', value: '(XX) XXXXX-XXXX', href: 'tel:+55XXXXXXXXXXX' },
   ]
 
   const socialLinks = [
-    { icon: Instagram, label: 'Instagram', href: 'https://instagram.com/dixmed' },
+    { icon: Instagram, label: 'Instagram', href: 'https://instagram.com/ameliasaude' },
     { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/company/ameliasaude' },
     { icon: Facebook, label: 'Facebook', href: 'https://facebook.com/ameliasaude' },
   ]
 
-  const certifications = [
-    { label: 'ANS', description: 'Registro 45768' }, // Using a placeholder or part of CNPJ as I don't see specific ANS registration for the Admin in the prompt, only for partners. "Possui registro obrigatório na ANS". I will leave generic or remove if unsure. Actually, user didn't provide Admin ANS number, only Partner operator numbers. I'll keep generic "Registrada na ANS".
-    { label: 'SSL', description: 'Conexão Segura' },
-    { label: 'LGPD', description: 'Em conformidade' },
-  ]
-
   return (
-    <footer className="relative bg-black-premium border-t border-gray-border">
-      {/* Top Gradient Line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-separator" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-px bg-gradient-to-r from-transparent via-gold-signature/50 to-transparent" />
+    <footer className="relative bg-[#2D1F4E]">
+      {/* Top accent line */}
+      <div className="h-px bg-gradient-to-r from-transparent via-gold-signature/40 to-transparent" />
 
       <Container>
-        {/* Main Footer Content */}
         <div className="pt-16 md:pt-20 pb-12 md:pb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
             {/* Brand Section */}
             <motion.div
               className="sm:col-span-2 lg:col-span-1"
@@ -81,24 +63,15 @@ export const Footer = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true, margin: '-50px' }}
             >
-              <Link href="/" className="inline-block mb-4">
-                <div className="relative w-32 h-10">
-                  <Image
-                    src="/Logos/AMÉLIA SAÚDE LOGO FINAL - Branca.png"
-                    alt="Amélia Saúde"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
+              <Link href="/" className="inline-block mb-5">
+                <span className="font-display text-3xl text-white">amélia</span>
               </Link>
-              <p className="text-platinum text-sm leading-relaxed mb-6">
-                Administradora de benefícios 100% digital.
+              <p className="text-white/60 text-sm leading-relaxed mb-6">
+                Operadora de Planos de Saúde.
                 <br />
-                Av. Rio Branco, 1, Sala 1610
+                Cuidando de você e da sua família
                 <br />
-                Centro, Rio de Janeiro - RJ
-                <br />
-                CEP 20.090-003
+                no Rio de Janeiro.
               </p>
 
               {/* Social Links */}
@@ -114,15 +87,14 @@ export const Footer = () => {
                       className={cn(
                         'w-10 h-10 rounded-full',
                         'flex items-center justify-center',
-                        'bg-white/5 border border-gray-border',
-                        'text-platinum hover:text-gold-signature',
-                        'hover:bg-gold-signature/10 hover:border-gold-signature/40',
-                        'hover:shadow-[0_0_15px_rgba(245,166,35,0.2)]',
+                        'bg-white/5 border border-white/10',
+                        'text-white/60 hover:text-gold-light',
+                        'hover:bg-gold-signature/15 hover:border-gold-signature/40',
                         'transition-all duration-300'
                       )}
                       aria-label={social.label}
                     >
-                      <Icon className="w-5 h-5" />
+                      <Icon className="w-4 h-4" />
                     </a>
                   )
                 })}
@@ -138,7 +110,7 @@ export const Footer = () => {
                 transition={{ duration: 0.5, delay: (index + 1) * 0.05 }}
                 viewport={{ once: true, margin: '-50px' }}
               >
-                <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">
+                <h4 className="font-semibold text-white/90 mb-4 text-sm tracking-wide">
                   {section.title}
                 </h4>
                 <ul className="space-y-3">
@@ -146,7 +118,7 @@ export const Footer = () => {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-platinum hover:text-gold-signature transition-colors duration-300 text-sm"
+                        className="text-white/50 hover:text-gold-light transition-colors duration-300 text-sm"
                       >
                         {link.label}
                       </Link>
@@ -163,7 +135,7 @@ export const Footer = () => {
               transition={{ duration: 0.5, delay: 0.15 }}
               viewport={{ once: true, margin: '-50px' }}
             >
-              <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">
+              <h4 className="font-semibold text-white/90 mb-4 text-sm tracking-wide">
                 Contato
               </h4>
               <ul className="space-y-4">
@@ -173,76 +145,35 @@ export const Footer = () => {
                     <li key={info.label}>
                       <a
                         href={info.href}
-                        className="flex items-start gap-3 group"
+                        className="flex items-center gap-3 group"
                       >
-                        <Icon className="w-5 h-5 text-gold-signature flex-shrink-0 mt-0.5" />
-                        <div className="text-sm">
-                          <p className="text-platinum/70 text-xs uppercase tracking-wide mb-0.5">
-                            {info.label}
-                          </p>
-                          <p className="text-white font-medium group-hover:text-gold-signature transition-colors">
-                            {info.value}
-                          </p>
-                        </div>
+                        <Icon className="w-4 h-4 text-gold-light/70 flex-shrink-0" />
+                        <span className="text-sm text-white/60 group-hover:text-gold-light transition-colors">
+                          {info.value}
+                        </span>
                       </a>
                     </li>
                   )
                 })}
               </ul>
             </motion.div>
-
-            {/* Certifications */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true, margin: '-50px' }}
-            >
-              <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">
-                Certificacoes
-              </h4>
-              <div className="space-y-3">
-                {certifications.map((cert) => (
-                  <div
-                    key={cert.label}
-                    className={cn(
-                      'flex items-center gap-3 px-3 py-2',
-                      'bg-gold-signature/5 border border-gold-signature/20 rounded-lg',
-                      'transition-all duration-300 hover:border-gold-signature/40 hover:bg-gold-signature/10'
-                    )}
-                  >
-                    <span className="w-8 h-8 rounded-md bg-gold-signature/15 border border-gold-signature/30 flex items-center justify-center">
-                      <span className="text-gold-signature text-xs font-bold">
-                        {cert.label}
-                      </span>
-                    </span>
-                    <span className="text-platinum text-xs">
-                      {cert.description}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/5 py-6 md:py-8">
+        <div className="border-t border-white/5 py-6">
           <motion.div
-            className="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+            className="flex flex-col md:flex-row md:items-center md:justify-between gap-3"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true, margin: '-50px' }}
           >
-            {/* Copyright */}
-            <p className="text-platinum/70 text-sm text-center md:text-left">
-              {currentYear} Amélia Saúde Administradora de Benefícios S.A. Todos os direitos reservados.
+            <p className="text-white/40 text-xs text-center md:text-left">
+              Copyright © {currentYear} - Todos os direitos reservados.
             </p>
-
-            {/* ANS Registration */}
-            <p className="text-platinum/50 text-xs text-center md:text-right">
-              CNPJ: 45.768.601/0001-87
+            <p className="text-white/30 text-xs text-center md:text-right">
+              Amelia Operadora de Planos de Saude S.A. CNPJ: 57.395.677/0001-93
             </p>
           </motion.div>
         </div>
