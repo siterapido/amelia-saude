@@ -3,21 +3,21 @@
 
 :root {
   /* Blacks - Refined with warm undertones */
-  --color-black-premium: #0a0a0a;
-  --color-black-deep: #111111;
-  --color-black-charcoal: #1a1a1a;
-  --color-black-elevated: #1e1e1e;
-  --color-black-warm: #1a1816;
-  --color-black-gradient-end: #141414;
+  --color-black-premium: #F8F6FB;
+  --color-black-deep: #F3F0F7;
+  --color-black-charcoal: #EDE9F3;
+  --color-black-elevated: #E8E3EF;
+  --color-black-warm: #F5F2F8;
+  --color-black-gradient-end: #F0ECF5;
 
-  /* Golds - Vibrant yellow (#f1c10f) */
-  --color-gold-primary: #f1c10f;
-  --color-gold-signature: #f4ca2f;
-  --color-gold-light: #f9dc6d;
-  --color-gold-soft: #e0b00e;
-  --color-gold-dark: #c49a0c;
-  --color-gold-vibrant: #f1c10f;
-  --color-gold-translucent: rgba(241, 193, 15, 0.18);
+  /* Purples - Primary purple (#5E4985) */
+  --color-gold-primary: #5E4985;
+  --color-gold-signature: #7B6CB1;
+  --color-gold-light: #A899CC;
+  --color-gold-soft: #4A3A6B;
+  --color-gold-dark: #3D2F5C;
+  --color-gold-vibrant: #5E4985;
+  --color-gold-translucent: rgba(94, 73, 133, 0.18);
 
   /* Warm neutrals */
   --color-platinum: #a8a8a8;
@@ -169,8 +169,8 @@ a {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 100% 70% at 20% 5%, rgba(241, 193, 15, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 60% at 80% 95%, rgba(241, 193, 15, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 70% at 20% 5%, rgba(94, 73, 133, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 60% at 80% 95%, rgba(94, 73, 133, 0.04) 0%, transparent 50%),
     radial-gradient(ellipse 50% 40% at 50% 50%, rgba(255, 255, 255, 0.008) 0%, transparent 60%);
   pointer-events: none;
   z-index: 0;
@@ -183,7 +183,7 @@ a {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 5%, rgba(255, 255, 255, 0.06) 30%, rgba(241, 193, 15, 0.25) 50%, rgba(255, 255, 255, 0.06) 70%, transparent 95%);
+  background: linear-gradient(90deg, transparent 5%, rgba(255, 255, 255, 0.06) 30%, rgba(94, 73, 133, 0.25) 50%, rgba(255, 255, 255, 0.06) 70%, transparent 95%);
   pointer-events: none;
   z-index: 1;
 }
@@ -288,16 +288,16 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Gold Glow Effect - Vibrant #f1c10f */
+/* Purple Glow Effect - Vibrant #5E4985 */
 .glow-gold {
-  box-shadow: 0 0 30px rgba(241, 193, 15, 0.3),
-    0 0 50px rgba(241, 193, 15, 0.15),
-    0 0 80px rgba(241, 193, 15, 0.08);
+  box-shadow: 0 0 30px rgba(94, 73, 133, 0.3),
+    0 0 50px rgba(94, 73, 133, 0.15),
+    0 0 80px rgba(94, 73, 133, 0.08);
 }
 
 .glow-gold-sm {
-  box-shadow: 0 0 15px rgba(241, 193, 15, 0.25),
-    0 0 30px rgba(241, 193, 15, 0.12);
+  box-shadow: 0 0 15px rgba(94, 73, 133, 0.25),
+    0 0 30px rgba(94, 73, 133, 0.12);
 }
 
 /* Text Shadow for Headers */
@@ -371,7 +371,7 @@ img[data-loaded="false"] {
   z-index: 0;
 }
 
-/* Gold Gradient Top Overlay - for Hero sections - Refined */
+/* Purple Gradient Top Overlay - for Hero sections - Refined */
 .gradient-gold-top {
   position: relative;
 }
@@ -388,7 +388,7 @@ img[data-loaded="false"] {
   z-index: 0;
 }
 
-/* Decorative Gold Line - Refined */
+/* Decorative Purple Line - Refined */
 .gold-line-horizontal {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(212, 168, 75, 0.4), transparent);
@@ -399,7 +399,7 @@ img[data-loaded="false"] {
   background: linear-gradient(180deg, var(--color-gold-signature), var(--color-gold-soft), transparent);
 }
 
-/* Enhanced Glass Effect with Gold Tint - Refined */
+/* Enhanced Glass Effect with Purple Tint - Refined */
 .glass-gold {
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(16px);
@@ -417,11 +417,11 @@ img[data-loaded="false"] {
 
 /* Icon Glow Effect - Vibrant */
 .icon-glow {
-  filter: drop-shadow(0 0 10px rgba(241, 193, 15, 0.4));
+  filter: drop-shadow(0 0 10px rgba(94, 73, 133, 0.4));
 }
 
 .icon-glow-sm {
-  filter: drop-shadow(0 0 6px rgba(241, 193, 15, 0.3));
+  filter: drop-shadow(0 0 6px rgba(94, 73, 133, 0.3));
 }
 
 /* Button Glow Pulse Animation - Vibrant */
@@ -433,13 +433,13 @@ img[data-loaded="false"] {
 
   0%,
   100% {
-    box-shadow: 0 0 25px rgba(241, 193, 15, 0.22),
-      0 0 50px rgba(241, 193, 15, 0.1);
+    box-shadow: 0 0 25px rgba(94, 73, 133, 0.22),
+      0 0 50px rgba(94, 73, 133, 0.1);
   }
 
   50% {
-    box-shadow: 0 0 35px rgba(241, 193, 15, 0.35),
-      0 0 70px rgba(241, 193, 15, 0.15);
+    box-shadow: 0 0 35px rgba(94, 73, 133, 0.35),
+      0 0 70px rgba(94, 73, 133, 0.15);
   }
 }
 
@@ -487,7 +487,7 @@ img[data-loaded="false"] {
   opacity: 1;
 }
 
-/* Gold Border Animation - Refined */
+/* Purple Border Animation - Refined */
 .border-gold-animate {
   border: 1px solid var(--color-border-subtle);
   transition: border-color 0.3s var(--transition-premium),
@@ -505,7 +505,7 @@ img[data-loaded="false"] {
   background: linear-gradient(90deg, rgba(212, 168, 75, 0.04), transparent 30%);
 }
 
-/* Stats Number Gold Gradient - Refined */
+/* Stats Number Purple Gradient - Refined */
 .stats-number {
   background: linear-gradient(135deg, var(--color-gold-primary) 0%, var(--color-gold-signature) 100%);
   -webkit-background-clip: text;
@@ -513,7 +513,7 @@ img[data-loaded="false"] {
   background-clip: text;
 }
 
-/* Section Separator with Gold - Refined */
+/* Section Separator with Purple - Refined */
 .section-separator {
   position: relative;
 }
@@ -533,7 +533,7 @@ img[data-loaded="false"] {
    GOLD SECTION BACKGROUNDS & TEXTURES
    ======================================== */
 
-/* Gold Section Base - Vibrant gradients */
+/* Purple Section Base - Vibrant gradients */
 .section-gold {
   position: relative;
   background: linear-gradient(165deg, var(--color-gold-soft) 0%, var(--color-gold-primary) 50%, var(--color-gold-soft) 100%);
@@ -639,7 +639,7 @@ img[data-loaded="false"] {
   z-index: 0;
 }
 
-/* Grain Texture for Gold Sections */
+/* Grain Texture for Purple Sections */
 .grain-gold {
   position: relative;
 }
@@ -684,7 +684,7 @@ img[data-loaded="false"] {
   z-index: 0;
 }
 
-/* Corner Decorative Glow for Gold Sections */
+/* Corner Decorative Glow for Purple Sections */
 .glow-corner-dark {
   position: relative;
 }
@@ -713,7 +713,7 @@ img[data-loaded="false"] {
   z-index: 0;
 }
 
-/* Dark text styling for gold backgrounds */
+/* Dark text styling for purple backgrounds */
 .section-gold,
 .section-gold-soft {
   color: var(--color-black-premium);
@@ -735,7 +735,7 @@ img[data-loaded="false"] {
   color: rgba(10, 10, 10, 0.8);
 }
 
-/* Button styling for gold sections */
+/* Button styling for purple sections */
 .btn-on-gold {
   background: var(--color-black-premium);
   color: var(--color-gold-signature);
@@ -749,7 +749,7 @@ img[data-loaded="false"] {
   transform: translateY(-2px);
 }
 
-/* Animated gradient border for gold sections */
+/* Animated gradient border for purple sections */
 .border-shimmer-gold {
   position: relative;
 }
@@ -783,7 +783,7 @@ img[data-loaded="false"] {
    Ambient glows, gradients & movement
    ======================================== */
 
-/* Ambient Gold Glow - Subtle corner lighting - Refined */
+/* Ambient Purple Glow - Subtle corner lighting - Refined */
 .ambient-glow {
   position: relative;
 }
@@ -991,7 +991,7 @@ img[data-loaded="false"] {
   }
 }
 
-/* Vignette Effect with Gold Tint */
+/* Vignette Effect with Purple Tint */
 .vignette-gold {
   position: relative;
 }
@@ -1032,7 +1032,7 @@ img[data-loaded="false"] {
    GLASS PREMIUM EFFECTS
    ======================================== */
 
-/* Glass card inner highlight - gold tinted - Refined */
+/* Glass card inner highlight - purple tinted - Refined */
 .glass-highlight {
   position: relative;
 }
@@ -1047,7 +1047,7 @@ img[data-loaded="false"] {
   z-index: 1;
 }
 
-/* Glass icon container - gold accent - Refined */
+/* Glass icon container - purple accent - Refined */
 .icon-glass {
   background: linear-gradient(135deg, rgba(232, 192, 104, 0.18) 0%, rgba(212, 168, 75, 0.1) 100%);
   border: 1px solid rgba(232, 192, 104, 0.35);
@@ -1086,7 +1086,7 @@ img[data-loaded="false"] {
 
 /* ========================================
    VIBRANT BLUR GLOW - HERO EFFECT
-   Modern premium blur effect for gold sections
+   Modern premium blur effect for purple sections
    ======================================== */
 
 /* Main vibrant blur container */
@@ -1106,7 +1106,7 @@ img[data-loaded="false"] {
   max-width: 800px;
   max-height: 800px;
   background: radial-gradient(circle,
-      rgba(241, 193, 15, 0.6) 0%,
+      rgba(94, 73, 133, 0.6) 0%,
       rgba(244, 202, 47, 0.4) 25%,
       rgba(249, 220, 109, 0.2) 50%,
       transparent 70%);
@@ -1129,7 +1129,7 @@ img[data-loaded="false"] {
   max-height: 700px;
   background: radial-gradient(circle,
       rgba(224, 176, 14, 0.5) 0%,
-      rgba(241, 193, 15, 0.3) 30%,
+      rgba(94, 73, 133, 0.3) 30%,
       rgba(244, 202, 47, 0.15) 50%,
       transparent 70%);
   filter: blur(100px);
@@ -1159,7 +1159,7 @@ img[data-loaded="false"] {
   max-height: 600px;
   background: radial-gradient(ellipse,
       rgba(249, 220, 109, 0.45) 0%,
-      rgba(241, 193, 15, 0.25) 40%,
+      rgba(94, 73, 133, 0.25) 40%,
       transparent 70%);
   filter: blur(120px);
   @apply animate-vibrate-blur-3;
@@ -1177,7 +1177,7 @@ img[data-loaded="false"] {
   max-height: 500px;
   background: radial-gradient(circle,
       rgba(196, 154, 12, 0.4) 0%,
-      rgba(241, 193, 15, 0.2) 40%,
+      rgba(94, 73, 133, 0.2) 40%,
       transparent 65%);
   filter: blur(90px);
   @apply animate-vibrate-blur-4;
@@ -1209,7 +1209,7 @@ img[data-loaded="false"] {
   background: linear-gradient(135deg, var(--color-gold-primary) 0%, var(--color-gold-soft) 100%);
   border-radius: 18px;
   box-shadow:
-    0 10px 30px rgba(241, 193, 15, 0.35),
+    0 10px 30px rgba(94, 73, 133, 0.35),
     0 4px 10px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1219,7 +1219,7 @@ img[data-loaded="false"] {
 .group:hover .icon-white-glass {
   transform: scale(1.06) translateY(-3px);
   box-shadow:
-    0 15px 40px rgba(241, 193, 15, 0.4),
+    0 15px 40px rgba(94, 73, 133, 0.4),
     0 6px 14px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
@@ -1237,7 +1237,7 @@ img[data-loaded="false"] {
   50% { 
     opacity: 1; 
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(241, 193, 15, 0.4);
+    box-shadow: 0 0 20px rgba(94, 73, 133, 0.4);
   }
 }
 
@@ -1266,22 +1266,22 @@ img[data-loaded="false"] {
 
 @keyframes iconGlowPulse {
   0%, 100% {
-    filter: drop-shadow(0 0 6px rgba(241, 193, 15, 0.3));
+    filter: drop-shadow(0 0 6px rgba(94, 73, 133, 0.3));
   }
   50% {
-    filter: drop-shadow(0 0 12px rgba(241, 193, 15, 0.6));
+    filter: drop-shadow(0 0 12px rgba(94, 73, 133, 0.6));
   }
 }
 
 /* Glow Pulse Animation for buttons */
 @keyframes glowPulseButton {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(241, 193, 15, 0.2),
-                0 0 40px rgba(241, 193, 15, 0.1);
+    box-shadow: 0 0 20px rgba(94, 73, 133, 0.2),
+                0 0 40px rgba(94, 73, 133, 0.1);
   }
   50% {
-    box-shadow: 0 0 30px rgba(241, 193, 15, 0.35),
-                0 0 60px rgba(241, 193, 15, 0.15);
+    box-shadow: 0 0 30px rgba(94, 73, 133, 0.35),
+                0 0 60px rgba(94, 73, 133, 0.15);
   }
 }
 

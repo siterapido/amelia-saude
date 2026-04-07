@@ -48,7 +48,7 @@ export function CrmSidebar() {
                 <Link href="/crm/pipeline" className="flex items-center gap-3">
                     <div className="relative w-28 h-9">
                         <Image
-                            src="/Logos/SIX SAÚDE LOGO FINAL - Branca.png"
+                            src="/Logos/AMÉLIA SAÚDE LOGO FINAL - Branca.png"
                             alt="SIX Saude"
                             fill
                             className="object-contain"

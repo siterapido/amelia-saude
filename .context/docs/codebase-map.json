@@ -1447,15 +1447,15 @@
   "dependencies": {
     "mostImported": [
       {
-        "file": "/Users/marcosalexandre/projetos/sixsaude/lib/db/schema.ts",
+        "file": "/Users/marcosalexandre/projetos/ameliasaude/lib/db/schema.ts",
         "importedBy": 3
       },
       {
-        "file": "/Users/marcosalexandre/projetos/sixsaude/lib/auth/index.ts",
+        "file": "/Users/marcosalexandre/projetos/ameliasaude/lib/auth/index.ts",
         "importedBy": 1
       },
       {
-        "file": "/Users/marcosalexandre/projetos/sixsaude/components/blog/BlogCard.tsx",
+        "file": "/Users/marcosalexandre/projetos/ameliasaude/components/blog/BlogCard.tsx",
         "importedBy": 1
       }
     ]

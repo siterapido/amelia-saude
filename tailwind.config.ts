@@ -1,28 +1,28 @@
 import type { Config } from 'tailwindcss'
 
 const colors = {
-  // Premium Black - Refined with warm undertones for depth
-  'black-premium': '#0A0A0A',
-  'black-deep': '#111111',
-  'black-charcoal': '#1A1A1A',
-  'black-elevated': '#1E1E1E',
-  'black-warm': '#1A1816',        // Black with warm undertone
-  'black-gradient-end': '#141414', // For subtle gradients
+  // Premium Purple - Amélia Saúde brand
+  'black-premium': '#F8F6FB',      // Light background
+  'black-deep': '#F3F0F7',
+  'black-charcoal': '#EDE9F3',
+  'black-elevated': '#E8E3EF',
+  'black-warm': '#F5F2F8',
+  'black-gradient-end': '#F0ECF5',
 
-  // Gold - Vibrant yellow (#f1c10f) with complementary tones
-  'gold-primary': '#f1c10f',       // Main yellow-gold
-  'gold-signature': '#f4ca2f',     // Slightly lighter
-  'gold-light': '#f9dc6d',         // Light highlight
-  'gold-soft': '#e0b00e',          // Warm deeper tone
-  'gold-dark': '#c49a0c',          // Rich deep tone
-  'gold-vibrant': '#f1c10f',       // Original vibrant
+  // Purple brand colors
+  'gold-primary': '#5E4985',       // Main purple
+  'gold-signature': '#7B6CB1',     // Secondary purple
+  'gold-light': '#A899CC',         // Light purple
+  'gold-soft': '#4A3A6B',          // Deep purple
+  'gold-dark': '#3D2F5C',          // Darkest purple
+  'gold-vibrant': '#5E4985',       // Brand purple
 
-  // Warm neutrals
-  'platinum': '#A8A8A8',
-  'platinum-light': '#B8B8B8',
-  'platinum-warm': '#C4B8A8',      // Warmer platinum
-  'gray-border': '#2A2A2A',
-  'gray-dark': '#333333',
+  // Neutrals
+  'platinum': '#6B6B6B',
+  'platinum-light': '#888888',
+  'platinum-warm': '#7A7089',
+  'gray-border': '#E0DAE8',
+  'gray-dark': '#D0C8DC',
 
   // Status colors
   'success-premium': '#10D86F',
@@ -84,36 +84,36 @@ const config: Config = {
         // Premium shadows
         'premium': '0 8px 32px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.15)',
         'premium-hover': '0 20px 60px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.2)',
-        // Gold shadows - vibrant #f1c10f
-        'gold-sm': '0 8px 32px rgba(241, 193, 15, 0.25), 0 4px 12px rgba(241, 193, 15, 0.12)',
-        'gold-md': '0 16px 48px rgba(241, 193, 15, 0.3), 0 8px 16px rgba(241, 193, 15, 0.15)',
-        'gold-lg': '0 24px 64px rgba(241, 193, 15, 0.35), 0 12px 24px rgba(241, 193, 15, 0.18)',
-        'gold-glow': '0 0 40px rgba(241, 193, 15, 0.3), 0 0 20px rgba(241, 193, 15, 0.18)',
-        'gold-glow-lg': '0 0 60px rgba(241, 193, 15, 0.4), 0 0 30px rgba(241, 193, 15, 0.22)',
+        // Gold shadows - vibrant #5E4985
+        'gold-sm': '0 8px 32px rgba(94, 73, 133, 0.25), 0 4px 12px rgba(94, 73, 133, 0.12)',
+        'gold-md': '0 16px 48px rgba(94, 73, 133, 0.3), 0 8px 16px rgba(94, 73, 133, 0.15)',
+        'gold-lg': '0 24px 64px rgba(94, 73, 133, 0.35), 0 12px 24px rgba(94, 73, 133, 0.18)',
+        'gold-glow': '0 0 40px rgba(94, 73, 133, 0.3), 0 0 20px rgba(94, 73, 133, 0.18)',
+        'gold-glow-lg': '0 0 60px rgba(94, 73, 133, 0.4), 0 0 30px rgba(94, 73, 133, 0.22)',
         // Glass effects
-        'glass': '0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(241, 193, 15, 0.12), inset 0 1px 0 rgba(241, 193, 15, 0.1)',
-        'glass-hover': '0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(241, 193, 15, 0.15), inset 0 1px 0 rgba(241, 193, 15, 0.15)',
+        'glass': '0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(94, 73, 133, 0.12), inset 0 1px 0 rgba(94, 73, 133, 0.1)',
+        'glass-hover': '0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(94, 73, 133, 0.15), inset 0 1px 0 rgba(94, 73, 133, 0.15)',
         // Card shadows
         'card-soft': '0 10px 50px rgba(0, 0, 0, 0.12), 0 6px 20px rgba(0, 0, 0, 0.08)',
         'card-soft-hover': '0 25px 80px rgba(0, 0, 0, 0.18), 0 10px 30px rgba(0, 0, 0, 0.1)',
       },
       backgroundImage: {
-        // Gold gradients - vibrant #f1c10f based
-        'gradient-gold': 'linear-gradient(135deg, #e0b00e 0%, #f1c10f 50%, #e0b00e 100%)',
-        'gradient-gold-soft': 'linear-gradient(165deg, #f1c10f 0%, #f4ca2f 50%, #f1c10f 100%)',
-        'gradient-gold-vibrant': 'linear-gradient(135deg, #f1c10f 0%, #f9dc6d 50%, #f1c10f 100%)',
+        // Gold gradients - vibrant #5E4985 based
+        'gradient-gold': 'linear-gradient(135deg, #4A3A6B 0%, #5E4985 50%, #4A3A6B 100%)',
+        'gradient-gold-soft': 'linear-gradient(165deg, #5E4985 0%, #7B6CB1 50%, #5E4985 100%)',
+        'gradient-gold-vibrant': 'linear-gradient(135deg, #5E4985 0%, #A899CC 50%, #5E4985 100%)',
         // Dark section gradients - subtle depth
-        'gradient-black-deep': 'linear-gradient(180deg, #0A0A0A 0%, #141414 100%)',
-        'gradient-black-warm': 'radial-gradient(ellipse at top center, #1A1816 0%, #0A0A0A 70%)',
-        'gradient-black-radial': 'radial-gradient(ellipse 120% 80% at 50% 0%, #1A1816 0%, #0A0A0A 60%)',
+        'gradient-black-deep': 'linear-gradient(180deg, #F8F6FB 0%, #F0ECF5 100%)',
+        'gradient-black-warm': 'radial-gradient(ellipse at top center, #F5F2F8 0%, #F8F6FB 70%)',
+        'gradient-black-radial': 'radial-gradient(ellipse 120% 80% at 50% 0%, #F5F2F8 0%, #F8F6FB 60%)',
         // Section transitions
-        'gradient-section-dark': 'linear-gradient(180deg, transparent 0%, #0A0A0A 10%, #0A0A0A 90%, transparent 100%)',
+        'gradient-section-dark': 'linear-gradient(180deg, transparent 0%, #F8F6FB 10%, #F8F6FB 90%, transparent 100%)',
         // Separators and accents - vibrant gold
-        'gradient-separator': 'linear-gradient(90deg, transparent, rgba(241, 193, 15, 0.4), transparent)',
-        'gradient-gold-radial': 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(241, 193, 15, 0.12) 0%, transparent 70%)',
-        'gradient-cta': 'linear-gradient(135deg, rgba(241, 193, 15, 0.06) 0%, transparent 50%)',
+        'gradient-separator': 'linear-gradient(90deg, transparent, rgba(94, 73, 133, 0.4), transparent)',
+        'gradient-gold-radial': 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(94, 73, 133, 0.12) 0%, transparent 70%)',
+        'gradient-cta': 'linear-gradient(135deg, rgba(94, 73, 133, 0.06) 0%, transparent 50%)',
         // Gold section backgrounds
-        'gradient-gold-section': 'linear-gradient(165deg, #e0b00e 0%, #f1c10f 50%, #e0b00e 100%)',
+        'gradient-gold-section': 'linear-gradient(165deg, #4A3A6B 0%, #5E4985 50%, #4A3A6B 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-out-expo',
@@ -175,8 +175,8 @@ const config: Config = {
           '100%': { backgroundPosition: '200% 0' },
         },
         glowPulse: {
-          '0%, 100%': { boxShadow: '0 0 25px rgba(241, 193, 15, 0.22), 0 0 50px rgba(241, 193, 15, 0.1)' },
-          '50%': { boxShadow: '0 0 35px rgba(241, 193, 15, 0.35), 0 0 70px rgba(241, 193, 15, 0.15)' },
+          '0%, 100%': { boxShadow: '0 0 25px rgba(94, 73, 133, 0.22), 0 0 50px rgba(94, 73, 133, 0.1)' },
+          '50%': { boxShadow: '0 0 35px rgba(94, 73, 133, 0.35), 0 0 70px rgba(94, 73, 133, 0.15)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -184,12 +184,12 @@ const config: Config = {
         },
         neonPulse: {
           '0%, 100%': {
-            boxShadow: '0 0 20px rgba(241,193,15,0.25), 0 0 40px rgba(241,193,15,0.15), 0 0 60px rgba(241,193,15,0.08)',
-            borderColor: 'rgba(241,193,15,0.6)',
+            boxShadow: '0 0 20px rgba(94,73,133,0.25), 0 0 40px rgba(94,73,133,0.15), 0 0 60px rgba(94,73,133,0.08)',
+            borderColor: 'rgba(94,73,133,0.6)',
           },
           '50%': {
-            boxShadow: '0 0 25px rgba(241,193,15,0.35), 0 0 50px rgba(241,193,15,0.22), 0 0 80px rgba(241,193,15,0.12)',
-            borderColor: 'rgba(241,193,15,0.8)',
+            boxShadow: '0 0 25px rgba(94,73,133,0.35), 0 0 50px rgba(94,73,133,0.22), 0 0 80px rgba(94,73,133,0.12)',
+            borderColor: 'rgba(94,73,133,0.8)',
           },
         },
         // Migrated Keyframes
@@ -216,7 +216,7 @@ const config: Config = {
           },
           '50%': {
             transform: 'translateY(-8px) scale(1.005)',
-            boxShadow: '0 20px 70px rgba(0, 0, 0, 0.16), 0 10px 25px rgba(0, 0, 0, 0.1), 0 0 30px rgba(241, 193, 15, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95)',
+            boxShadow: '0 20px 70px rgba(0, 0, 0, 0.16), 0 10px 25px rgba(0, 0, 0, 0.1), 0 0 30px rgba(94, 73, 133, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95)',
           },
         },
         ambientPulse: {

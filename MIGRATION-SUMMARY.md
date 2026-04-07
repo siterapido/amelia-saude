@@ -112,7 +112,7 @@ psql $DATABASE_URL
 
 ## 🔐 Credenciais Padrão
 
-- **Email:** admin@sixsaude.com.br
+- **Email:** admin@ameliasaude.com.br
 - **Password:** admin123
 - **Role:** admin
 

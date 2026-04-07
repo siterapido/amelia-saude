@@ -30,7 +30,7 @@ const openrouter = createOpenAI({
     baseURL: 'https://openrouter.ai/api/v1',
     apiKey: process.env.OPENROUTER_API_KEY!,
     headers: {
-        'HTTP-Referer': 'https://sixsaude.com.br',
+        'HTTP-Referer': 'https://ameliasaude.com.br',
         'X-Title': 'SIX Saude SDR Agent',
     },
 })

@@ -10,13 +10,13 @@ import { Footer } from '@/components/layout/Footer'
 import { AIChatWidget } from '@/components/ui/AIChatWidget'
 
 export const metadata: Metadata = {
-  title: 'SIX Saúde | Planos de Saúde Premium com Atendimento Humano',
+  title: 'Amélia Saúde | Planos de Saúde Premium com Atendimento Humano',
   description:
     'Planos de saúde com transparência, agilidade e atendimento 24/7. Administradora AAA registrada na ANS. Autoatendimento rápido e suporte especializado.',
   openGraph: {
-    title: 'SIX Saúde | Planos de Saúde Premium',
+    title: 'Amélia Saúde | Planos de Saúde Premium',
     description: 'Planos de saúde com atendimento humano e transparência total',
-    url: 'https://sixsaude.com.br',
+    url: 'https://ameliasaude.com.br',
     type: 'website',
     images: [
       {

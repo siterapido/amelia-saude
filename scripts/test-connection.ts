@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv';
 import { resolve } from 'path';
 
-dotenv.config({ path: resolve('/Users/marcosalexandre/projetos/sixsaude/.env.local') });
+dotenv.config({ path: resolve('/Users/marcosalexandre/projetos/ameliasaude/.env.local') });
 
 async function testConnection() {
     const apiUrl = 'https://evolution-api-production-027f.up.railway.app';

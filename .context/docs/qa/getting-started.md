@@ -18,7 +18,7 @@ generatedAt: 2026-01-30T18:33:31.310Z
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd sixsaude
+cd ameliasaude
 
 # Install dependencies
 pnpm install

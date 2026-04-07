@@ -146,7 +146,7 @@ export default function PrivacidadePage() {
           com nosso Encarregado de Protecao de Dados (DPO):
         </p>
         <div className="mt-4 p-4 bg-black-deep rounded-lg border border-white/10">
-          <p><strong className="text-white">E-mail:</strong> privacidade@sixsaude.com.br</p>
+          <p><strong className="text-white">E-mail:</strong> privacidade@ameliasaude.com.br</p>
           <p><strong className="text-white">Telefone:</strong> 0800 000 0000</p>
         </div>
       </section>

@@ -160,7 +160,7 @@ start_dev_server() {
     log_info "Starting development server..."
     log_success "Development server started at http://localhost:3000"
     log_info "Admin panel: http://localhost:3000/admin"
-    log_info "Default credentials: admin@sixsaude.com.br / admin123"
+    log_info "Default credentials: admin@ameliasaude.com.br / admin123"
 
     pnpm dev
 }

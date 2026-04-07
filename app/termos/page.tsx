@@ -18,7 +18,7 @@ export default function TermosPage() {
           1. Aceitacao dos Termos
         </h2>
         <p>
-          Ao acessar e usar o site da SIX Saude (sixsaude.com.br) e nossos servicos, voce concorda
+          Ao acessar e usar o site da SIX Saude (ameliasaude.com.br) e nossos servicos, voce concorda
           em cumprir e estar vinculado a estes Termos de Uso. Se voce nao concordar com qualquer
           parte destes termos, nao devera usar nosso site ou servicos.
         </p>
@@ -155,7 +155,7 @@ export default function TermosPage() {
           Para duvidas sobre estes termos:
         </p>
         <div className="mt-4 p-4 bg-black-deep rounded-lg border border-white/10">
-          <p><strong className="text-white">E-mail:</strong> contato@sixsaude.com.br</p>
+          <p><strong className="text-white">E-mail:</strong> contato@ameliasaude.com.br</p>
           <p><strong className="text-white">Telefone:</strong> 0800 000 0000</p>
         </div>
       </section>

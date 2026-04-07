@@ -176,7 +176,7 @@ export default function LGPDPage() {
         </p>
         <div className="p-4 bg-black-deep rounded-lg border border-white/10">
           <p><strong className="text-white">DPO:</strong> Departamento de Privacidade SIX Saude</p>
-          <p><strong className="text-white">E-mail:</strong> dpo@sixsaude.com.br</p>
+          <p><strong className="text-white">E-mail:</strong> dpo@ameliasaude.com.br</p>
           <p><strong className="text-white">Telefone:</strong> 0800 000 0000</p>
         </div>
       </section>
