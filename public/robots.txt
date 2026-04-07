@@ -1,0 +1,13 @@
+# robots.txt - SIX Saúde
+# https://sixsaude.com.br
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://sixsaude.com.br/sitemap.xml
+
+# Disallow admin/private paths (if any in future)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/

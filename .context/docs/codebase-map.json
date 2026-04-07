@@ -1,0 +1,1468 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-01-30T18:33:31.143Z",
+  "stack": {
+    "primaryLanguage": "typescript",
+    "languages": [
+      "javascript",
+      "typescript"
+    ],
+    "frameworks": [
+      "nextjs"
+    ],
+    "buildTools": [],
+    "testFrameworks": [],
+    "packageManager": "pnpm",
+    "isMonorepo": false,
+    "hasDocker": false,
+    "hasCI": false
+  },
+  "structure": {
+    "totalFiles": 171,
+    "topDirectories": [
+      {
+        "name": "app",
+        "fileCount": 30
+      },
+      {
+        "name": "CLAUDE.md",
+        "fileCount": 1
+      },
+      {
+        "name": "components",
+        "fileCount": 58
+      },
+      {
+        "name": "Documentos ",
+        "fileCount": 12
+      },
+      {
+        "name": "drizzle.config.ts",
+        "fileCount": 1
+      },
+      {
+        "name": "eslint.config.mjs",
+        "fileCount": 1
+      },
+      {
+        "name": "lib",
+        "fileCount": 10
+      },
+      {
+        "name": "next-env.d.ts",
+        "fileCount": 1
+      },
+      {
+        "name": "next.config.ts",
+        "fileCount": 1
+      },
+      {
+        "name": "package.json",
+        "fileCount": 1
+      },
+      {
+        "name": "pnpm-lock.yaml",
+        "fileCount": 1
+      },
+      {
+        "name": "postcss.config.mjs",
+        "fileCount": 1
+      },
+      {
+        "name": "public",
+        "fileCount": 49
+      },
+      {
+        "name": "README.md",
+        "fileCount": 1
+      },
+      {
+        "name": "styles",
+        "fileCount": 1
+      },
+      {
+        "name": "tailwind.config.ts",
+        "fileCount": 1
+      },
+      {
+        "name": "tsconfig.json",
+        "fileCount": 1
+      }
+    ],
+    "languageDistribution": [
+      {
+        "extension": ".tsx",
+        "count": 69
+      },
+      {
+        "extension": ".png",
+        "count": 36
+      },
+      {
+        "extension": ".ts",
+        "count": 30
+      },
+      {
+        "extension": ".md",
+        "count": 14
+      },
+      {
+        "extension": ".svg",
+        "count": 12
+      },
+      {
+        "extension": ".json",
+        "count": 2
+      },
+      {
+        "extension": ".mjs",
+        "count": 2
+      },
+      {
+        "extension": ".yaml",
+        "count": 1
+      },
+      {
+        "extension": ".css",
+        "count": 1
+      },
+      {
+        "extension": ".txt",
+        "count": 1
+      }
+    ]
+  },
+  "architecture": {
+    "layers": [
+      {
+        "name": "Utils",
+        "description": "Shared utilities and helpers",
+        "directories": [
+          "lib",
+          "lib/utils",
+          "lib/types",
+          "lib/db",
+          "lib/auth"
+        ],
+        "symbolCount": 24,
+        "dependsOn": [
+          "Models"
+        ]
+      },
+      {
+        "name": "Components",
+        "description": "UI components and views",
+        "directories": [
+          "components/ui",
+          "components/sections",
+          "components/layout",
+          "components/hooks",
+          "components/blog",
+          "components/animations",
+          "app",
+          "components",
+          "app/termos",
+          "app/sobre",
+          "app/privacidade",
+          "app/noticias",
+          "app/lgpd",
+          "app/blog",
+          "app/admin",
+          "components/effects",
+          "components/admin",
+          "app/noticias/[slug]",
+          "app/blog/[slug]",
+          "app/admin/posts",
+          "app/admin/login",
+          "app/admin/posts/new",
+          "app/admin/posts/[id]/edit"
+        ],
+        "symbolCount": 151,
+        "dependsOn": []
+      },
+      {
+        "name": "Models",
+        "description": "Data structures and domain objects",
+        "directories": [
+          "lib/db"
+        ],
+        "symbolCount": 10,
+        "dependsOn": []
+      },
+      {
+        "name": "Controllers",
+        "description": "Request handling and routing",
+        "directories": [
+          "lib/api",
+          "app/api/posts",
+          "app/api/categories",
+          "app/api/chat/support",
+          "app/api/posts/[id]",
+          "app/api/auth/me",
+          "app/api/auth/logout",
+          "app/api/auth/login",
+          "app/api/ai/generate-post"
+        ],
+        "symbolCount": 24,
+        "dependsOn": []
+      },
+      {
+        "name": "Generators",
+        "description": "Content and object generation",
+        "directories": [
+          "app/admin/ai-generator"
+        ],
+        "symbolCount": 5,
+        "dependsOn": []
+      }
+    ],
+    "patterns": [],
+    "entryPoints": [
+      "components/ui/index.ts",
+      "components/sections/index.ts",
+      "components/layout/index.ts",
+      "components/hooks/index.ts",
+      "components/blog/index.ts",
+      "components/animations/index.ts",
+      "lib/db/index.ts",
+      "lib/auth/index.ts"
+    ]
+  },
+  "symbols": {
+    "classes": [],
+    "interfaces": [
+      {
+        "name": "Author",
+        "kind": "interface",
+        "file": "lib/types/news.ts",
+        "line": 12,
+        "exported": true
+      },
+      {
+        "name": "JWTPayload",
+        "kind": "interface",
+        "file": "lib/auth/index.ts",
+        "line": 17,
+        "exported": true
+      },
+      {
+        "name": "NewsArticle",
+        "kind": "interface",
+        "file": "lib/types/news.ts",
+        "line": 18,
+        "exported": true
+      },
+      {
+        "name": "NewsCategory",
+        "kind": "interface",
+        "file": "lib/types/news.ts",
+        "line": 5,
+        "exported": true
+      },
+      {
+        "name": "NewsFilters",
+        "kind": "interface",
+        "file": "lib/types/news.ts",
+        "line": 33,
+        "exported": true
+      },
+      {
+        "name": "PaginatedResponse",
+        "kind": "interface",
+        "file": "lib/types/news.ts",
+        "line": 40,
+        "exported": true
+      },
+      {
+        "name": "AnimatedCounterProps",
+        "kind": "interface",
+        "file": "components/animations/AnimatedCounter.tsx",
+        "line": 7,
+        "exported": false
+      },
+      {
+        "name": "AuthContextType",
+        "kind": "interface",
+        "file": "lib/auth/context.tsx",
+        "line": 13,
+        "exported": false
+      },
+      {
+        "name": "BadgeProps",
+        "kind": "interface",
+        "file": "components/ui/Badge.tsx",
+        "line": 4,
+        "exported": false
+      },
+      {
+        "name": "BlogArticlePageProps",
+        "kind": "interface",
+        "file": "app/blog/[slug]/page.tsx",
+        "line": 7,
+        "exported": false
+      },
+      {
+        "name": "BlogArticleProps",
+        "kind": "interface",
+        "file": "components/blog/BlogArticle.tsx",
+        "line": 11,
+        "exported": false
+      },
+      {
+        "name": "BlogCardProps",
+        "kind": "interface",
+        "file": "components/blog/BlogCard.tsx",
+        "line": 11,
+        "exported": false
+      },
+      {
+        "name": "BlogFiltersProps",
+        "kind": "interface",
+        "file": "components/blog/BlogFilters.tsx",
+        "line": 8,
+        "exported": false
+      },
+      {
+        "name": "BlogGridProps",
+        "kind": "interface",
+        "file": "components/blog/BlogGrid.tsx",
+        "line": 9,
+        "exported": false
+      },
+      {
+        "name": "BlogHeroProps",
+        "kind": "interface",
+        "file": "components/blog/BlogHero.tsx",
+        "line": 11,
+        "exported": false
+      },
+      {
+        "name": "BlogPaginationProps",
+        "kind": "interface",
+        "file": "components/blog/BlogPagination.tsx",
+        "line": 7,
+        "exported": false
+      },
+      {
+        "name": "BlogSidebarProps",
+        "kind": "interface",
+        "file": "components/blog/BlogSidebar.tsx",
+        "line": 11,
+        "exported": false
+      },
+      {
+        "name": "ButtonProps",
+        "kind": "interface",
+        "file": "components/ui/Button.tsx",
+        "line": 10,
+        "exported": false
+      },
+      {
+        "name": "CardContentProps",
+        "kind": "interface",
+        "file": "components/ui/Card.tsx",
+        "line": 148,
+        "exported": false
+      },
+      {
+        "name": "CardFooterProps",
+        "kind": "interface",
+        "file": "components/ui/Card.tsx",
+        "line": 171,
+        "exported": false
+      },
+      {
+        "name": "CardHeaderProps",
+        "kind": "interface",
+        "file": "components/ui/Card.tsx",
+        "line": 125,
+        "exported": false
+      },
+      {
+        "name": "CardImageProps",
+        "kind": "interface",
+        "file": "components/ui/Card.tsx",
+        "line": 195,
+        "exported": false
+      },
+      {
+        "name": "CardProps",
+        "kind": "interface",
+        "file": "components/ui/Card.tsx",
+        "line": 9,
+        "exported": false
+      },
+      {
+        "name": "Category",
+        "kind": "interface",
+        "file": "app/admin/ai-generator/page.tsx",
+        "line": 16,
+        "exported": false
+      },
+      {
+        "name": "Category",
+        "kind": "interface",
+        "file": "app/admin/posts/new/page.tsx",
+        "line": 17,
+        "exported": false
+      },
+      {
+        "name": "Category",
+        "kind": "interface",
+        "file": "app/admin/posts/[id]/edit/page.tsx",
+        "line": 17,
+        "exported": false
+      },
+      {
+        "name": "CategoryBadgeProps",
+        "kind": "interface",
+        "file": "components/ui/CategoryBadge.tsx",
+        "line": 7,
+        "exported": false
+      },
+      {
+        "name": "ContainerProps",
+        "kind": "interface",
+        "file": "components/ui/Container.tsx",
+        "line": 4,
+        "exported": false
+      },
+      {
+        "name": "CTABannerProps",
+        "kind": "interface",
+        "file": "components/sections/CTABanner.tsx",
+        "line": 13,
+        "exported": false
+      },
+      {
+        "name": "FloatingOrbsProps",
+        "kind": "interface",
+        "file": "components/animations/FloatingOrbs.tsx",
+        "line": 15,
+        "exported": false
+      },
+      {
+        "name": "GeneratedPost",
+        "kind": "interface",
+        "file": "app/admin/ai-generator/page.tsx",
+        "line": 22,
+        "exported": false
+      },
+      {
+        "name": "GradientTextProps",
+        "kind": "interface",
+        "file": "components/animations/GradientText.tsx",
+        "line": 7,
+        "exported": false
+      },
+      {
+        "name": "HighlightItem",
+        "kind": "interface",
+        "file": "components/sections/HighlightSection.tsx",
+        "line": 11,
+        "exported": false
+      },
+      {
+        "name": "HighlightSectionProps",
+        "kind": "interface",
+        "file": "components/sections/HighlightSection.tsx",
+        "line": 17,
+        "exported": false
+      },
+      {
+        "name": "LegalPageLayoutProps",
+        "kind": "interface",
+        "file": "components/layout/LegalPageLayout.tsx",
+        "line": 9,
+        "exported": false
+      },
+      {
+        "name": "LogoHorizontalImageProps",
+        "kind": "interface",
+        "file": "components/logo-horizontal-image.tsx",
+        "line": 8,
+        "exported": false
+      },
+      {
+        "name": "LogoHorizontalProps",
+        "kind": "interface",
+        "file": "components/logo-horizontal.tsx",
+        "line": 5,
+        "exported": false
+      },
+      {
+        "name": "LogoImageProps",
+        "kind": "interface",
+        "file": "components/logo-image.tsx",
+        "line": 8,
+        "exported": false
+      },
+      {
+        "name": "LogoProps",
+        "kind": "interface",
+        "file": "components/logo.tsx",
+        "line": 5,
+        "exported": false
+      },
+      {
+        "name": "MagneticButtonProps",
+        "kind": "interface",
+        "file": "components/animations/MagneticButton.tsx",
+        "line": 7,
+        "exported": false
+      },
+      {
+        "name": "MousePosition",
+        "kind": "interface",
+        "file": "components/hooks/useMousePosition.ts",
+        "line": 5,
+        "exported": false
+      },
+      {
+        "name": "MousePosition",
+        "kind": "interface",
+        "file": "components/effects/CursorGlow.tsx",
+        "line": 5,
+        "exported": false
+      },
+      {
+        "name": "NavItem",
+        "kind": "interface",
+        "file": "components/layout/Navbar.tsx",
+        "line": 12,
+        "exported": false
+      },
+      {
+        "name": "NewsCardProps",
+        "kind": "interface",
+        "file": "components/ui/NewsCard.tsx",
+        "line": 14,
+        "exported": false
+      },
+      {
+        "name": "NewsGridSectionProps",
+        "kind": "interface",
+        "file": "components/sections/NewsGridSection.tsx",
+        "line": 11,
+        "exported": false
+      },
+      {
+        "name": "NewsHeroSectionProps",
+        "kind": "interface",
+        "file": "components/sections/NewsHeroSection.tsx",
+        "line": 9,
+        "exported": false
+      },
+      {
+        "name": "NewsSidebarProps",
+        "kind": "interface",
+        "file": "components/sections/NewsSidebar.tsx",
+        "line": 12,
+        "exported": false
+      },
+      {
+        "name": "OrbConfig",
+        "kind": "interface",
+        "file": "components/animations/FloatingOrbs.tsx",
+        "line": 7,
+        "exported": false
+      },
+      {
+        "name": "PageProps",
+        "kind": "interface",
+        "file": "app/noticias/[slug]/page.tsx",
+        "line": 19,
+        "exported": false
+      },
+      {
+        "name": "PaginationProps",
+        "kind": "interface",
+        "file": "components/ui/Pagination.tsx",
+        "line": 7,
+        "exported": false
+      }
+    ],
+    "functions": [
+      {
+        "name": "AIChatWidget",
+        "kind": "function",
+        "file": "components/ui/AIChatWidget.tsx",
+        "line": 19,
+        "exported": true
+      },
+      {
+        "name": "AnimatedCounter",
+        "kind": "function",
+        "file": "components/animations/AnimatedCounter.tsx",
+        "line": 20,
+        "exported": true
+      },
+      {
+        "name": "AppSection",
+        "kind": "function",
+        "file": "components/sections/AppSection.tsx",
+        "line": 25,
+        "exported": true
+      },
+      {
+        "name": "AuthProvider",
+        "kind": "function",
+        "file": "lib/auth/context.tsx",
+        "line": 23,
+        "exported": true
+      },
+      {
+        "name": "ClientSection",
+        "kind": "function",
+        "file": "components/sections/ClientSection.tsx",
+        "line": 16,
+        "exported": true
+      },
+      {
+        "name": "cn",
+        "kind": "function",
+        "file": "lib/utils/cn.ts",
+        "line": 7,
+        "exported": true
+      },
+      {
+        "name": "createToken",
+        "kind": "function",
+        "file": "lib/auth/index.ts",
+        "line": 41,
+        "exported": true
+      },
+      {
+        "name": "CursorGlow",
+        "kind": "function",
+        "file": "components/effects/CursorGlow.tsx",
+        "line": 15,
+        "exported": true
+      },
+      {
+        "name": "DELETE",
+        "kind": "function",
+        "file": "app/api/posts/[id]/route.ts",
+        "line": 194,
+        "exported": true
+      },
+      {
+        "name": "FAQSection",
+        "kind": "function",
+        "file": "components/sections/FAQSection.tsx",
+        "line": 15,
+        "exported": true
+      },
+      {
+        "name": "FloatingOrbs",
+        "kind": "function",
+        "file": "components/animations/FloatingOrbs.tsx",
+        "line": 24,
+        "exported": true
+      },
+      {
+        "name": "Footer",
+        "kind": "function",
+        "file": "components/layout/Footer.tsx",
+        "line": 22,
+        "exported": true
+      },
+      {
+        "name": "generateMetadata",
+        "kind": "function",
+        "file": "app/noticias/[slug]/page.tsx",
+        "line": 28,
+        "exported": true
+      },
+      {
+        "name": "generateMetadata",
+        "kind": "function",
+        "file": "app/blog/[slug]/page.tsx",
+        "line": 60,
+        "exported": true
+      },
+      {
+        "name": "generateStaticParams",
+        "kind": "function",
+        "file": "app/noticias/[slug]/page.tsx",
+        "line": 23,
+        "exported": true
+      },
+      {
+        "name": "generateStaticParams",
+        "kind": "function",
+        "file": "app/blog/[slug]/page.tsx",
+        "line": 49,
+        "exported": true
+      },
+      {
+        "name": "GET",
+        "kind": "function",
+        "file": "app/api/posts/route.ts",
+        "line": 28,
+        "exported": true
+      },
+      {
+        "name": "GET",
+        "kind": "function",
+        "file": "app/api/categories/route.ts",
+        "line": 20,
+        "exported": true
+      },
+      {
+        "name": "GET",
+        "kind": "function",
+        "file": "app/api/posts/[id]/route.ts",
+        "line": 30,
+        "exported": true
+      },
+      {
+        "name": "GET",
+        "kind": "function",
+        "file": "app/api/auth/me/route.ts",
+        "line": 12,
+        "exported": true
+      },
+      {
+        "name": "getAllSlugs",
+        "kind": "function",
+        "file": "lib/api/news.ts",
+        "line": 210,
+        "exported": true
+      },
+      {
+        "name": "getAuthCookie",
+        "kind": "function",
+        "file": "lib/auth/index.ts",
+        "line": 78,
+        "exported": true
+      },
+      {
+        "name": "getCategories",
+        "kind": "function",
+        "file": "lib/api/news.ts",
+        "line": 133,
+        "exported": true
+      },
+      {
+        "name": "getCurrentUser",
+        "kind": "function",
+        "file": "lib/auth/index.ts",
+        "line": 94,
+        "exported": true
+      },
+      {
+        "name": "getFeaturedNews",
+        "kind": "function",
+        "file": "lib/api/news.ts",
+        "line": 148,
+        "exported": true
+      },
+      {
+        "name": "getNews",
+        "kind": "function",
+        "file": "lib/api/news.ts",
+        "line": 60,
+        "exported": true
+      },
+      {
+        "name": "getNewsBySlug",
+        "kind": "function",
+        "file": "lib/api/news.ts",
+        "line": 121,
+        "exported": true
+      },
+      {
+        "name": "getPopularNews",
+        "kind": "function",
+        "file": "lib/api/news.ts",
+        "line": 171,
+        "exported": true
+      },
+      {
+        "name": "getRelatedNews",
+        "kind": "function",
+        "file": "lib/api/news.ts",
+        "line": 185,
+        "exported": true
+      },
+      {
+        "name": "GradientText",
+        "kind": "function",
+        "file": "components/animations/GradientText.tsx",
+        "line": 17,
+        "exported": true
+      },
+      {
+        "name": "hashPassword",
+        "kind": "function",
+        "file": "lib/auth/index.ts",
+        "line": 27,
+        "exported": true
+      },
+      {
+        "name": "HeroSection",
+        "kind": "function",
+        "file": "components/sections/HeroSection.tsx",
+        "line": 15,
+        "exported": true
+      },
+      {
+        "name": "LegalPageLayout",
+        "kind": "function",
+        "file": "components/layout/LegalPageLayout.tsx",
+        "line": 19,
+        "exported": true
+      },
+      {
+        "name": "MagneticButton",
+        "kind": "function",
+        "file": "components/animations/MagneticButton.tsx",
+        "line": 17,
+        "exported": true
+      },
+      {
+        "name": "Navbar",
+        "kind": "function",
+        "file": "components/layout/Navbar.tsx",
+        "line": 38,
+        "exported": true
+      },
+      {
+        "name": "NewsCard",
+        "kind": "function",
+        "file": "components/ui/NewsCard.tsx",
+        "line": 25,
+        "exported": true
+      },
+      {
+        "name": "NewsCardSkeleton",
+        "kind": "function",
+        "file": "components/ui/NewsCard.tsx",
+        "line": 198,
+        "exported": true
+      },
+      {
+        "name": "NewsGridSection",
+        "kind": "function",
+        "file": "components/sections/NewsGridSection.tsx",
+        "line": 29,
+        "exported": true
+      },
+      {
+        "name": "NewsHeroSection",
+        "kind": "function",
+        "file": "components/sections/NewsHeroSection.tsx",
+        "line": 17,
+        "exported": true
+      },
+      {
+        "name": "NewsSidebar",
+        "kind": "function",
+        "file": "components/sections/NewsSidebar.tsx",
+        "line": 24,
+        "exported": true
+      },
+      {
+        "name": "Pagination",
+        "kind": "function",
+        "file": "components/ui/Pagination.tsx",
+        "line": 18,
+        "exported": true
+      },
+      {
+        "name": "ParallaxLayer",
+        "kind": "function",
+        "file": "components/animations/ParallaxLayer.tsx",
+        "line": 18,
+        "exported": true
+      },
+      {
+        "name": "PhoneVisualization",
+        "kind": "function",
+        "file": "components/ui/PhoneVisualization.tsx",
+        "line": 33,
+        "exported": true
+      },
+      {
+        "name": "PlanSection",
+        "kind": "function",
+        "file": "components/sections/PlanSection.tsx",
+        "line": 17,
+        "exported": true
+      },
+      {
+        "name": "POST",
+        "kind": "function",
+        "file": "app/api/posts/route.ts",
+        "line": 149,
+        "exported": true
+      },
+      {
+        "name": "POST",
+        "kind": "function",
+        "file": "app/api/categories/route.ts",
+        "line": 33,
+        "exported": true
+      },
+      {
+        "name": "POST",
+        "kind": "function",
+        "file": "app/api/chat/support/route.ts",
+        "line": 29,
+        "exported": true
+      },
+      {
+        "name": "POST",
+        "kind": "function",
+        "file": "app/api/auth/logout/route.ts",
+        "line": 9,
+        "exported": true
+      },
+      {
+        "name": "POST",
+        "kind": "function",
+        "file": "app/api/auth/login/route.ts",
+        "line": 18,
+        "exported": true
+      },
+      {
+        "name": "POST",
+        "kind": "function",
+        "file": "app/api/ai/generate-post/route.ts",
+        "line": 49,
+        "exported": true
+      }
+    ],
+    "types": [
+      {
+        "name": "Author",
+        "kind": "type",
+        "file": "lib/db/schema.ts",
+        "line": 99,
+        "exported": true
+      },
+      {
+        "name": "Category",
+        "kind": "type",
+        "file": "lib/db/schema.ts",
+        "line": 97,
+        "exported": true
+      },
+      {
+        "name": "NewAuthor",
+        "kind": "type",
+        "file": "lib/db/schema.ts",
+        "line": 100,
+        "exported": true
+      },
+      {
+        "name": "NewCategory",
+        "kind": "type",
+        "file": "lib/db/schema.ts",
+        "line": 98,
+        "exported": true
+      },
+      {
+        "name": "NewPost",
+        "kind": "type",
+        "file": "lib/db/schema.ts",
+        "line": 102,
+        "exported": true
+      },
+      {
+        "name": "NewPostTag",
+        "kind": "type",
+        "file": "lib/db/schema.ts",
+        "line": 104,
+        "exported": true
+      },
+      {
+        "name": "NewUser",
+        "kind": "type",
+        "file": "lib/db/schema.ts",
+        "line": 96,
+        "exported": true
+      },
+      {
+        "name": "Post",
+        "kind": "type",
+        "file": "lib/db/schema.ts",
+        "line": 101,
+        "exported": true
+      },
+      {
+        "name": "PostTag",
+        "kind": "type",
+        "file": "lib/db/schema.ts",
+        "line": 103,
+        "exported": true
+      },
+      {
+        "name": "User",
+        "kind": "type",
+        "file": "lib/db/schema.ts",
+        "line": 95,
+        "exported": true
+      },
+      {
+        "name": "ButtonSize",
+        "kind": "type",
+        "file": "components/ui/Button.tsx",
+        "line": 8,
+        "exported": false
+      },
+      {
+        "name": "ButtonVariant",
+        "kind": "type",
+        "file": "components/ui/Button.tsx",
+        "line": 7,
+        "exported": false
+      },
+      {
+        "name": "CardVariant",
+        "kind": "type",
+        "file": "components/ui/Card.tsx",
+        "line": 7,
+        "exported": false
+      },
+      {
+        "name": "CTAVariant",
+        "kind": "type",
+        "file": "components/sections/CTABanner.tsx",
+        "line": 11,
+        "exported": false
+      },
+      {
+        "name": "LogoColor",
+        "kind": "type",
+        "file": "components/logo.tsx",
+        "line": 3,
+        "exported": false
+      },
+      {
+        "name": "LogoColor",
+        "kind": "type",
+        "file": "components/logo-image.tsx",
+        "line": 6,
+        "exported": false
+      },
+      {
+        "name": "LogoColor",
+        "kind": "type",
+        "file": "components/logo-horizontal.tsx",
+        "line": 3,
+        "exported": false
+      },
+      {
+        "name": "LogoColor",
+        "kind": "type",
+        "file": "components/logo-horizontal-image.tsx",
+        "line": 6,
+        "exported": false
+      },
+      {
+        "name": "NewsCardVariant",
+        "kind": "type",
+        "file": "components/ui/NewsCard.tsx",
+        "line": 12,
+        "exported": false
+      },
+      {
+        "name": "RouteContext",
+        "kind": "type",
+        "file": "app/api/posts/[id]/route.ts",
+        "line": 28,
+        "exported": false
+      },
+      {
+        "name": "SectionBackground",
+        "kind": "type",
+        "file": "components/layout/Section.tsx",
+        "line": 8,
+        "exported": false
+      },
+      {
+        "name": "SectionPadding",
+        "kind": "type",
+        "file": "components/layout/Section.tsx",
+        "line": 9,
+        "exported": false
+      }
+    ],
+    "enums": []
+  },
+  "publicAPI": [
+    {
+      "name": "AIChatWidget",
+      "kind": "function",
+      "file": "components/ui/AIChatWidget.tsx",
+      "line": 19,
+      "exported": true
+    },
+    {
+      "name": "AnimatedCounter",
+      "kind": "function",
+      "file": "components/animations/AnimatedCounter.tsx",
+      "line": 20,
+      "exported": true
+    },
+    {
+      "name": "AppSection",
+      "kind": "function",
+      "file": "components/sections/AppSection.tsx",
+      "line": 25,
+      "exported": true
+    },
+    {
+      "name": "Author",
+      "kind": "interface",
+      "file": "lib/types/news.ts",
+      "line": 12,
+      "exported": true
+    },
+    {
+      "name": "Author",
+      "kind": "type",
+      "file": "lib/db/schema.ts",
+      "line": 99,
+      "exported": true
+    },
+    {
+      "name": "AuthProvider",
+      "kind": "function",
+      "file": "lib/auth/context.tsx",
+      "line": 23,
+      "exported": true
+    },
+    {
+      "name": "Category",
+      "kind": "type",
+      "file": "lib/db/schema.ts",
+      "line": 97,
+      "exported": true
+    },
+    {
+      "name": "ClientSection",
+      "kind": "function",
+      "file": "components/sections/ClientSection.tsx",
+      "line": 16,
+      "exported": true
+    },
+    {
+      "name": "cn",
+      "kind": "function",
+      "file": "lib/utils/cn.ts",
+      "line": 7,
+      "exported": true
+    },
+    {
+      "name": "createToken",
+      "kind": "function",
+      "file": "lib/auth/index.ts",
+      "line": 41,
+      "exported": true
+    },
+    {
+      "name": "CursorGlow",
+      "kind": "function",
+      "file": "components/effects/CursorGlow.tsx",
+      "line": 15,
+      "exported": true
+    },
+    {
+      "name": "DELETE",
+      "kind": "function",
+      "file": "app/api/posts/[id]/route.ts",
+      "line": 194,
+      "exported": true
+    },
+    {
+      "name": "FAQSection",
+      "kind": "function",
+      "file": "components/sections/FAQSection.tsx",
+      "line": 15,
+      "exported": true
+    },
+    {
+      "name": "FloatingOrbs",
+      "kind": "function",
+      "file": "components/animations/FloatingOrbs.tsx",
+      "line": 24,
+      "exported": true
+    },
+    {
+      "name": "Footer",
+      "kind": "function",
+      "file": "components/layout/Footer.tsx",
+      "line": 22,
+      "exported": true
+    },
+    {
+      "name": "generateMetadata",
+      "kind": "function",
+      "file": "app/noticias/[slug]/page.tsx",
+      "line": 28,
+      "exported": true
+    },
+    {
+      "name": "generateMetadata",
+      "kind": "function",
+      "file": "app/blog/[slug]/page.tsx",
+      "line": 60,
+      "exported": true
+    },
+    {
+      "name": "generateStaticParams",
+      "kind": "function",
+      "file": "app/noticias/[slug]/page.tsx",
+      "line": 23,
+      "exported": true
+    },
+    {
+      "name": "generateStaticParams",
+      "kind": "function",
+      "file": "app/blog/[slug]/page.tsx",
+      "line": 49,
+      "exported": true
+    },
+    {
+      "name": "GET",
+      "kind": "function",
+      "file": "app/api/posts/route.ts",
+      "line": 28,
+      "exported": true
+    },
+    {
+      "name": "GET",
+      "kind": "function",
+      "file": "app/api/categories/route.ts",
+      "line": 20,
+      "exported": true
+    },
+    {
+      "name": "GET",
+      "kind": "function",
+      "file": "app/api/posts/[id]/route.ts",
+      "line": 30,
+      "exported": true
+    },
+    {
+      "name": "GET",
+      "kind": "function",
+      "file": "app/api/auth/me/route.ts",
+      "line": 12,
+      "exported": true
+    },
+    {
+      "name": "getAllSlugs",
+      "kind": "function",
+      "file": "lib/api/news.ts",
+      "line": 210,
+      "exported": true
+    },
+    {
+      "name": "getAuthCookie",
+      "kind": "function",
+      "file": "lib/auth/index.ts",
+      "line": 78,
+      "exported": true
+    },
+    {
+      "name": "getCategories",
+      "kind": "function",
+      "file": "lib/api/news.ts",
+      "line": 133,
+      "exported": true
+    },
+    {
+      "name": "getCurrentUser",
+      "kind": "function",
+      "file": "lib/auth/index.ts",
+      "line": 94,
+      "exported": true
+    },
+    {
+      "name": "getFeaturedNews",
+      "kind": "function",
+      "file": "lib/api/news.ts",
+      "line": 148,
+      "exported": true
+    },
+    {
+      "name": "getNews",
+      "kind": "function",
+      "file": "lib/api/news.ts",
+      "line": 60,
+      "exported": true
+    },
+    {
+      "name": "getNewsBySlug",
+      "kind": "function",
+      "file": "lib/api/news.ts",
+      "line": 121,
+      "exported": true
+    },
+    {
+      "name": "getPopularNews",
+      "kind": "function",
+      "file": "lib/api/news.ts",
+      "line": 171,
+      "exported": true
+    },
+    {
+      "name": "getRelatedNews",
+      "kind": "function",
+      "file": "lib/api/news.ts",
+      "line": 185,
+      "exported": true
+    },
+    {
+      "name": "GradientText",
+      "kind": "function",
+      "file": "components/animations/GradientText.tsx",
+      "line": 17,
+      "exported": true
+    },
+    {
+      "name": "hashPassword",
+      "kind": "function",
+      "file": "lib/auth/index.ts",
+      "line": 27,
+      "exported": true
+    },
+    {
+      "name": "HeroSection",
+      "kind": "function",
+      "file": "components/sections/HeroSection.tsx",
+      "line": 15,
+      "exported": true
+    },
+    {
+      "name": "JWTPayload",
+      "kind": "interface",
+      "file": "lib/auth/index.ts",
+      "line": 17,
+      "exported": true
+    },
+    {
+      "name": "LegalPageLayout",
+      "kind": "function",
+      "file": "components/layout/LegalPageLayout.tsx",
+      "line": 19,
+      "exported": true
+    },
+    {
+      "name": "MagneticButton",
+      "kind": "function",
+      "file": "components/animations/MagneticButton.tsx",
+      "line": 17,
+      "exported": true
+    },
+    {
+      "name": "Navbar",
+      "kind": "function",
+      "file": "components/layout/Navbar.tsx",
+      "line": 38,
+      "exported": true
+    },
+    {
+      "name": "NewAuthor",
+      "kind": "type",
+      "file": "lib/db/schema.ts",
+      "line": 100,
+      "exported": true
+    },
+    {
+      "name": "NewCategory",
+      "kind": "type",
+      "file": "lib/db/schema.ts",
+      "line": 98,
+      "exported": true
+    },
+    {
+      "name": "NewPost",
+      "kind": "type",
+      "file": "lib/db/schema.ts",
+      "line": 102,
+      "exported": true
+    },
+    {
+      "name": "NewPostTag",
+      "kind": "type",
+      "file": "lib/db/schema.ts",
+      "line": 104,
+      "exported": true
+    },
+    {
+      "name": "NewsArticle",
+      "kind": "interface",
+      "file": "lib/types/news.ts",
+      "line": 18,
+      "exported": true
+    },
+    {
+      "name": "NewsCard",
+      "kind": "function",
+      "file": "components/ui/NewsCard.tsx",
+      "line": 25,
+      "exported": true
+    },
+    {
+      "name": "NewsCardSkeleton",
+      "kind": "function",
+      "file": "components/ui/NewsCard.tsx",
+      "line": 198,
+      "exported": true
+    },
+    {
+      "name": "NewsCategory",
+      "kind": "interface",
+      "file": "lib/types/news.ts",
+      "line": 5,
+      "exported": true
+    },
+    {
+      "name": "NewsFilters",
+      "kind": "interface",
+      "file": "lib/types/news.ts",
+      "line": 33,
+      "exported": true
+    },
+    {
+      "name": "NewsGridSection",
+      "kind": "function",
+      "file": "components/sections/NewsGridSection.tsx",
+      "line": 29,
+      "exported": true
+    },
+    {
+      "name": "NewsHeroSection",
+      "kind": "function",
+      "file": "components/sections/NewsHeroSection.tsx",
+      "line": 17,
+      "exported": true
+    }
+  ],
+  "dependencies": {
+    "mostImported": [
+      {
+        "file": "/Users/marcosalexandre/projetos/sixsaude/lib/db/schema.ts",
+        "importedBy": 3
+      },
+      {
+        "file": "/Users/marcosalexandre/projetos/sixsaude/lib/auth/index.ts",
+        "importedBy": 1
+      },
+      {
+        "file": "/Users/marcosalexandre/projetos/sixsaude/components/blog/BlogCard.tsx",
+        "importedBy": 1
+      }
+    ]
+  },
+  "stats": {
+    "totalSymbols": 215,
+    "exportedSymbols": 85,
+    "analysisTimeMs": 133
+  }
+}
