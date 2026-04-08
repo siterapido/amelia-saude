@@ -1,13 +1,20 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
-import { MapPin, Building2, Stethoscope, ArrowRight } from 'lucide-react'
+import { animate, motion, useMotionValue, useTransform } from 'framer-motion'
+import { MapPin, MapPinned, Building2, Stethoscope, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
 import { MagneticButton } from '@/components/animations'
+import ameliaLogo from '@/Logo/logo-amelia-site.png'
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
+
+type OrbitNodeData = {
+  name: string
+  icon: React.ElementType
+}
 
 const STATS = [
   { icon: MapPin,      value: '8+',  label: 'Municípios atendidos' },
@@ -15,19 +22,23 @@ const STATS = [
   { icon: Stethoscope, value: '30+', label: 'Especialidades médicas' },
 ]
 
-// Inner orbit — 3 cidades principais
-const INNER_NODES = [
-  { name: 'Rio de Janeiro', icon: MapPin },
-  { name: 'Niterói',        icon: MapPin },
-  { name: 'D. de Caxias',   icon: MapPin },
+// Orbit 1 — 2 cidades principais
+const INNER_NODES: OrbitNodeData[] = [
+  { name: 'Rio de Janeiro', icon: MapPinned },
+  { name: 'Niterói', icon: MapPinned },
 ]
 
-// Outer orbit — 4 cidades da região
-const OUTER_NODES = [
-  { name: 'Nova Iguaçu',  icon: MapPin },
-  { name: 'São Gonçalo',  icon: MapPin },
-  { name: 'Petrópolis',   icon: MapPin },
-  { name: 'Nilópolis',    icon: MapPin },
+// Orbit 2 — 2 cidades estratégicas
+const MIDDLE_NODES: OrbitNodeData[] = [
+  { name: 'D. de Caxias', icon: MapPinned },
+  { name: 'São Gonçalo', icon: MapPinned },
+]
+
+// Orbit 3 — 3 cidades da região
+const OUTER_NODES: OrbitNodeData[] = [
+  { name: 'Nova Iguaçu', icon: MapPinned },
+  { name: 'Petrópolis', icon: MapPinned },
+  { name: 'Nilópolis', icon: MapPinned },
 ]
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -43,75 +54,82 @@ function getNodePosition(index: number, total: number): { x: number; y: number }
 interface OrbitNodeProps {
   name: string
   icon: React.ElementType
-  duration: number
-  direction: 1 | -1
 }
 
-const OrbitNode = ({ name, icon: Icon, duration, direction }: OrbitNodeProps) => (
-  <motion.div
-    animate={{ rotate: 360 * -direction }}
-    transition={{ duration, repeat: Infinity, ease: 'linear' }}
-    className="flex flex-col items-center gap-1.5"
-  >
+const OrbitNode = ({ name, icon: Icon }: OrbitNodeProps) => (
+  <div className="flex flex-col items-center gap-1.5">
     <div
-      className="w-14 h-14 rounded-full flex items-center justify-center border border-gold-primary/20 shadow-gold-sm"
+      className="relative w-14 h-14 rounded-full flex items-center justify-center border border-gold-primary/18 shadow-[0_10px_30px_rgba(10,10,10,0.08)]"
       style={{
-        background: 'linear-gradient(135deg, rgba(123,107,178,0.12) 0%, rgba(123,107,178,0.22) 100%)',
-        backdropFilter: 'blur(4px)',
+        background: 'linear-gradient(135deg, rgba(255,255,255,0.78) 0%, rgba(123,107,178,0.22) 100%)',
+        backdropFilter: 'blur(6px)',
       }}
     >
+      <div
+        aria-hidden
+        className="absolute inset-0 rounded-full ring-1 ring-gold-primary/10"
+      />
       <Icon className="w-6 h-6 text-gold-primary" />
     </div>
     <span className="text-[10px] font-medium text-[#1A1A2E] whitespace-nowrap leading-tight text-center max-w-[80px]">
       {name}
     </span>
-  </motion.div>
+  </div>
 )
 
 interface OrbitRingProps {
-  nodes: typeof INNER_NODES
+  nodes: OrbitNodeData[]
   size: number
   duration: number
   direction: 1 | -1
 }
 
-const OrbitRing = ({ nodes, size, duration, direction }: OrbitRingProps) => (
-  <motion.div
-    className="absolute rounded-full border border-dashed border-gold-primary/20"
-    style={{
-      width: size,
-      height: size,
-      top: '50%',
-      left: '50%',
-      marginTop: -size / 2,
-      marginLeft: -size / 2,
-    }}
-    animate={{ rotate: 360 * direction }}
-    transition={{ duration, repeat: Infinity, ease: 'linear' }}
-  >
-    {nodes.map((node, i) => {
-      const pos = getNodePosition(i, nodes.length)
-      return (
-        <div
-          key={node.name}
-          className="absolute"
-          style={{
-            top: `calc(50% + ${pos.y}%)`,
-            left: `calc(50% + ${pos.x}%)`,
-            transform: 'translate(-50%, -50%)',
-          }}
-        >
-          <OrbitNode
-            name={node.name}
-            icon={node.icon}
-            duration={duration}
-            direction={direction}
-          />
-        </div>
-      )
-    })}
-  </motion.div>
-)
+const OrbitRing = ({ nodes, size, duration, direction }: OrbitRingProps) => {
+  const rotate = useMotionValue(0)
+  const counterRotate = useTransform(rotate, (v) => -v)
+
+  React.useEffect(() => {
+    const controls = animate(rotate, 360 * direction, {
+      duration,
+      repeat: Infinity,
+      ease: 'linear',
+    })
+    return () => controls.stop()
+  }, [direction, duration, rotate])
+
+  return (
+    <motion.div
+      className="absolute rounded-full border border-dashed border-gold-primary/20"
+      style={{
+        width: size,
+        height: size,
+        top: '50%',
+        left: '50%',
+        marginTop: -size / 2,
+        marginLeft: -size / 2,
+        rotate,
+      }}
+    >
+      {nodes.map((node, i) => {
+        const pos = getNodePosition(i, nodes.length)
+        return (
+          <motion.div
+            key={node.name}
+            className="absolute"
+            style={{
+              top: `calc(50% + ${pos.y}%)`,
+              left: `calc(50% + ${pos.x}%)`,
+              transform: 'translate(-50%, -50%)',
+              rotate: counterRotate,
+            }}
+          >
+            <OrbitNode name={node.name} icon={node.icon} />
+          </motion.div>
+        )
+      })}
+    </motion.div>
+  )
+}
 
 // ─── Section ──────────────────────────────────────────────────────────────────
 
@@ -236,7 +254,7 @@ export const NetworkSection = () => {
           >
             <div
               className="relative flex items-center justify-center"
-              style={{ width: 460, height: 460 }}
+              style={{ width: 520, height: 520 }}
             >
               {/* Glow behind hub */}
               <div
@@ -244,20 +262,25 @@ export const NetworkSection = () => {
                 className="absolute w-28 h-28 rounded-full bg-gold-primary/15 blur-3xl"
               />
 
-              {/* Inner orbit: 3 nodes, clockwise, 18s */}
-              <OrbitRing nodes={INNER_NODES} size={220} duration={18} direction={1} />
+              {/* Orbit 1: 2 nodes, clockwise, 16s */}
+              <OrbitRing nodes={INNER_NODES} size={200} duration={16} direction={1} />
 
-              {/* Outer orbit: 4 nodes, counter-clockwise, 28s */}
-              <OrbitRing nodes={OUTER_NODES} size={360} duration={28} direction={-1} />
+              {/* Orbit 2: 2 nodes, counter-clockwise, 22s */}
+              <OrbitRing nodes={MIDDLE_NODES} size={320} duration={22} direction={-1} />
+
+              {/* Orbit 3: 3 nodes, clockwise, 32s */}
+              <OrbitRing nodes={OUTER_NODES} size={440} duration={32} direction={1} />
 
               {/* Central hub */}
-              <div className="relative z-10 flex flex-col items-center justify-center w-20 h-20 rounded-full border-2 border-gold-primary/30 bg-white shadow-gold-sm">
-                <span
-                  className="font-display font-bold text-[9px] text-center text-gold-primary leading-tight px-1"
-                  style={{ letterSpacing: '-0.2px' }}
-                >
-                  Amélia<br />Saúde
-                </span>
+              <div className="relative z-10 flex items-center justify-center w-20 h-20 rounded-full border-2 border-gold-primary/30 bg-white shadow-gold-sm overflow-hidden">
+                <Image
+                  src={ameliaLogo}
+                  alt="Logo da Amélia Saúde"
+                  width={56}
+                  height={56}
+                  className="object-contain"
+                  priority={false}
+                />
               </div>
             </div>
           </motion.div>

@@ -2,10 +2,12 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { MessageCircle, Mail, Phone, Instagram, Linkedin, Facebook } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { cn } from '@/lib/utils/cn'
+import footerLogo from '@/Logo/logo-amelia-site-branca.png'
 
 /**
  * Footer Component - Amélia Saúde
@@ -63,8 +65,15 @@ export const Footer = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true, margin: '-50px' }}
             >
-              <Link href="/" className="inline-block mb-5">
-                <span className="font-display text-3xl text-white">amélia</span>
+              <Link href="/" className="inline-block mb-5" aria-label="Amélia Saúde — início">
+                <Image
+                  src={footerLogo}
+                  alt="Amélia Saúde"
+                  width={200}
+                  height={81}
+                  className="h-auto w-[160px] sm:w-[180px]"
+                  sizes="180px"
+                />
               </Link>
               <p className="text-white/80 text-sm leading-relaxed mb-6">
                 Operadora de Planos de Saúde.
