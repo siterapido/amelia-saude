@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import headerLogo from '@/Logo/logo-amelia-site.png'
+import headerLogoBranca from '@/Logo/logo-amelia-site-branca.png'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { cn } from '@/lib/utils/cn'
@@ -25,8 +26,8 @@ const navItems: NavItem[] = [
 ]
 
 /**
- * Premium Navbar Component - Amélia Saúde
- * Clean white nav with purple accents
+ * Premium Navbar — Amélia Saúde
+ * Topo: logo e links brancos sobre fundo transparente; ao rolar: fundo claro e cores originais.
  */
 export const Navbar = () => {
   const pathname = usePathname()
@@ -38,7 +39,7 @@ export const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
     }
-
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -76,12 +77,12 @@ export const Navbar = () => {
                 transition={{ duration: 0.2 }}
               >
                 <Image
-                  src={headerLogo}
+                  src={isScrolled ? headerLogo : headerLogoBranca}
                   alt="Amélia Saúde"
                   width={240}
                   height={76}
                   priority
-                  className="h-auto w-[150px] md:w-[190px]"
+                  className="h-auto w-[150px] md:w-[190px] transition-opacity duration-300"
                 />
               </motion.div>
             </Link>
@@ -94,7 +95,12 @@ export const Navbar = () => {
                     key={item.href}
                     variant="primary"
                     size="sm"
-                    className="!bg-gold-primary !text-white hover:!bg-gold-signature !shadow-none hover:!shadow-gold-sm !rounded-xl !font-semibold !text-sm !tracking-wide"
+                    className={cn(
+                      '!rounded-xl !font-semibold !text-sm !tracking-wide !shadow-none',
+                      isScrolled
+                        ? '!bg-gold-primary !text-white hover:!bg-gold-signature hover:!shadow-gold-sm'
+                        : '!bg-transparent !border-2 !border-white !text-white hover:!bg-white/10 hover:!shadow-none'
+                    )}
                     onClick={() => {
                       if (item.href.startsWith('/#')) {
                         const element = document.querySelector(item.href.substring(1))
@@ -111,11 +117,12 @@ export const Navbar = () => {
                     className={cn(
                       'transition-colors duration-300',
                       'text-sm font-medium',
-                      'text-gray-600 hover:text-gold-primary',
                       'relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5',
-                      'after:bg-gold-primary after:rounded-full',
-                      'after:transition-all after:duration-300',
-                      'hover:after:w-full'
+                      'after:rounded-full after:transition-all after:duration-300',
+                      'hover:after:w-full',
+                      isScrolled
+                        ? 'text-gray-600 hover:text-gold-primary after:bg-gold-primary'
+                        : 'text-white hover:text-white/85 after:bg-white'
                     )}
                   >
                     {item.label}
@@ -132,7 +139,12 @@ export const Navbar = () => {
               )}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <Menu className={cn("w-6 h-6", isMobileMenuOpen ? "text-white" : "text-gray-800")} />
+              <Menu
+                className={cn(
+                  'w-6 h-6 transition-colors duration-300',
+                  isMobileMenuOpen || !isScrolled ? 'text-white' : 'text-gray-800'
+                )}
+              />
             </button>
           </nav>
         </Container>

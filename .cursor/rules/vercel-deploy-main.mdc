@@ -1,0 +1,28 @@
+---
+description: Deploy em produção Vercel via branch main em toda atualização relevante
+alwaysApply: true
+---
+
+# Deploy Vercel — produção em `main`
+
+## Objetivo
+
+Toda alteração que deva ir ao site em produção deve chegar à branch **`main`**, que na Vercel está ligada ao **Production** (domínio principal).
+
+## O que fazer ao concluir trabalho
+
+1. **Preferir merge via PR** para `main` (revisão e CI), em vez de push direto na `main` quando houver fluxo de equipe.
+2. **Após o merge em `main`**, a Vercel dispara o build e o deploy de produção automaticamente (integração Git ↔ projeto Vercel).
+3. **Não deixar mudanças só em branches** se a intenção é publicar: sem merge em `main`, produção não atualiza.
+
+## Preview
+
+- Pull requests e branches não-`main` geram **Preview Deployments** na Vercel (URLs de pré-visualização), não substituem produção até o merge em `main`.
+
+## Deploy manual (exceção)
+
+- Só usar `vercel deploy --prod` ou equivalente quando o fluxo Git não estiver disponível ou for acordo explícito do time; o padrão do repositório é **Git push/merge em `main`**.
+
+## Variáveis de ambiente
+
+- Conferir no painel Vercel (Production vs Preview) se novas variáveis ou mudanças de configuração foram aplicadas antes de considerar o deploy concluído.
