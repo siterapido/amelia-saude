@@ -29,12 +29,15 @@ export const CTABanner: React.FC<CTABannerProps> = ({
   const isPurple = variant === 'purple'
 
   return (
-    <section className={cn(
-      'relative py-16 md:py-24 overflow-hidden',
-      isPurple
-        ? 'bg-gradient-to-br from-[#5E4985] to-[#7B6CB1]'
-        : 'bg-[#F8F6FB]'
-    )}>
+    <section
+      data-navbar-theme={isPurple ? 'dark' : 'light'}
+      className={cn(
+        'relative py-16 md:py-24 overflow-hidden',
+        isPurple
+          ? 'bg-gradient-to-br from-[#5E4985] to-[#7B6CB1]'
+          : 'bg-[#F8F6FB]'
+      )}
+    >
       <Container>
         <motion.div
           className="flex flex-col md:flex-row md:items-center md:justify-between gap-8"

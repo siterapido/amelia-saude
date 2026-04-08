@@ -16,7 +16,10 @@ interface NewsHeroSectionProps {
  */
 export const NewsHeroSection = ({ article, loading = false }: NewsHeroSectionProps) => {
   return (
-    <section className="relative bg-gray-900 pt-28 md:pt-32 pb-8 md:pb-12 overflow-hidden">
+    <section
+      data-navbar-theme="dark"
+      className="relative bg-gray-900 pt-28 md:pt-32 pb-8 md:pb-12 overflow-hidden"
+    >
       {/* Gradient background accent */}
       <div className="absolute inset-0 bg-gradient-gold-radial opacity-30 pointer-events-none" />
 

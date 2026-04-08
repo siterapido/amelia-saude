@@ -124,7 +124,7 @@ function NewsPageContent() {
   }, [categoryParam, searchParam, pageParam])
 
   return (
-    <main className="min-h-screen bg-gray-900">
+    <main data-navbar-theme="dark" className="min-h-screen bg-gray-900">
       {/* Hero with Featured Article */}
       <NewsHeroSection article={featuredArticle} loading={initialLoading} />
 
@@ -167,7 +167,7 @@ export default function NewsPage() {
   return (
     <Suspense
       fallback={
-        <main className="min-h-screen bg-gray-900">
+        <main data-navbar-theme="dark" className="min-h-screen bg-gray-900">
           <NewsHeroSection article={null} loading={true} />
         </main>
       }

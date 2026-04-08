@@ -25,7 +25,7 @@ export const LegalPageLayout = ({
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-black-premium pt-24 md:pt-32 pb-16 md:pb-24">
+      <section data-navbar-theme="light" className="relative bg-black-premium pt-24 md:pt-32 pb-16 md:pb-24">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gold-primary/5 rounded-full blur-3xl" />
 
         <Container>
@@ -49,7 +49,7 @@ export const LegalPageLayout = ({
       </section>
 
       {/* Content */}
-      <section className="relative py-12 md:py-16 bg-black-charcoal">
+      <section data-navbar-theme="dark" className="relative py-12 md:py-16 bg-black-charcoal">
         <Container>
           <motion.div
             className="max-w-4xl prose prose-invert prose-gold"
@@ -65,7 +65,7 @@ export const LegalPageLayout = ({
       </section>
 
       {/* Contact CTA */}
-      <section className="relative py-16 bg-black-premium border-t border-white/5">
+      <section data-navbar-theme="light" className="relative py-16 bg-black-premium border-t border-white/5">
         <Container>
           <motion.div
             className="text-center"

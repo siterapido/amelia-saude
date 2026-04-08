@@ -69,7 +69,10 @@ export default async function NewsArticlePage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-black-premium">
       {/* Hero Image */}
-      <section className="relative h-[50vh] md:h-[60vh] pt-24 overflow-hidden">
+      <section
+        data-navbar-theme="dark"
+        className="relative h-[50vh] md:h-[60vh] pt-24 overflow-hidden"
+      >
         <Image
           src={article.coverImage}
           alt={article.title}
@@ -94,7 +97,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
       </section>
 
       {/* Article Header */}
-      <section className="relative -mt-32 pb-8">
+      <section data-navbar-theme="dark" className="relative -mt-32 pb-8">
         <Container>
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
@@ -147,7 +150,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
       </section>
 
       {/* Article Content */}
-      <section className="py-8 md:py-12 bg-black-deep">
+      <section data-navbar-theme="dark" className="py-8 md:py-12 bg-black-deep">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Article Body */}
@@ -200,7 +203,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
 
       {/* Related News */}
       {relatedNews.length > 0 && (
-        <section className="py-12 md:py-16 bg-black-premium">
+        <section data-navbar-theme="light" className="py-12 md:py-16 bg-black-premium">
           <Container>
             <h2 className="font-display text-h4 md:text-h3 text-white font-bold mb-8">
               Notícias Relacionadas

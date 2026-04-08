@@ -73,7 +73,11 @@ export const LatestNewsSection = async () => {
     }
 
     return (
-        <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#3D2F5C' }}>
+        <section
+            data-navbar-theme="dark"
+            className="py-24 relative overflow-hidden"
+            style={{ backgroundColor: '#3D2F5C' }}
+        >
             {/* Background Accents */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/3 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />

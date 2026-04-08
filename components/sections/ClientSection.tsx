@@ -49,6 +49,7 @@ export const ClientSection = () => {
   return (
     <section
       id="about"
+      data-navbar-theme="light"
       className="relative py-24 md:py-32 lg:py-40 bg-[#F8F6FB]"
     >
       <Container>

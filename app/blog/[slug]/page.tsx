@@ -33,14 +33,17 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
     return (
         <main className="min-h-screen bg-black-premium">
             {/* Article Hero */}
-            <section className="relative pt-28 md:pt-32 pb-12 bg-gradient-black-deep">
+            <section
+                data-navbar-theme="dark"
+                className="relative pt-28 md:pt-32 pb-12 bg-gradient-black-deep"
+            >
                 <Container>
                     <BlogArticle article={article} relatedArticles={relatedArticles} />
                 </Container>
             </section>
 
             {/* Bottom Spacing */}
-            <div className="h-24 bg-black-deep" />
+            <div data-navbar-theme="dark" className="h-24 bg-black-deep" />
         </main>
     )
 }

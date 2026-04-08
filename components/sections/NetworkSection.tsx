@@ -137,6 +137,7 @@ export const NetworkSection = () => {
   return (
     <section
       id="rede-credenciada"
+      data-navbar-theme="light"
       className="relative py-24 md:py-32 lg:py-40 bg-white overflow-hidden"
     >
       {/* Decorative background rings */}

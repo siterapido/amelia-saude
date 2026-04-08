@@ -50,7 +50,7 @@ export const Footer = () => {
   ]
 
   return (
-    <footer className="relative bg-[#2D1F4E]">
+    <footer data-navbar-theme="dark" className="relative bg-[#2D1F4E]">
       {/* Top accent line */}
       <div className="h-px bg-gradient-to-r from-transparent via-gold-signature/40 to-transparent" />
 

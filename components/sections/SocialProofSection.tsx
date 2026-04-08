@@ -39,7 +39,7 @@ export const SocialProofSection = () => {
   ]
 
   return (
-    <section className="relative py-24 md:py-32 bg-white">
+    <section data-navbar-theme="light" className="relative py-24 md:py-32 bg-white">
       <Container>
         {/* Header */}
         <div className="mb-16 md:mb-20 text-center">

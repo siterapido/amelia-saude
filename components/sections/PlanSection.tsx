@@ -50,7 +50,11 @@ export const PlanSection = () => {
   ]
 
   return (
-    <section id="plans" className="relative py-24 md:py-32 bg-gradient-to-br from-[#5E4985] to-[#7B6CB1] overflow-hidden">
+    <section
+      id="plans"
+      data-navbar-theme="dark"
+      className="relative py-24 md:py-32 bg-gradient-to-br from-[#5E4985] to-[#7B6CB1] overflow-hidden"
+    >
       {/* Parallax background */}
       <ParallaxBackground variant="dark" />
 

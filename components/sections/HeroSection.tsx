@@ -42,7 +42,10 @@ export const HeroSection = () => {
   }
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-black-premium">
+    <section
+      data-navbar-theme="light"
+      className="relative min-h-screen w-full overflow-hidden bg-black-premium"
+    >
       {/* Parallax background */}
       <ParallaxBackground variant="light" />
 

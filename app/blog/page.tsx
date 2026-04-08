@@ -128,7 +128,7 @@ function BlogPageContent() {
     }, [categoryParam, searchParam, pageParam])
 
     return (
-        <main className="min-h-screen bg-gray-900">
+        <main data-navbar-theme="dark" className="min-h-screen bg-gray-900">
             {/* Hero with Featured Article */}
             <BlogHero article={featuredArticle} loading={initialLoading} />
 
@@ -179,7 +179,7 @@ export default function BlogPage() {
     return (
         <Suspense
             fallback={
-                <main className="min-h-screen bg-gray-900">
+                <main data-navbar-theme="dark" className="min-h-screen bg-gray-900">
                     <BlogHero article={null} loading={true} />
                 </main>
             }

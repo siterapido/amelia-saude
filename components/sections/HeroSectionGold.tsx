@@ -41,7 +41,10 @@ export const HeroSectionGold = () => {
   }
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gold-primary">
+    <section
+      data-navbar-theme="light"
+      className="relative min-h-screen w-full overflow-hidden bg-gold-primary"
+    >
       {/* Tech-inspired background texture */}
       <div className="absolute inset-0 z-0">
         {/* Circuit board grid pattern */}

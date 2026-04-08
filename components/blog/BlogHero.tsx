@@ -20,7 +20,10 @@ interface BlogHeroProps {
 export const BlogHero: React.FC<BlogHeroProps> = ({ article, loading = false }) => {
     if (loading || !article) {
         return (
-            <section className="relative min-h-[70vh] w-full overflow-hidden bg-gray-900 pt-24">
+            <section
+                data-navbar-theme="dark"
+                className="relative min-h-[70vh] w-full overflow-hidden bg-gray-900 pt-24"
+            >
                 <div className="absolute inset-0 top-24 bg-gray-800 animate-pulse" />
             </section>
         )
@@ -32,7 +35,10 @@ export const BlogHero: React.FC<BlogHeroProps> = ({ article, loading = false }) 
     }
 
     return (
-        <section className="relative min-h-[70vh] w-full overflow-hidden bg-gray-900 pt-24">
+        <section
+            data-navbar-theme="dark"
+            className="relative min-h-[70vh] w-full overflow-hidden bg-gray-900 pt-24"
+        >
             {/* Background Image */}
             <div className="absolute inset-0 top-24">
                 <Image

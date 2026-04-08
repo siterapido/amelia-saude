@@ -48,7 +48,7 @@ export const FAQSection = () => {
   ]
 
   return (
-    <section id="faq" className="relative py-24 md:py-32 bg-white">
+    <section id="faq" data-navbar-theme="light" className="relative py-24 md:py-32 bg-white">
       <Container>
         {/* Header */}
         <div className="mb-16 md:mb-20 text-center space-y-5">

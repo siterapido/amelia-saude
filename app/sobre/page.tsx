@@ -116,7 +116,10 @@ export default function SobrePage() {
   return (
     <>
       {/* Hero Section - Split Layout Premium */}
-      <section className="relative min-h-screen w-full overflow-hidden bg-black-premium">
+      <section
+        data-navbar-theme="light"
+        className="relative min-h-screen w-full overflow-hidden bg-black-premium"
+      >
         {/* Animated Gradient Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold-primary/15 via-transparent to-transparent" />
@@ -312,7 +315,11 @@ export default function SobrePage() {
       </section>
 
       {/* Timeline Section - Gold Background */}
-      <section id="historia-section" className="relative py-24 md:py-32 section-gold-soft pattern-shield grain-gold overflow-hidden">
+      <section
+        id="historia-section"
+        data-navbar-theme="light"
+        className="relative py-24 md:py-32 section-gold-soft pattern-shield grain-gold overflow-hidden"
+      >
         {/* Corner glow effects */}
         <div className="glow-corner-dark" />
 
@@ -379,7 +386,10 @@ export default function SobrePage() {
       </section>
 
       {/* Mission, Vision, Values - Premium Cards */}
-      <section className="relative py-24 md:py-32 bg-black-premium overflow-hidden">
+      <section
+        data-navbar-theme="light"
+        className="relative py-24 md:py-32 bg-black-premium overflow-hidden"
+      >
         {/* Ambient glow */}
         <div className="ambient-glow" />
 
@@ -444,7 +454,10 @@ export default function SobrePage() {
       </section>
 
       {/* Differentials - Glass Cards */}
-      <section className="relative py-24 md:py-32 glass-section-dark overflow-hidden">
+      <section
+        data-navbar-theme="dark"
+        className="relative py-24 md:py-32 glass-section-dark overflow-hidden"
+      >
         <Container>
           <motion.div
             className="text-center mb-16 relative z-10"
@@ -497,7 +510,10 @@ export default function SobrePage() {
       </section>
 
       {/* Impact Numbers - Premium */}
-      <section className="relative py-24 md:py-32 bg-black-premium overflow-hidden">
+      <section
+        data-navbar-theme="light"
+        className="relative py-24 md:py-32 bg-black-premium overflow-hidden"
+      >
         {/* Mesh gradient background */}
         <div className="absolute inset-0 animate-mesh-float" />
 
@@ -549,7 +565,10 @@ export default function SobrePage() {
       </section>
 
       {/* Final CTA - Gold Section */}
-      <section className="relative py-24 md:py-32 section-gold-soft pattern-medical-cross grain-gold overflow-hidden">
+      <section
+        data-navbar-theme="light"
+        className="relative py-24 md:py-32 section-gold-soft pattern-medical-cross grain-gold overflow-hidden"
+      >
         <div className="glow-corner-dark" />
 
         <Container>
