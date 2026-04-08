@@ -45,8 +45,8 @@ export const WhatsAppButton = ({
         damping: 20,
         delay: 1,
       }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.97 }}
       aria-label="Contato via WhatsApp"
       title="Fale conosco pelo WhatsApp"
     >
@@ -83,12 +83,12 @@ export const WhatsAppButton = ({
 
       {/* Main button */}
       <span
-        className="relative flex items-center justify-center w-16 h-16 rounded-full bg-[#25D366] text-white shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+        className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-md group-hover:shadow-lg transition-shadow duration-300"
         style={{
-          boxShadow: '0 4px 20px rgba(37, 211, 102, 0.4)',
+          boxShadow: '0 3px 16px rgba(37, 211, 102, 0.35)',
         }}
       >
-        <MessageCircle size={28} strokeWidth={2} />
+        <MessageCircle size={22} strokeWidth={2} />
       </span>
     </motion.button>
   )

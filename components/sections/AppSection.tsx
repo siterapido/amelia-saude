@@ -200,7 +200,7 @@ export const AppSection = () => {
               <Button
                 variant="primary"
                 size="lg"
-                icon={<Clock size={20} />}
+                icon={<Clock size={16} strokeWidth={2} />}
                 className="opacity-70 cursor-not-allowed"
                 disabled
               >

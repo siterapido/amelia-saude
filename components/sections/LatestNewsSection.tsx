@@ -94,9 +94,9 @@ export const LatestNewsSection = async () => {
                     </div>
 
                     <Link href="/blog">
-                        <Button variant="ghost" className="group text-white/80 hover:text-white p-0 h-auto font-bold text-lg">
+                        <Button variant="ghost" className="group text-white/80 hover:text-white p-0 h-auto font-medium text-sm normal-case tracking-normal">
                             Ver todos os artigos
-                            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                            <ArrowRight className="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1" />
                         </Button>
                     </Link>
                 </div>

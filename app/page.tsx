@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { HeroSection } from '@/components/sections/HeroSection'
+import { HeroTabletSection } from '@/components/sections/HeroTabletSection'
 import { ClientSection } from '@/components/sections/ClientSection'
 import { PlanSection } from '@/components/sections/PlanSection'
 import { SocialProofSection } from '@/components/sections/SocialProofSection'
@@ -34,6 +35,9 @@ export default function Home() {
     <>
       {/* Hero */}
       <HeroSection />
+
+      {/* Mockup tablet */}
+      <HeroTabletSection />
 
       {/* Sobre Nós */}
       <ClientSection />

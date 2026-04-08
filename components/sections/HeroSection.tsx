@@ -5,14 +5,12 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
-import { TabletVisualization } from '@/components/ui/TabletVisualization'
 import { MagneticButton } from '@/components/animations'
 import { ParallaxBackground } from '@/components/animations/ParallaxBackground'
 import { useReducedMotion } from '@/components/hooks'
 
 /**
- * Hero Section Component
- * Two-column layout with text left, tablet mockup right on desktop
+ * Hero Section Component — conteúdo centralizado; tablet em HeroTabletSection.
  */
 export const HeroSection = () => {
   const prefersReducedMotion = useReducedMotion()
@@ -50,16 +48,14 @@ export const HeroSection = () => {
       <ParallaxBackground variant="light" />
 
       {/* Content */}
-      <Container className="relative z-10 flex items-center justify-center min-h-screen pt-28 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
-          {/* Text column */}
-          <motion.div
-            className="text-center lg:text-left"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            style={{ y: prefersReducedMotion ? 0 : contentY }}
-          >
+      <Container className="relative z-10 flex flex-col items-center justify-center min-h-screen pt-28 pb-20">
+        <motion.div
+          className="text-center w-full max-w-3xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          style={{ y: prefersReducedMotion ? 0 : contentY }}
+        >
             {/* Badge */}
             <motion.div variants={itemVariants} className="mb-8">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-primary/8 border border-gold-primary/15 text-gold-primary text-sm font-medium">
@@ -81,14 +77,14 @@ export const HeroSection = () => {
             </motion.div>
 
             {/* Subheadline */}
-            <motion.div variants={itemVariants} className="mb-12 max-w-[600px] mx-auto lg:mx-0">
+            <motion.div variants={itemVariants} className="mb-12 max-w-[600px] mx-auto">
               <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-body">
                 Conectamos você aos melhores médicos, clínicas, centros médicos e laboratórios, sem burocracias.
               </p>
             </motion.div>
 
             {/* CTAs */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
               <MagneticButton strength={0.1}>
                 <Button
                   variant="primary"
@@ -121,7 +117,7 @@ export const HeroSection = () => {
             {/* Trust indicator */}
             <motion.div
               variants={itemVariants}
-              className="mt-14 flex items-center justify-center lg:justify-start gap-4"
+              className="mt-14 flex items-center justify-center gap-4"
             >
               <div className="flex -space-x-2">
                 {[
@@ -142,18 +138,7 @@ export const HeroSection = () => {
                 <span className="text-[#1A1A2E] font-semibold">+2.500</span> famílias protegidas
               </div>
             </motion.div>
-          </motion.div>
-
-          {/* Tablet mockup column */}
-          <motion.div
-            className="hidden lg:block"
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <TabletVisualization variant="dashboard" />
-          </motion.div>
-        </div>
+        </motion.div>
       </Container>
 
       {/* Scroll Indicator */}
@@ -164,7 +149,7 @@ export const HeroSection = () => {
         transition={{ duration: 2, repeat: Infinity, repeatType: 'loop' }}
       >
         <button
-          onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => document.getElementById('app-preview')?.scrollIntoView({ behavior: 'smooth' })}
           className="p-3 rounded-full border border-gray-200 text-gray-400 hover:text-gold-primary hover:border-gold-primary/30 transition-colors duration-300"
           aria-label="Rolar para baixo"
         >

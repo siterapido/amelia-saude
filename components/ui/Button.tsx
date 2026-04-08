@@ -7,6 +7,32 @@ import { cn } from '@/lib/utils/cn'
 type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'ghost-gold' | 'black'
 type ButtonSize = 'sm' | 'base' | 'lg'
 
+function ButtonLoadingSpinner({ variant }: { variant: ButtonVariant }) {
+  return (
+    <motion.svg
+      className="w-4 h-4"
+      viewBox="0 0 24 24"
+      fill="none"
+      animate={{ rotate: 360 }}
+      transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+    >
+      <circle
+        className={variant === 'primary' ? 'stroke-white/30' : 'stroke-current opacity-30'}
+        cx="12"
+        cy="12"
+        r="10"
+        strokeWidth="3"
+      />
+      <path
+        className={variant === 'primary' ? 'stroke-white' : 'stroke-current'}
+        d="M12 2a10 10 0 0 1 10 10"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+    </motion.svg>
+  )
+}
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Visual style variant */
   variant?: ButtonVariant
@@ -52,8 +78,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const baseClasses = cn(
-      'relative font-semibold uppercase tracking-wide',
-      'inline-flex items-center justify-center gap-2.5',
+      'relative font-medium uppercase tracking-wide',
+      'inline-flex items-center justify-center gap-1.5',
       'transition-all duration-300 ease-premium',
       'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-signature focus-visible:ring-offset-2 focus-visible:ring-offset-black-premium',
       fullWidth && 'w-full'
@@ -61,14 +87,14 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantClasses = {
       primary: cn(
-        'bg-gold-primary text-white font-bold',
+        'bg-gold-primary text-white font-semibold',
         'hover:bg-gold-signature shadow-gold-sm hover:shadow-gold-glow',
-        'hover:-translate-y-0.5 hover:scale-[1.015]',
-        'active:translate-y-0 active:scale-[0.98]',
+        'hover:-translate-y-px',
+        'active:translate-y-0 active:scale-[0.99]',
         'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100 disabled:hover:shadow-gold-sm'
       ),
       secondary: cn(
-        'border-2 border-gold-primary/30 text-gold-primary bg-transparent',
+        'border border-gold-primary/35 text-gold-primary bg-transparent',
         'hover:border-gold-primary hover:text-gold-signature hover:bg-gold-primary/5',
         'hover:shadow-[0_0_25px_rgba(123,107,178,0.18)]',
         'active:bg-gold-primary/10',
@@ -90,42 +116,18 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       ),
       black: cn(
         'bg-black text-white border border-white/10',
-        'shadow-[0_10px_30px_rgba(0,0,0,0.5)]',
+        'shadow-[0_8px_24px_rgba(0,0,0,0.45)]',
         'hover:bg-zinc-900 hover:border-gold-primary/30 hover:text-gold-primary',
-        'hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(0,0,0,0.6)]',
-        'active:scale-[0.98] transition-all duration-300'
+        'hover:-translate-y-px hover:shadow-[0_12px_32px_rgba(0,0,0,0.55)]',
+        'active:scale-[0.99] transition-all duration-300'
       ),
     }
 
     const sizeClasses = {
-      sm: 'px-5 py-2.5 text-sm rounded-[10px] min-h-[40px]',
-      base: 'px-8 py-4 text-btn rounded-premium min-h-[52px]',
-      lg: 'px-10 py-5 text-base rounded-premium min-h-[60px]',
+      sm: 'px-3.5 py-1.5 text-xs rounded-lg min-h-[32px]',
+      base: 'px-5 py-2.5 text-sm rounded-card-sm min-h-[40px]',
+      lg: 'px-6 py-3 text-sm rounded-card-sm min-h-[44px]',
     }
-
-    const LoadingSpinner = () => (
-      <motion.svg
-        className="w-5 h-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-      >
-        <circle
-          className={variant === 'primary' ? 'stroke-white/30' : 'stroke-current opacity-30'}
-          cx="12"
-          cy="12"
-          r="10"
-          strokeWidth="3"
-        />
-        <path
-          className={variant === 'primary' ? 'stroke-white' : 'stroke-current'}
-          d="M12 2a10 10 0 0 1 10 10"
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-      </motion.svg>
-    )
 
     return (
       <button
@@ -137,7 +139,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {isLoading ? (
           <>
-            <LoadingSpinner />
+            <ButtonLoadingSpinner variant={variant} />
             <span className="opacity-70">{children}</span>
           </>
         ) : (

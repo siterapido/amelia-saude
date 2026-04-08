@@ -138,7 +138,7 @@ export const PlanSection = () => {
 
                   <MagneticButton strength={0.1} className="w-full">
                     <button
-                      className={`w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                      className={`w-full py-2.5 rounded-xl font-medium text-xs uppercase tracking-wide transition-all duration-300 ${
                         plan.highlighted
                           ? 'bg-gold-primary text-white hover:bg-gold-signature shadow-gold-sm'
                           : 'bg-gold-primary/8 text-gold-primary hover:bg-gold-primary/15 border border-gold-primary/20'
