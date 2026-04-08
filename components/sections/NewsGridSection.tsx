@@ -60,8 +60,8 @@ export const NewsGridSection = ({
                 'px-4 py-2 rounded-full text-sm font-medium',
                 'transition-all duration-300',
                 currentCategory === category.slug
-                  ? 'bg-gold-signature text-black-premium shadow-gold-sm'
-                  : 'bg-white/5 border border-white/10 text-white/80 hover:bg-white/10 hover:border-white/20'
+                  ? 'bg-gold-signature text-white shadow-gold-sm'
+                  : 'bg-gray-800 border border-gray-700 text-gray-300 hover:bg-gray-700 hover:border-gray-600 hover:text-white'
               )}
             >
               {category.name}
@@ -90,10 +90,10 @@ export const NewsGridSection = ({
           animate={{ opacity: 1 }}
           className="text-center py-16"
         >
-          <p className="text-platinum/60 text-lg mb-2">
+          <p className="text-gray-300 text-lg mb-2">
             Nenhuma notícia encontrada
           </p>
-          <p className="text-platinum/40 text-sm">
+          <p className="text-gray-500 text-sm">
             Tente ajustar os filtros ou buscar por outros termos
           </p>
         </motion.div>

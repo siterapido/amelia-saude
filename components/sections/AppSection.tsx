@@ -9,7 +9,6 @@ import {
   Clock,
   Calendar,
   Bell,
-  Download,
   Star,
   Users,
   CheckCircle2
@@ -17,10 +16,12 @@ import {
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
 import { PhoneVisualization } from '@/components/ui/PhoneVisualization'
+import { TabletVisualization } from '@/components/ui/TabletVisualization'
+import { ParallaxLayer } from '@/components/animations/ParallaxLayer'
 
 /**
  * Mobile App Section
- * Showcase app features with premium 3D visualization and interactive elements
+ * Phone + Tablet layered composition with parallax depth
  */
 export const AppSection = () => {
   const features = [
@@ -66,15 +67,41 @@ export const AppSection = () => {
     <section className="relative py-24 md:py-32 lg:py-48 bg-white overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left - Phone Visualization */}
+          {/* Left - Device Composition */}
           <motion.div
-            className="relative order-2 lg:order-1"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="relative order-2 lg:order-1 min-h-[400px] lg:min-h-[500px]"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-100px' }}
           >
-            <PhoneVisualization />
+            {/* Tablet behind - desktop only */}
+            <div className="hidden lg:block absolute -left-8 top-8 w-[380px] z-0 opacity-80">
+              <ParallaxLayer speed={0.2} direction="up">
+                <motion.div
+                  initial={{ opacity: 0, x: -40, scale: 0.9 }}
+                  whileInView={{ opacity: 0.8, x: 0, scale: 0.85 }}
+                  transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+                  viewport={{ once: true }}
+                >
+                  <TabletVisualization variant="dashboard" />
+                </motion.div>
+              </ParallaxLayer>
+            </div>
+
+            {/* Phone in front */}
+            <div className="relative z-10 lg:ml-24">
+              <ParallaxLayer speed={0.4} direction="up">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  viewport={{ once: true }}
+                >
+                  <PhoneVisualization />
+                </motion.div>
+              </ParallaxLayer>
+            </div>
           </motion.div>
 
           {/* Right - Content */}
@@ -184,9 +211,19 @@ export const AppSection = () => {
         </div>
       </Container>
 
-      {/* Decorative background elements */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-gold-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gold-signature/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle background particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <motion.div
+          className="absolute top-1/4 left-0 w-96 h-96 bg-gold-primary/5 rounded-full blur-3xl"
+          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-0 w-96 h-96 bg-gold-signature/5 rounded-full blur-3xl"
+          animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        />
+      </div>
     </section>
   )
 }

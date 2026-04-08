@@ -124,12 +124,12 @@ function NewsPageContent() {
   }, [categoryParam, searchParam, pageParam])
 
   return (
-    <main className="min-h-screen bg-black-premium">
+    <main className="min-h-screen bg-gray-900">
       {/* Hero with Featured Article */}
       <NewsHeroSection article={featuredArticle} loading={initialLoading} />
 
       {/* Main Content */}
-      <section className="py-12 md:py-16 bg-black-deep">
+      <section className="py-12 md:py-16 bg-gray-900">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* News Grid (2/3) */}
@@ -167,7 +167,7 @@ export default function NewsPage() {
   return (
     <Suspense
       fallback={
-        <main className="min-h-screen bg-black-premium">
+        <main className="min-h-screen bg-gray-900">
           <NewsHeroSection article={null} loading={true} />
         </main>
       }

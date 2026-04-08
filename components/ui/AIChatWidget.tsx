@@ -126,7 +126,7 @@ export const AIChatWidget = () => {
             >
                 {/* Pulse ring effect */}
                 <motion.span
-                    className="absolute inset-0 rounded-full bg-[#5E4985]"
+                    className="absolute inset-0 rounded-full bg-[#A78BFA]/70 shadow-[0_0_24px_rgba(167,139,250,0.32)]"
                     animate={{
                         scale: [1, 1.4, 1.4],
                         opacity: [0.4, 0, 0],
@@ -141,7 +141,7 @@ export const AIChatWidget = () => {
 
                 {/* Secondary pulse */}
                 <motion.span
-                    className="absolute inset-0 rounded-full bg-[#5E4985]"
+                    className="absolute inset-0 rounded-full bg-[#C4B5FD]/60 shadow-[0_0_18px_rgba(167,139,250,0.24)]"
                     animate={{
                         scale: [1, 1.2, 1.2],
                         opacity: [0.3, 0, 0],
@@ -157,9 +157,9 @@ export const AIChatWidget = () => {
 
                 {/* Main button */}
                 <span
-                    className="relative flex items-center justify-center w-16 h-16 rounded-full bg-[#5E4985] text-white shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+                    className="relative flex items-center justify-center w-16 h-16 rounded-full bg-[#8B6FD1] text-white shadow-[0_8px_26px_rgba(167,139,250,0.28)] group-hover:shadow-[0_12px_30px_rgba(167,139,250,0.38)] transition-shadow duration-300"
                     style={{
-                        boxShadow: '0 4px 20px rgba(246, 194, 0, 0.4)',
+                        boxShadow: '0 8px 26px rgba(167, 139, 250, 0.28)',
                     }}
                 >
                     <AnimatePresence mode="wait">
@@ -170,6 +170,7 @@ export const AIChatWidget = () => {
                                 animate={{ rotate: 0, opacity: 1 }}
                                 exit={{ rotate: 90, opacity: 0 }}
                                 transition={{ duration: 0.2 }}
+                                style={{ filter: 'drop-shadow(0 0 8px rgba(196, 181, 253, 0.45))' }}
                             >
                                 <X size={28} strokeWidth={2} />
                             </motion.span>
@@ -180,6 +181,7 @@ export const AIChatWidget = () => {
                                 animate={{ rotate: 0, opacity: 1 }}
                                 exit={{ rotate: -90, opacity: 0 }}
                                 transition={{ duration: 0.2 }}
+                                style={{ filter: 'drop-shadow(0 0 8px rgba(196, 181, 253, 0.45))' }}
                             >
                                 <Sparkles size={28} strokeWidth={2} />
                             </motion.span>

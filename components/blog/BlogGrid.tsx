@@ -23,15 +23,15 @@ export const BlogGrid: React.FC<BlogGridProps> = ({ articles, loading = false, c
                 {[...Array(6)].map((_, i) => (
                     <div
                         key={i}
-                        className="rounded-card bg-black-charcoal border border-gray-border overflow-hidden animate-pulse"
+                        className="rounded-card bg-gray-800 border border-gray-700 overflow-hidden animate-pulse"
                     >
-                        <div className="h-56 bg-gray-dark" />
+                        <div className="h-56 bg-gray-700" />
                         <div className="p-6 space-y-4">
-                            <div className="h-4 bg-gray-dark rounded w-3/4" />
-                            <div className="h-4 bg-gray-dark rounded w-1/2" />
+                            <div className="h-4 bg-gray-700 rounded w-3/4" />
+                            <div className="h-4 bg-gray-700 rounded w-1/2" />
                             <div className="space-y-2">
-                                <div className="h-3 bg-gray-dark rounded" />
-                                <div className="h-3 bg-gray-dark rounded w-5/6" />
+                                <div className="h-3 bg-gray-700 rounded" />
+                                <div className="h-3 bg-gray-700 rounded w-5/6" />
                             </div>
                         </div>
                     </div>
@@ -43,8 +43,8 @@ export const BlogGrid: React.FC<BlogGridProps> = ({ articles, loading = false, c
     if (articles.length === 0) {
         return (
             <div className="text-center py-16">
-                <p className="text-platinum text-lg">Nenhum artigo encontrado.</p>
-                <p className="text-platinum-light text-sm mt-2">
+                <p className="text-gray-300 text-lg">Nenhum artigo encontrado.</p>
+                <p className="text-gray-500 text-sm mt-2">
                     Tente ajustar os filtros ou buscar por outro termo.
                 </p>
             </div>

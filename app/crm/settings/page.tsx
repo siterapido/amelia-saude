@@ -172,7 +172,7 @@ export default function CRMSettingsPage() {
                                 <button
                                     onClick={handleSaveName}
                                     disabled={nameSaving}
-                                    className="px-4 py-2.5 bg-gold-primary text-black font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 text-sm"
+                                    className="px-4 py-2.5 bg-gold-primary text-white font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 text-sm"
                                 >
                                     {nameSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Salvar'}
                                 </button>
@@ -325,7 +325,7 @@ export default function CRMSettingsPage() {
                                 <button
                                     onClick={handleChangePassword}
                                     disabled={pwSaving}
-                                    className="w-full flex items-center justify-center gap-2 py-2.5 bg-gold-primary text-black font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 text-sm"
+                                    className="w-full flex items-center justify-center gap-2 py-2.5 bg-gold-primary text-white font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 text-sm"
                                 >
                                     {pwSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Lock className="w-4 h-4" />}
                                     {pwSaving ? 'Salvando...' : 'Alterar senha'}

@@ -35,9 +35,9 @@ export const NewsCard = ({ article, variant = 'default', className, priority = f
         <motion.article
           className={cn(
             'relative overflow-hidden rounded-card',
-            'bg-black-deep border border-gray-border',
+            'bg-gray-800 border border-gray-700',
             'transition-all duration-500',
-            'hover:border-gold-signature/50 hover:shadow-[0_0_40px_rgba(245,166,35,0.1)]'
+            'hover:border-gold-signature/50 hover:shadow-[0_0_40px_rgba(94,73,133,0.2)]'
           )}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export const NewsCard = ({ article, variant = 'default', className, priority = f
                 priority={priority}
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black-premium/60 via-transparent to-transparent lg:bg-gradient-to-r" />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent lg:bg-gradient-to-r" />
             </div>
 
             {/* Content */}
@@ -69,11 +69,11 @@ export const NewsCard = ({ article, variant = 'default', className, priority = f
                 {article.title}
               </h2>
 
-              <p className="text-platinum/80 text-body mb-6 line-clamp-3">
+              <p className="text-gray-400 text-body mb-6 line-clamp-3">
                 {article.excerpt}
               </p>
 
-              <div className="flex items-center gap-4 text-sm text-platinum/60">
+              <div className="flex items-center gap-4 text-sm text-gray-500">
                 <span className="flex items-center gap-1.5">
                   <Calendar className="w-4 h-4" />
                   {formattedDate}
@@ -85,7 +85,7 @@ export const NewsCard = ({ article, variant = 'default', className, priority = f
               </div>
 
               {article.author && (
-                <div className="flex items-center gap-3 mt-6 pt-6 border-t border-white/10">
+                <div className="flex items-center gap-3 mt-6 pt-6 border-t border-gray-700">
                   {article.author.avatar && (
                     <Image
                       src={article.author.avatar}
@@ -98,7 +98,7 @@ export const NewsCard = ({ article, variant = 'default', className, priority = f
                   <div>
                     <p className="text-white font-medium text-sm">{article.author.name}</p>
                     {article.author.role && (
-                      <p className="text-platinum/60 text-xs">{article.author.role}</p>
+                      <p className="text-gray-400 text-xs">{article.author.role}</p>
                     )}
                   </div>
                 </div>
@@ -126,7 +126,7 @@ export const NewsCard = ({ article, variant = 'default', className, priority = f
             <h3 className="font-semibold text-white text-sm line-clamp-2 mb-2 group-hover:text-gold-light transition-colors">
               {article.title}
             </h3>
-            <div className="flex items-center gap-2 text-xs text-platinum/60">
+            <div className="flex items-center gap-2 text-xs text-gray-500">
               <span>{formattedDate}</span>
               <span>·</span>
               <span>{article.readingTime} min</span>
@@ -143,10 +143,10 @@ export const NewsCard = ({ article, variant = 'default', className, priority = f
       <motion.article
         className={cn(
           'h-full flex flex-col overflow-hidden rounded-card',
-          'bg-black-deep border border-gray-border',
+          'bg-gray-800 border border-gray-700',
           'transition-all duration-400',
           'hover:-translate-y-2 hover:border-gold-primary/50',
-          'hover:shadow-[0_12px_48px_rgba(0,0,0,0.5),0_0_30px_rgba(245,166,35,0.1)]'
+          'hover:shadow-[0_12px_48px_rgba(0,0,0,0.5),0_0_30px_rgba(94,73,133,0.2)]'
         )}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -172,11 +172,11 @@ export const NewsCard = ({ article, variant = 'default', className, priority = f
             {article.title}
           </h3>
 
-          <p className="text-platinum/70 text-sm mb-4 line-clamp-2 flex-1">
+          <p className="text-gray-400 text-sm mb-4 line-clamp-2 flex-1">
             {article.excerpt}
           </p>
 
-          <div className="flex items-center justify-between text-xs text-platinum/60 pt-4 border-t border-white/5">
+          <div className="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-gray-700">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5" />
               {formattedDate}
@@ -198,18 +198,18 @@ export const NewsCard = ({ article, variant = 'default', className, priority = f
 export const NewsCardSkeleton = ({ variant = 'default' }: { variant?: NewsCardVariant }) => {
   if (variant === 'featured') {
     return (
-      <div className="rounded-card bg-black-deep border border-gray-border overflow-hidden animate-pulse">
+      <div className="rounded-card bg-gray-800 border border-gray-700 overflow-hidden animate-pulse">
         <div className="grid lg:grid-cols-2">
-          <div className="aspect-[16/10] lg:aspect-auto lg:min-h-[400px] bg-black-charcoal" />
+          <div className="aspect-[16/10] lg:aspect-auto lg:min-h-[400px] bg-gray-700" />
           <div className="p-8 lg:p-10">
             <div className="flex gap-3 mb-4">
-              <div className="h-6 w-20 rounded-full bg-black-charcoal" />
-              <div className="h-6 w-16 rounded-full bg-black-charcoal" />
+              <div className="h-6 w-20 rounded-full bg-gray-700" />
+              <div className="h-6 w-16 rounded-full bg-gray-700" />
             </div>
-            <div className="h-8 w-3/4 rounded bg-black-charcoal mb-3" />
-            <div className="h-8 w-1/2 rounded bg-black-charcoal mb-4" />
-            <div className="h-4 w-full rounded bg-black-charcoal mb-2" />
-            <div className="h-4 w-2/3 rounded bg-black-charcoal" />
+            <div className="h-8 w-3/4 rounded bg-gray-700 mb-3" />
+            <div className="h-8 w-1/2 rounded bg-gray-700 mb-4" />
+            <div className="h-4 w-full rounded bg-gray-700 mb-2" />
+            <div className="h-4 w-2/3 rounded bg-gray-700" />
           </div>
         </div>
       </div>
@@ -219,27 +219,27 @@ export const NewsCardSkeleton = ({ variant = 'default' }: { variant?: NewsCardVa
   if (variant === 'horizontal') {
     return (
       <div className="flex gap-4 animate-pulse">
-        <div className="w-24 h-24 rounded-premium bg-black-charcoal flex-shrink-0" />
+        <div className="w-24 h-24 rounded-premium bg-gray-700 flex-shrink-0" />
         <div className="flex-1">
-          <div className="h-4 w-full rounded bg-black-charcoal mb-2" />
-          <div className="h-4 w-2/3 rounded bg-black-charcoal mb-3" />
-          <div className="h-3 w-1/3 rounded bg-black-charcoal" />
+          <div className="h-4 w-full rounded bg-gray-700 mb-2" />
+          <div className="h-4 w-2/3 rounded bg-gray-700 mb-3" />
+          <div className="h-3 w-1/3 rounded bg-gray-700" />
         </div>
       </div>
     )
   }
 
   return (
-    <div className="rounded-card bg-black-deep border border-gray-border overflow-hidden animate-pulse">
-      <div className="aspect-video bg-black-charcoal" />
+    <div className="rounded-card bg-gray-800 border border-gray-700 overflow-hidden animate-pulse">
+      <div className="aspect-video bg-gray-700" />
       <div className="p-6">
-        <div className="h-5 w-3/4 rounded bg-black-charcoal mb-2" />
-        <div className="h-5 w-1/2 rounded bg-black-charcoal mb-4" />
-        <div className="h-4 w-full rounded bg-black-charcoal mb-2" />
-        <div className="h-4 w-2/3 rounded bg-black-charcoal mb-4" />
-        <div className="flex justify-between pt-4 border-t border-white/5">
-          <div className="h-3 w-20 rounded bg-black-charcoal" />
-          <div className="h-3 w-16 rounded bg-black-charcoal" />
+        <div className="h-5 w-3/4 rounded bg-gray-700 mb-2" />
+        <div className="h-5 w-1/2 rounded bg-gray-700 mb-4" />
+        <div className="h-4 w-full rounded bg-gray-700 mb-2" />
+        <div className="h-4 w-2/3 rounded bg-gray-700 mb-4" />
+        <div className="flex justify-between pt-4 border-t border-gray-600">
+          <div className="h-3 w-20 rounded bg-gray-700" />
+          <div className="h-3 w-16 rounded bg-gray-700" />
         </div>
       </div>
     </div>

@@ -521,7 +521,7 @@ export default function ContactDetailPage() {
                                         <button
                                             onClick={addActivity}
                                             disabled={savingActivity || !activityForm.title.trim()}
-                                            className="px-4 py-2 bg-gold-primary text-black font-semibold rounded-xl text-sm hover:opacity-90 disabled:opacity-50"
+                                            className="px-4 py-2 bg-gold-primary text-white font-semibold rounded-xl text-sm hover:opacity-90 disabled:opacity-50"
                                         >
                                             {savingActivity ? 'Salvando...' : 'Salvar'}
                                         </button>
@@ -620,7 +620,7 @@ export default function ContactDetailPage() {
                                         <button
                                             onClick={addFollowup}
                                             disabled={savingFollowup || !followupForm.message.trim() || !followupForm.scheduledAt}
-                                            className="px-4 py-2 bg-gold-primary text-black font-semibold rounded-xl text-sm hover:opacity-90 disabled:opacity-50"
+                                            className="px-4 py-2 bg-gold-primary text-white font-semibold rounded-xl text-sm hover:opacity-90 disabled:opacity-50"
                                         >
                                             {savingFollowup ? 'Salvando...' : 'Agendar'}
                                         </button>

@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import headerLogo from '@/Logo/logo-amelia-site.png'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { cn } from '@/lib/utils/cn'
@@ -67,15 +69,21 @@ export const Navbar = () => {
       >
         <Container>
           <nav className="flex items-center justify-between h-20 md:h-24">
-            {/* Logo - Text based "amélia" */}
+            {/* Brand logo */}
             <Link href="/" className="flex items-center group">
-              <motion.span
+              <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
-                className="font-display text-3xl md:text-4xl tracking-tight text-gold-primary"
               >
-                amélia
-              </motion.span>
+                <Image
+                  src={headerLogo}
+                  alt="Amélia Saúde"
+                  width={240}
+                  height={76}
+                  priority
+                  className="h-auto w-[150px] md:w-[190px]"
+                />
+              </motion.div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -86,7 +94,7 @@ export const Navbar = () => {
                     key={item.href}
                     variant="primary"
                     size="sm"
-                    className="!bg-gold-primary !bg-none !text-white hover:!bg-gold-signature !shadow-none hover:!shadow-gold-sm !rounded-xl !font-semibold !text-sm !tracking-wide"
+                    className="!bg-gold-primary !text-white hover:!bg-gold-signature !shadow-none hover:!shadow-gold-sm !rounded-xl !font-semibold !text-sm !tracking-wide"
                     onClick={() => {
                       if (item.href.startsWith('/#')) {
                         const element = document.querySelector(item.href.substring(1))
@@ -118,7 +126,10 @@ export const Navbar = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden relative z-50 p-2"
+              className={cn(
+                "lg:hidden relative z-50 p-2 transition-opacity duration-200",
+                isMobileMenuOpen && "opacity-0 pointer-events-none"
+              )}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <Menu className={cn("w-6 h-6", isMobileMenuOpen ? "text-white" : "text-gray-800")} />
@@ -153,7 +164,7 @@ export const Navbar = () => {
                 >
                   <Link
                     href={item.href}
-                    className="text-2xl font-body font-light text-white/80 hover:text-white transition-colors"
+                    className="text-2xl font-body font-light text-white hover:text-white transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -162,7 +173,7 @@ export const Navbar = () => {
               ))}
             </motion.nav>
             <button
-              className="absolute top-7 right-6 text-white/80 hover:text-white transition-colors"
+              className="absolute top-7 right-6 text-white hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <X size={28} />

@@ -2,20 +2,20 @@ import type { Config } from 'tailwindcss'
 
 const colors = {
   // Premium Purple - Amélia Saúde brand
-  'black-premium': '#F8F6FB',      // Light background
-  'black-deep': '#F3F0F7',
-  'black-charcoal': '#EDE9F3',
-  'black-elevated': '#E8E3EF',
-  'black-warm': '#F5F2F8',
-  'black-gradient-end': '#F0ECF5',
+  'black-premium': '#F5F6F8',      // Light neutral background
+  'black-deep': '#EEF1F4',
+  'black-charcoal': '#E7EBF0',
+  'black-elevated': '#E1E6EC',
+  'black-warm': '#F2F4F7',
+  'black-gradient-end': '#ECEFF3',
 
   // Purple brand colors
-  'gold-primary': '#5E4985',       // Main purple
-  'gold-signature': '#7B6CB1',     // Secondary purple
-  'gold-light': '#A899CC',         // Light purple
-  'gold-soft': '#4A3A6B',          // Deep purple
-  'gold-dark': '#3D2F5C',          // Darkest purple
-  'gold-vibrant': '#5E4985',       // Brand purple
+  'gold-primary': '#7B6BB2',       // Main purple (requested)
+  'gold-signature': '#6A5BA0',     // Slightly deeper hover/contrast
+  'gold-light': '#A79BD0',         // Light purple
+  'gold-soft': '#5F528E',          // Deep purple
+  'gold-dark': '#4A3F72',          // Darkest purple
+  'gold-vibrant': '#7B6BB2',       // Brand purple
 
   // Neutrals
   'platinum': '#6B6B6B',

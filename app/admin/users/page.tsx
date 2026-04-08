@@ -147,7 +147,7 @@ export default function UsersPage() {
                         setEditingUser(null)
                         setShowModal(true)
                     }}
-                    className="flex items-center gap-2 px-5 py-2.5 bg-gold-primary text-black font-semibold rounded-xl hover:opacity-90 transition-opacity"
+                    className="flex items-center gap-2 px-5 py-2.5 bg-gold-primary text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
                 >
                     <Plus className="w-5 h-5" />
                     Novo Usuário
@@ -341,7 +341,7 @@ export default function UsersPage() {
                                     <button
                                         type="submit"
                                         disabled={saving}
-                                        className="flex-1 py-3 px-4 bg-gold-primary text-black font-semibold rounded-xl hover:opacity-90 disabled:opacity-50 transition-opacity flex items-center justify-center gap-2"
+                                        className="flex-1 py-3 px-4 bg-gold-primary text-white font-semibold rounded-xl hover:opacity-90 disabled:opacity-50 transition-opacity flex items-center justify-center gap-2"
                                     >
                                         {saving && <Loader2 className="w-5 h-5 animate-spin" />}
                                         {editingUser ? 'Salvar' : 'Criar'}

@@ -54,7 +54,7 @@ export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
 
     return (
       <div className={cn('relative', className)}>
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-platinum/60 pointer-events-none" />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
         <input
           ref={ref}
           type="text"
@@ -63,10 +63,10 @@ export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
           placeholder={placeholder}
           className={cn(
             'w-full pl-12 pr-10 py-3',
-            'bg-white/5 border border-white/10 rounded-premium',
-            'text-white placeholder:text-platinum/40',
+            'bg-gray-800 border border-gray-700 rounded-premium',
+            'text-white placeholder:text-gray-500',
             'transition-all duration-300',
-            'focus:outline-none focus:border-gold-signature/50 focus:bg-white/10',
+            'focus:outline-none focus:border-gold-signature/60 focus:bg-gray-700',
             'focus:ring-2 focus:ring-gold-signature/20'
           )}
           {...props}
@@ -78,7 +78,7 @@ export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
             className={cn(
               'absolute right-3 top-1/2 -translate-y-1/2',
               'p-1 rounded-full',
-              'text-platinum/60 hover:text-white hover:bg-white/10',
+              'text-gray-400 hover:text-white hover:bg-gray-700',
               'transition-all duration-200'
             )}
             aria-label="Limpar busca"

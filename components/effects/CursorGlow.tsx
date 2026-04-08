@@ -9,7 +9,7 @@ interface MousePosition {
 
 /**
  * CursorGlow Component
- * Creates a premium neon gold glow effect that follows the cursor
+ * Creates a premium purple glow effect that follows the cursor
  * Only active on desktop devices (pointer: fine)
  */
 export function CursorGlow() {
@@ -69,7 +69,7 @@ export function CursorGlow() {
         className="pointer-events-none fixed inset-0 z-[9999] transition-opacity duration-300"
         style={{
           opacity: isVisible && isHovering ? 1 : 0,
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(245, 166, 35, 0.02), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(167, 139, 250, 0.07), transparent 42%)`,
         }}
         aria-hidden="true"
       />
@@ -79,7 +79,7 @@ export function CursorGlow() {
         className="pointer-events-none fixed inset-0 z-[9999] transition-opacity duration-200"
         style={{
           opacity: isVisible && isHovering ? 1 : 0,
-          background: `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 184, 0, 0.03), transparent 40%)`,
+          background: `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(167, 139, 250, 0.09), transparent 42%)`,
         }}
         aria-hidden="true"
       />
@@ -89,7 +89,7 @@ export function CursorGlow() {
         className="pointer-events-none fixed inset-0 z-[9999] transition-opacity duration-150"
         style={{
           opacity: isVisible && isHovering ? 1 : 0,
-          background: `radial-gradient(150px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 184, 0, 0.04), transparent 40%)`,
+          background: `radial-gradient(150px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(167, 139, 250, 0.12), transparent 44%)`,
         }}
         aria-hidden="true"
       />
@@ -99,7 +99,7 @@ export function CursorGlow() {
         className="pointer-events-none fixed inset-0 z-[9999] transition-opacity duration-100"
         style={{
           opacity: isVisible && isHovering ? 1 : 0,
-          background: `radial-gradient(80px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(245, 166, 35, 0.05), transparent 50%)`,
+          background: `radial-gradient(80px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(196, 181, 253, 0.14), transparent 54%)`,
         }}
         aria-hidden="true"
       />

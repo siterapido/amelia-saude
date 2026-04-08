@@ -6,6 +6,7 @@ import { SocialProofSection } from '@/components/sections/SocialProofSection'
 import { FAQSection } from '@/components/sections/FAQSection'
 import { CTABanner } from '@/components/sections/CTABanner'
 import { LatestNewsSection } from '@/components/sections/LatestNewsSection'
+import { NetworkSection } from '@/components/sections/NetworkSection'
 import { Footer } from '@/components/layout/Footer'
 import { AIChatWidget } from '@/components/ui/AIChatWidget'
 
@@ -34,8 +35,11 @@ export default function Home() {
       {/* Hero */}
       <HeroSection />
 
-      {/* Sobre Nós + Rede Credenciada */}
+      {/* Sobre Nós */}
       <ClientSection />
+
+      {/* Rede Credenciada — Orbital */}
+      <NetworkSection />
 
       {/* CTA */}
       <CTABanner

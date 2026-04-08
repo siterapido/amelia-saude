@@ -6,6 +6,7 @@
 
 export { HeroSection } from './HeroSection'
 export { ClientSection } from './ClientSection'
+export { NetworkSection } from './NetworkSection'
 export { PlanSection } from './PlanSection'
 export { AppSection } from './AppSection'
 export { FAQSection } from './FAQSection'

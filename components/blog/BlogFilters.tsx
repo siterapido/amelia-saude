@@ -43,7 +43,7 @@ export const BlogFilters: React.FC<BlogFiltersProps> = ({
             {/* Search Bar */}
             <form onSubmit={handleSearchSubmit} className="relative">
                 <div className="relative">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-platinum" />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <input
                         type="text"
                         value={searchInput}
@@ -51,21 +51,21 @@ export const BlogFilters: React.FC<BlogFiltersProps> = ({
                         placeholder="Buscar artigos..."
                         className={cn(
                             'w-full pl-12 pr-12 py-4 rounded-premium',
-                            'bg-black-charcoal/60 backdrop-blur-sm',
-                            'border border-gray-border focus:border-gold-primary/50',
-                            'text-white placeholder:text-platinum',
+                            'bg-gray-800 backdrop-blur-sm',
+                            'border border-gray-700 focus:border-gold-primary/60',
+                            'text-white placeholder:text-gray-500',
                             'transition-all duration-300',
-                            'focus:outline-none focus:ring-2 focus:ring-gold-primary/20'
+                            'focus:outline-none focus:ring-2 focus:ring-gold-primary/25'
                         )}
                     />
                     {searchInput && (
                         <button
                             type="button"
                             onClick={handleClearSearch}
-                            className="absolute right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-gray-dark rounded-full transition-colors"
+                            className="absolute right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-gray-700 rounded-full transition-colors"
                             aria-label="Limpar busca"
                         >
-                            <X className="w-4 h-4 text-platinum" />
+                            <X className="w-4 h-4 text-gray-400" />
                         </button>
                     )}
                 </div>
@@ -96,8 +96,8 @@ export const BlogFilters: React.FC<BlogFiltersProps> = ({
                             'px-5 py-2.5 rounded-full font-medium text-sm uppercase tracking-wider',
                             'transition-all duration-300 ease-out-expo',
                             currentCategory === category.slug
-                                ? 'bg-gold-primary text-black-premium shadow-gold-md'
-                                : 'bg-black-charcoal/60 backdrop-blur-sm text-platinum border border-gray-border hover:border-gold-primary/40 hover:text-white'
+                                ? 'bg-gold-primary text-white shadow-gold-md'
+                                : 'bg-gray-800 text-gray-400 border border-gray-700 hover:border-gold-primary/50 hover:text-white'
                         )}
                     >
                         {category.name}

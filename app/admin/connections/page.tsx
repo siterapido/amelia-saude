@@ -116,7 +116,7 @@ export default function ConnectionsPage() {
                     <h1 className="text-3xl font-bold text-white">Conexões</h1>
                     <p className="text-platinum mt-1">Gerencie integrações e APIs externas</p>
                 </div>
-                <button className="flex items-center gap-2 px-5 py-2.5 bg-gold-primary text-black font-semibold rounded-xl hover:opacity-90 transition-opacity">
+                <button className="flex items-center gap-2 px-5 py-2.5 bg-gold-primary text-white font-semibold rounded-xl hover:opacity-90 transition-opacity">
                     <Plug className="w-5 h-5" />
                     Nova Conexão
                 </button>

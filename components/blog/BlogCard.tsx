@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils/cn'
 interface BlogCardProps {
     article: NewsArticle
     featured?: boolean
+    light?: boolean
     className?: string
 }
 
@@ -18,7 +19,7 @@ interface BlogCardProps {
  * Premium Blog Card Component
  * Features glass effect, hover animations, and premium styling
  */
-export const BlogCard: React.FC<BlogCardProps> = ({ article, featured = false, className }) => {
+export const BlogCard: React.FC<BlogCardProps> = ({ article, featured = false, light = false, className }) => {
     const formatDate = (dateString: string) => {
         const date = new Date(dateString)
         return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })
@@ -30,10 +31,11 @@ export const BlogCard: React.FC<BlogCardProps> = ({ article, featured = false, c
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className={cn(
-                'group relative overflow-hidden rounded-card bg-black-charcoal',
-                'border border-gray-border hover:border-gold-primary/30',
-                'transition-all duration-500 ease-out-expo',
-                'hover:shadow-premium-hover hover:-translate-y-1',
+                'group relative overflow-hidden rounded-card',
+                light
+                    ? 'bg-white border border-gray-200 hover:border-gold-primary/40 hover:shadow-card-soft-hover'
+                    : 'bg-gray-800 border border-gray-700 hover:border-gold-primary/50 hover:shadow-premium-hover',
+                'transition-all duration-500 ease-out-expo hover:-translate-y-1',
                 featured ? 'lg:col-span-2' : '',
                 className
             )}
@@ -53,7 +55,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ article, featured = false, c
                     />
 
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black-premium via-black-premium/60 to-transparent opacity-80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black-premium via-black-premium/60 to-transparent opacity-40" />
 
                     {/* Category Badge */}
                     <div className="absolute top-4 left-4 z-10">
@@ -76,8 +78,10 @@ export const BlogCard: React.FC<BlogCardProps> = ({ article, featured = false, c
                 <div className="p-6 md:p-8">
                     {/* Title */}
                     <h3 className={cn(
-                        'font-display font-bold text-white mb-3 line-clamp-2',
-                        'transition-colors duration-300 group-hover:text-gold-signature',
+                        'font-display font-bold mb-3 line-clamp-2 transition-colors duration-300',
+                        light
+                            ? 'text-gray-900 group-hover:text-gold-primary'
+                            : 'text-white group-hover:text-gold-signature',
                         featured ? 'text-2xl md:text-3xl' : 'text-xl'
                     )}>
                         {article.title}
@@ -85,14 +89,15 @@ export const BlogCard: React.FC<BlogCardProps> = ({ article, featured = false, c
 
                     {/* Excerpt */}
                     <p className={cn(
-                        'text-platinum mb-4 line-clamp-2',
+                        'mb-4 line-clamp-2',
+                        light ? 'text-gray-500' : 'text-gray-400',
                         featured ? 'text-base' : 'text-sm'
                     )}>
                         {article.excerpt}
                     </p>
 
                     {/* Metadata */}
-                    <div className="flex items-center gap-4 text-xs text-platinum-light">
+                    <div className={cn('flex items-center gap-4 text-xs', light ? 'text-gray-400' : 'text-gray-500')}>
                         <div className="flex items-center gap-1.5">
                             <Calendar className="w-4 h-4" />
                             <span>{formatDate(article.publishedAt)}</span>
@@ -105,7 +110,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ article, featured = false, c
 
                     {/* Author */}
                     {article.author && (
-                        <div className="flex items-center gap-3 mt-4 pt-4 border-t border-gray-border">
+                        <div className={cn('flex items-center gap-3 mt-4 pt-4 border-t', light ? 'border-gray-200' : 'border-gray-700')}>
                             {article.author.avatar && (
                                 <div className="relative w-8 h-8 rounded-full overflow-hidden">
                                     <Image
@@ -117,16 +122,16 @@ export const BlogCard: React.FC<BlogCardProps> = ({ article, featured = false, c
                                 </div>
                             )}
                             <div>
-                                <p className="text-sm font-medium text-white">{article.author.name}</p>
+                                <p className={cn('text-sm font-medium', light ? 'text-gray-900' : 'text-white')}>{article.author.name}</p>
                                 {article.author.role && (
-                                    <p className="text-xs text-platinum">{article.author.role}</p>
+                                    <p className={cn('text-xs', light ? 'text-gray-500' : 'text-gray-400')}>{article.author.role}</p>
                                 )}
                             </div>
                         </div>
                     )}
 
                     {/* Hover Indicator */}
-                    <div className="mt-4 flex items-center gap-2 text-gold-signature text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className={cn('mt-4 flex items-center gap-2 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300', light ? 'text-gold-primary' : 'text-gold-signature')}>
                         <span>Ler mais</span>
                         <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

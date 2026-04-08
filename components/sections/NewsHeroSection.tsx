@@ -16,9 +16,9 @@ interface NewsHeroSectionProps {
  */
 export const NewsHeroSection = ({ article, loading = false }: NewsHeroSectionProps) => {
   return (
-    <section className="relative bg-black-premium pt-28 md:pt-32 pb-8 md:pb-12 overflow-hidden">
+    <section className="relative bg-gray-900 pt-28 md:pt-32 pb-8 md:pb-12 overflow-hidden">
       {/* Gradient background accent */}
-      <div className="absolute inset-0 bg-gradient-gold-radial opacity-50 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-gold-radial opacity-30 pointer-events-none" />
 
       <Container className="relative">
         <motion.div
@@ -30,7 +30,7 @@ export const NewsHeroSection = ({ article, loading = false }: NewsHeroSectionPro
           <h1 className="font-display text-h3 md:text-h2 text-white font-bold">
             Notícias
           </h1>
-          <p className="text-platinum/70 mt-2 text-body-lg">
+          <p className="text-gray-400 mt-2 text-body-lg">
             Fique por dentro das novidades em saúde e bem-estar
           </p>
         </motion.div>

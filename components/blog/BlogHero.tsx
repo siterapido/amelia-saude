@@ -20,8 +20,8 @@ interface BlogHeroProps {
 export const BlogHero: React.FC<BlogHeroProps> = ({ article, loading = false }) => {
     if (loading || !article) {
         return (
-            <section className="relative min-h-[70vh] w-full overflow-hidden bg-black-premium pt-24">
-                <div className="absolute inset-0 top-24 bg-gray-dark animate-pulse" />
+            <section className="relative min-h-[70vh] w-full overflow-hidden bg-gray-900 pt-24">
+                <div className="absolute inset-0 top-24 bg-gray-800 animate-pulse" />
             </section>
         )
     }
@@ -32,7 +32,7 @@ export const BlogHero: React.FC<BlogHeroProps> = ({ article, loading = false }) 
     }
 
     return (
-        <section className="relative min-h-[70vh] w-full overflow-hidden bg-black-premium pt-24">
+        <section className="relative min-h-[70vh] w-full overflow-hidden bg-gray-900 pt-24">
             {/* Background Image */}
             <div className="absolute inset-0 top-24">
                 <Image
@@ -44,8 +44,8 @@ export const BlogHero: React.FC<BlogHeroProps> = ({ article, loading = false }) 
                     sizes="100vw"
                 />
                 {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black-premium via-black-premium/80 to-black-premium/40" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black-premium/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-gray-900/40" />
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent" />
             </div>
 
             {/* Decorative Elements */}
@@ -76,12 +76,12 @@ export const BlogHero: React.FC<BlogHeroProps> = ({ article, loading = false }) 
                         </h1>
 
                         {/* Excerpt */}
-                        <p className="text-platinum-light text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
+                        <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
                             {article.excerpt}
                         </p>
 
                         {/* Metadata */}
-                        <div className="flex flex-wrap items-center gap-6 mb-8 text-sm text-platinum">
+                        <div className="flex flex-wrap items-center gap-6 mb-8 text-sm text-gray-400">
                             {article.author && (
                                 <div className="flex items-center gap-3">
                                     {article.author.avatar && (
@@ -97,7 +97,7 @@ export const BlogHero: React.FC<BlogHeroProps> = ({ article, loading = false }) 
                                     <div>
                                         <p className="font-medium text-white">{article.author.name}</p>
                                         {article.author.role && (
-                                            <p className="text-xs text-platinum">{article.author.role}</p>
+                                            <p className="text-xs text-gray-400">{article.author.role}</p>
                                         )}
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@ export const BlogHero: React.FC<BlogHeroProps> = ({ article, loading = false }) 
             </div>
 
             {/* Bottom Gradient Fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black-deep to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-900 to-transparent" />
         </section>
     )
 }

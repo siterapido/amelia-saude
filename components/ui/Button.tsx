@@ -55,22 +55,22 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       'relative font-semibold uppercase tracking-wide',
       'inline-flex items-center justify-center gap-2.5',
       'transition-all duration-300 ease-premium',
-      'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-signature focus-visible:ring-offset-2 focus-visible:ring-offset-white',
+      'focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-signature focus-visible:ring-offset-2 focus-visible:ring-offset-black-premium',
       fullWidth && 'w-full'
     )
 
     const variantClasses = {
       primary: cn(
-        'bg-gradient-gold text-white font-bold',
-        'shadow-gold-sm hover:shadow-gold-glow',
+        'bg-gold-primary text-white font-bold',
+        'hover:bg-gold-signature shadow-gold-sm hover:shadow-gold-glow',
         'hover:-translate-y-0.5 hover:scale-[1.015]',
         'active:translate-y-0 active:scale-[0.98]',
         'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100 disabled:hover:shadow-gold-sm'
       ),
       secondary: cn(
         'border-2 border-gold-primary/30 text-gold-primary bg-transparent',
-        'hover:border-gold-primary hover:text-gold-signature',
-        'hover:shadow-[0_0_25px_rgba(94,73,133,0.12)]',
+        'hover:border-gold-primary hover:text-gold-signature hover:bg-gold-primary/5',
+        'hover:shadow-[0_0_25px_rgba(123,107,178,0.18)]',
         'active:bg-gold-primary/10',
         'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:border-gold-primary/30 disabled:hover:text-gold-primary'
       ),

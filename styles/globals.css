@@ -3,21 +3,21 @@
 
 :root {
   /* Blacks - Refined with warm undertones */
-  --color-black-premium: #F8F6FB;
-  --color-black-deep: #F3F0F7;
-  --color-black-charcoal: #EDE9F3;
-  --color-black-elevated: #E8E3EF;
-  --color-black-warm: #F5F2F8;
-  --color-black-gradient-end: #F0ECF5;
+  --color-black-premium: #F5F6F8;
+  --color-black-deep: #EEF1F4;
+  --color-black-charcoal: #E7EBF0;
+  --color-black-elevated: #E1E6EC;
+  --color-black-warm: #F2F4F7;
+  --color-black-gradient-end: #ECEFF3;
 
-  /* Purples - Primary purple (#5E4985) */
-  --color-gold-primary: #5E4985;
-  --color-gold-signature: #7B6CB1;
-  --color-gold-light: #A899CC;
-  --color-gold-soft: #4A3A6B;
-  --color-gold-dark: #3D2F5C;
-  --color-gold-vibrant: #5E4985;
-  --color-gold-translucent: rgba(94, 73, 133, 0.18);
+  /* Purples - Primary highlight (#7B6BB2) */
+  --color-gold-primary: #7B6BB2;
+  --color-gold-signature: #6A5BA0;
+  --color-gold-light: #A79BD0;
+  --color-gold-soft: #5F528E;
+  --color-gold-dark: #4A3F72;
+  --color-gold-vibrant: #7B6BB2;
+  --color-gold-translucent: rgba(123, 107, 178, 0.18);
 
   /* Warm neutrals */
   --color-platinum: #a8a8a8;
@@ -41,7 +41,7 @@ html {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--color-black-premium);
   color: #1A1A2E;
   overflow-x: hidden;
 }

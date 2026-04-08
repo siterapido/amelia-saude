@@ -55,7 +55,7 @@ export const NewsSidebar = ({
       {/* Popular News */}
       <motion.div
         variants={itemVariants}
-        className="bg-black-deep border border-gray-border rounded-card p-6"
+        className="bg-gray-800 border border-gray-700 rounded-card p-6"
       >
         <div className="flex items-center gap-2 mb-6">
           <TrendingUp className="w-5 h-5 text-gold-signature" />
@@ -86,7 +86,7 @@ export const NewsSidebar = ({
       {/* Categories */}
       <motion.div
         variants={itemVariants}
-        className="bg-black-deep border border-gray-border rounded-card p-6"
+        className="bg-gray-800 border border-gray-700 rounded-card p-6"
       >
         <h3 className="font-display text-lg text-white font-semibold mb-6">Categorias</h3>
         <nav className="space-y-2">
@@ -96,9 +96,9 @@ export const NewsSidebar = ({
               href={`/noticias?categoria=${category.slug}`}
               className={cn(
                 'flex items-center justify-between py-3 px-4 rounded-premium',
-                'bg-white/5 border border-transparent',
+                'bg-gray-700/40 border border-transparent',
                 'transition-all duration-300',
-                'hover:bg-white/10 hover:border-gold-signature/30',
+                'hover:bg-gray-700 hover:border-gold-signature/30',
                 'group'
               )}
             >
@@ -107,7 +107,7 @@ export const NewsSidebar = ({
                   className="w-2.5 h-2.5 rounded-full"
                   style={{ backgroundColor: category.color }}
                 />
-                <span className="text-white/80 group-hover:text-white transition-colors">
+                <span className="text-gray-300 group-hover:text-white transition-colors">
                   {category.name}
                 </span>
               </span>
@@ -122,8 +122,8 @@ export const NewsSidebar = ({
         variants={itemVariants}
         className={cn(
           'relative overflow-hidden rounded-card p-6',
-          'bg-gradient-to-br from-gold-primary/20 to-gold-signature/5',
-          'border border-gold-signature/30'
+          'bg-gradient-to-br from-gold-primary/25 to-gold-signature/10',
+          'border border-gold-signature/40'
         )}
       >
         {/* Decorative glow */}
@@ -134,7 +134,7 @@ export const NewsSidebar = ({
             <Mail className="w-5 h-5 text-gold-signature" />
             <h3 className="font-display text-lg text-white font-semibold">Newsletter</h3>
           </div>
-          <p className="text-platinum/80 text-sm mb-5">
+          <p className="text-gray-300 text-sm mb-5">
             Receba as principais notícias de saúde direto no seu email.
           </p>
           <form className="space-y-3" onSubmit={handleNewsletterSubmit}>
@@ -143,8 +143,8 @@ export const NewsSidebar = ({
               placeholder="Seu melhor email"
               className={cn(
                 'w-full px-4 py-3 rounded-premium',
-                'bg-black-premium/50 border border-white/10',
-                'text-white placeholder:text-platinum/40',
+                'bg-gray-900/70 border border-gray-600',
+                'text-white placeholder:text-gray-500',
                 'focus:outline-none focus:border-gold-signature/50',
                 'transition-colors duration-300'
               )}
@@ -153,7 +153,7 @@ export const NewsSidebar = ({
               Inscrever-se
             </Button>
           </form>
-          <p className="text-platinum/50 text-xs mt-3">
+          <p className="text-gray-400 text-xs mt-3">
             Sem spam. Cancele quando quiser.
           </p>
         </div>
@@ -162,7 +162,7 @@ export const NewsSidebar = ({
       {/* Tags */}
       <motion.div
         variants={itemVariants}
-        className="bg-black-deep border border-gray-border rounded-card p-6"
+        className="bg-gray-800 border border-gray-700 rounded-card p-6"
       >
         <div className="flex items-center gap-2 mb-6">
           <Tag className="w-5 h-5 text-gold-signature" />
@@ -175,9 +175,9 @@ export const NewsSidebar = ({
               href={`/noticias?busca=${encodeURIComponent(tag)}`}
               className={cn(
                 'px-3 py-1.5 rounded-full text-sm',
-                'bg-white/5 border border-white/10 text-platinum/80',
+                'bg-gray-700/50 border border-gray-600 text-gray-400',
                 'transition-all duration-300',
-                'hover:bg-gold-signature/10 hover:border-gold-signature/30 hover:text-gold-light'
+                'hover:bg-gold-signature/15 hover:border-gold-signature/40 hover:text-gold-light'
               )}
             >
               {tag}

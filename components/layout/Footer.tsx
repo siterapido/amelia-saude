@@ -66,7 +66,7 @@ export const Footer = () => {
               <Link href="/" className="inline-block mb-5">
                 <span className="font-display text-3xl text-white">amélia</span>
               </Link>
-              <p className="text-white/60 text-sm leading-relaxed mb-6">
+              <p className="text-white/80 text-sm leading-relaxed mb-6">
                 Operadora de Planos de Saúde.
                 <br />
                 Cuidando de você e da sua família
@@ -75,7 +75,7 @@ export const Footer = () => {
               </p>
 
               {/* Social Links */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 text-white">
                 {socialLinks.map((social) => {
                   const Icon = social.icon
                   return (
@@ -88,7 +88,7 @@ export const Footer = () => {
                         'w-10 h-10 rounded-full',
                         'flex items-center justify-center',
                         'bg-white/5 border border-white/10',
-                        'text-white/60 hover:text-gold-light',
+                        'text-white/80 hover:text-gold-light',
                         'hover:bg-gold-signature/15 hover:border-gold-signature/40',
                         'transition-all duration-300'
                       )}
@@ -110,15 +110,15 @@ export const Footer = () => {
                 transition={{ duration: 0.5, delay: (index + 1) * 0.05 }}
                 viewport={{ once: true, margin: '-50px' }}
               >
-                <h4 className="font-semibold text-white/90 mb-4 text-sm tracking-wide">
+                <h4 className="font-semibold text-white mb-4 text-sm tracking-wide">
                   {section.title}
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-3 text-white">
                   {section.links.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-white/50 hover:text-gold-light transition-colors duration-300 text-sm"
+                        className="text-white hover:text-white/90 transition-colors duration-300 text-sm"
                       >
                         {link.label}
                       </Link>
@@ -135,7 +135,7 @@ export const Footer = () => {
               transition={{ duration: 0.5, delay: 0.15 }}
               viewport={{ once: true, margin: '-50px' }}
             >
-              <h4 className="font-semibold text-white/90 mb-4 text-sm tracking-wide">
+              <h4 className="font-semibold text-white mb-4 text-sm tracking-wide">
                 Contato
               </h4>
               <ul className="space-y-4">
@@ -147,8 +147,8 @@ export const Footer = () => {
                         href={info.href}
                         className="flex items-center gap-3 group"
                       >
-                        <Icon className="w-4 h-4 text-gold-light/70 flex-shrink-0" />
-                        <span className="text-sm text-white/60 group-hover:text-gold-light transition-colors">
+                        <Icon className="w-4 h-4 text-white/80 flex-shrink-0" />
+                        <span className="text-sm text-white/80 group-hover:text-gold-light transition-colors">
                           {info.value}
                         </span>
                       </a>
@@ -169,10 +169,10 @@ export const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true, margin: '-50px' }}
           >
-            <p className="text-white/40 text-xs text-center md:text-left">
+            <p className="text-white/70 text-xs text-center md:text-left">
               Copyright © {currentYear} - Todos os direitos reservados.
             </p>
-            <p className="text-white/30 text-xs text-center md:text-right">
+            <p className="text-white/60 text-xs text-center md:text-right">
               Amelia Operadora de Planos de Saude S.A. CNPJ: 57.395.677/0001-93
             </p>
           </motion.div>

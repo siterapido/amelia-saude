@@ -887,7 +887,7 @@ function DealDetailModal({ deal, stages, onClose, onUpdated }: {
                                                 <button
                                                     onClick={addActivity}
                                                     disabled={savingActivity || !activityForm.title.trim()}
-                                                    className="px-3 py-1.5 bg-gold-primary text-black font-medium rounded-lg text-xs hover:opacity-90 disabled:opacity-50"
+                                                    className="px-3 py-1.5 bg-gold-primary text-white font-medium rounded-lg text-xs hover:opacity-90 disabled:opacity-50"
                                                 >
                                                     {savingActivity ? 'Salvando...' : 'Salvar'}
                                                 </button>
@@ -982,7 +982,7 @@ function DealDetailModal({ deal, stages, onClose, onUpdated }: {
                                                 <button
                                                     onClick={addFollowup}
                                                     disabled={savingFollowup || !followupForm.message.trim() || !followupForm.scheduledAt}
-                                                    className="px-3 py-1.5 bg-gold-primary text-black font-medium rounded-lg text-xs hover:opacity-90 disabled:opacity-50"
+                                                    className="px-3 py-1.5 bg-gold-primary text-white font-medium rounded-lg text-xs hover:opacity-90 disabled:opacity-50"
                                                 >
                                                     {savingFollowup ? 'Salvando...' : 'Agendar'}
                                                 </button>

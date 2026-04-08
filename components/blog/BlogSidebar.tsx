@@ -26,11 +26,11 @@ export const BlogSidebar: React.FC<BlogSidebarProps> = ({
     if (loading) {
         return (
             <aside className="space-y-8">
-                <div className="rounded-card bg-black-charcoal border border-gray-border p-6 animate-pulse">
-                    <div className="h-6 bg-gray-dark rounded w-3/4 mb-4" />
+                <div className="rounded-card bg-gray-800 border border-gray-700 p-6 animate-pulse">
+                    <div className="h-6 bg-gray-700 rounded w-3/4 mb-4" />
                     <div className="space-y-3">
                         {[...Array(3)].map((_, i) => (
-                            <div key={i} className="h-20 bg-gray-dark rounded" />
+                            <div key={i} className="h-20 bg-gray-700 rounded" />
                         ))}
                     </div>
                 </div>
@@ -41,7 +41,7 @@ export const BlogSidebar: React.FC<BlogSidebarProps> = ({
     return (
         <aside className="space-y-8 lg:sticky lg:top-32">
             {/* Popular Articles */}
-            <div className="rounded-card bg-black-charcoal/60 backdrop-blur-sm border border-gray-border p-6 glass-dark">
+            <div className="rounded-card bg-gray-800/80 backdrop-blur-sm border border-gray-700 p-6">
                 <div className="flex items-center gap-2 mb-6">
                     <TrendingUp className="w-5 h-5 text-gold-primary" />
                     <h3 className="font-display font-bold text-white text-lg uppercase tracking-wider">
@@ -56,12 +56,12 @@ export const BlogSidebar: React.FC<BlogSidebarProps> = ({
                             href={`/blog/${article.slug}`}
                             className="group block"
                         >
-                            <article className="flex gap-4 p-3 rounded-premium hover:bg-black-elevated/50 transition-colors duration-300">
+                            <article className="flex gap-4 p-3 rounded-premium hover:bg-gray-700/50 transition-colors duration-300">
                                 {/* Number */}
                                 <div className="flex-shrink-0">
                                     <div className={cn(
                                         'w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm',
-                                        index === 0 ? 'bg-gold-primary text-black-premium' : 'bg-gray-dark text-platinum'
+                                        index === 0 ? 'bg-gold-primary text-white' : 'bg-gray-700 text-gray-400'
                                     )}>
                                         {index + 1}
                                     </div>
@@ -72,7 +72,7 @@ export const BlogSidebar: React.FC<BlogSidebarProps> = ({
                                     <h4 className="font-medium text-white text-sm line-clamp-2 mb-1 group-hover:text-gold-signature transition-colors">
                                         {article.title}
                                     </h4>
-                                    <p className="text-xs text-platinum">
+                                    <p className="text-xs text-gray-500">
                                         {article.readingTime} min
                                     </p>
                                 </div>
@@ -95,7 +95,7 @@ export const BlogSidebar: React.FC<BlogSidebarProps> = ({
             </div>
 
             {/* Categories */}
-            <div className="rounded-card bg-black-charcoal/60 backdrop-blur-sm border border-gray-border p-6 glass-dark">
+            <div className="rounded-card bg-gray-800/80 backdrop-blur-sm border border-gray-700 p-6">
                 <h3 className="font-display font-bold text-white text-lg uppercase tracking-wider mb-6">
                     Categorias
                 </h3>
@@ -105,9 +105,9 @@ export const BlogSidebar: React.FC<BlogSidebarProps> = ({
                         <Link
                             key={category.id}
                             href={`/blog?categoria=${category.slug}`}
-                            className="flex items-center justify-between p-3 rounded-premium hover:bg-black-elevated/50 transition-colors duration-300 group"
+                            className="flex items-center justify-between p-3 rounded-premium hover:bg-gray-700/50 transition-colors duration-300 group"
                         >
-                            <span className="text-platinum group-hover:text-white transition-colors">
+                            <span className="text-gray-400 group-hover:text-white transition-colors">
                                 {category.name}
                             </span>
                             <div className="w-2 h-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity bg-gold-primary" />

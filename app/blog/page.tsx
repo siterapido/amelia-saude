@@ -128,12 +128,12 @@ function BlogPageContent() {
     }, [categoryParam, searchParam, pageParam])
 
     return (
-        <main className="min-h-screen bg-black-premium">
+        <main className="min-h-screen bg-gray-900">
             {/* Hero with Featured Article */}
             <BlogHero article={featuredArticle} loading={initialLoading} />
 
             {/* Main Content */}
-            <section className="py-12 md:py-16 lg:py-24 bg-black-deep">
+            <section className="py-12 md:py-16 lg:py-24 bg-gray-900">
                 <Container>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
                         {/* Main Column (2/3) */}
@@ -179,7 +179,7 @@ export default function BlogPage() {
     return (
         <Suspense
             fallback={
-                <main className="min-h-screen bg-black-premium">
+                <main className="min-h-screen bg-gray-900">
                     <BlogHero article={null} loading={true} />
                 </main>
             }
