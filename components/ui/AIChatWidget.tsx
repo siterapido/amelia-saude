@@ -1,8 +1,10 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Sparkles, X, Send, MessageCircle, UserCheck } from 'lucide-react'
+import logoBranca from '@/Logo/logo-amelia-site-branca.png'
 
 type ChatMsg = { id: string; role: 'user' | 'assistant'; text: string }
 
@@ -25,7 +27,7 @@ function getOrCreateSessionId(): string {
  *
  * Premium floating chat widget with:
  * - Yellow theme matching brand colors
- * - AI icon with pulse animation
+ * - Logo branca Amélia Saúde no botão (ícone X ao abrir)
  * - Expandable chat panel
  * - SDR Agent responses via CRM
  * - WhatsApp handoff option
@@ -176,14 +178,21 @@ export const AIChatWidget = () => {
                             </motion.span>
                         ) : (
                             <motion.span
-                                key="sparkles"
-                                initial={{ rotate: 90, opacity: 0 }}
-                                animate={{ rotate: 0, opacity: 1 }}
-                                exit={{ rotate: -90, opacity: 0 }}
+                                key="logo"
+                                className="flex items-center justify-center"
+                                initial={{ scale: 0.85, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                exit={{ scale: 0.85, opacity: 0 }}
                                 transition={{ duration: 0.2 }}
-                                style={{ filter: 'drop-shadow(0 0 8px rgba(196, 181, 253, 0.45))' }}
                             >
-                                <Sparkles size={28} strokeWidth={2} />
+                                <Image
+                                    src={logoBranca}
+                                    alt=""
+                                    width={240}
+                                    height={76}
+                                    className="max-h-[22px] max-w-[46px] w-auto h-auto object-contain object-center select-none"
+                                    aria-hidden
+                                />
                             </motion.span>
                         )}
                     </AnimatePresence>
