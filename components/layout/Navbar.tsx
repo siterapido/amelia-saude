@@ -29,7 +29,7 @@ const navItems: NavItem[] = [
 /**
  * Premium Navbar — Amélia Saúde
  * Fundo claro sob o header → logo colorida e links escuros; fundo escuro → logo branca e links claros.
- * Com scroll, barra clara sólida (sempre logo colorida + links escuros).
+ * Com scroll ou em /blog e /notícias, barra clara sólida (logo colorida + links escuros).
  */
 export const Navbar = () => {
   const pathname = usePathname()
@@ -58,7 +58,11 @@ export const Navbar = () => {
 
   if (isAdminRoute) return null
 
-  const solidBar = isScrolled
+  /** Blog/notícias: mesma barra branca da LP (não transparente no topo). */
+  const isBlogOrNewsRoute =
+    pathname.startsWith('/blog') || pathname.startsWith('/noticias')
+
+  const solidBar = isScrolled || isBlogOrNewsRoute
   /** Cromado “claro”: logo colorida + texto escuro (barra sólida OU superfície clara atrás do header). */
   const useLightChrome = solidBar || surfaceTheme === 'light'
 
