@@ -13,17 +13,14 @@ import {
   getRelatedNews,
   getPopularNews,
   getCategories,
-  getAllSlugs,
 } from '@/lib/api/news'
 
 interface PageProps {
   params: Promise<{ slug: string }>
 }
 
-export async function generateStaticParams() {
-  const slugs = await getAllSlugs()
-  return slugs.map((slug) => ({ slug }))
-}
+/** Evita consulta ao Neon no build (mesmo padrão que /blog/[slug]). */
+export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params
